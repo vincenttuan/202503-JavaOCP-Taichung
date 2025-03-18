@@ -13,7 +13,9 @@ public class ArrayDemo2 {
 		}
 		System.out.println("------");
 		// 使用 for-loop (從尾端開始印)
-		
+		for(int i=scores.length-1;i>=0;i--) {
+			System.out.println(scores[i]);
+		}
 		
 	}
 
