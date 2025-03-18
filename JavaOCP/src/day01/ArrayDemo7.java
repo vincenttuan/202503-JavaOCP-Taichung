@@ -35,6 +35,13 @@ public class ArrayDemo7 {
 		// -------------------------------------------------------------------
 		System.out.println("scoresA 的標準差:" + sdA);
 		System.out.println("scoresB 的標準差:" + sdB);
+		// -------------------------------------------------------------------
+		// 判斷集中度
+		if(sdA < sdB) {
+			System.out.println("scoreA 集中度較高");
+		} else {
+			System.out.println("scoreB 集中度較高");
+		}
 	}
 	
 }
