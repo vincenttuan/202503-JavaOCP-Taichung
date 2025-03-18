@@ -18,7 +18,8 @@ public class ArrayDemo7 {
 		}
 		int avgB = sumB / scoresB.length;
 		// ---------------------------------
-		
+		System.out.println("scoreA 的平均:" + avgA);
+		System.out.println("scoreB 的平均:" + avgB);
 		
 	}
 	
