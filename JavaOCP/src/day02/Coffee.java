@@ -14,6 +14,6 @@ public class Coffee {
 	
 	// 列印出產品資訊
 	void printInfo() {
-		System.out.printf("%s $%d (%c) %s%n", name, price, size, (hot?"熱":"冷"));
+		System.out.printf("%s%s $%d (%c)%n", (hot?"熱":"冰"), name, price, size);
 	} 
 }
