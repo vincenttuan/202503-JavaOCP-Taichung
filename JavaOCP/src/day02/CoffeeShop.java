@@ -16,6 +16,14 @@ public class CoffeeShop {
 		macchiato.price = 80;
 		macchiato.hot = false;
 		macchiato.printInfo();
+		
+		Coffee americano = new Coffee();
+		americano.name = "美式";
+		americano.size = '大';
+		americano.price = 50;
+		americano.hot = true;
+		americano.printInfo();
+		
 	}
 
 }
