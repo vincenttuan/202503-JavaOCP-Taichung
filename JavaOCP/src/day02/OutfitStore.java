@@ -28,8 +28,6 @@ public class OutfitStore {
 			outfits[i].printInfo();
 		}
 		
-		
-		
 	}
 	
 }
