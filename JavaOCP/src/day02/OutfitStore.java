@@ -30,7 +30,7 @@ public class OutfitStore {
 			outfits[i].printInfo();
 			total += outfits[i].price;
 		}
-		System.out.printf("總共需支付 $,d%n", total);
+		System.out.printf("總共需支付 $%,d%n", total);
 		
 	}
 	
