@@ -9,6 +9,13 @@ public class CoffeeShop {
 		latte.price = 65;
 		latte.hot = true;
 		latte.printInfo();
+		
+		Coffee macchiato = new Coffee();
+		macchiato.name = "焦糖瑪奇朵";
+		macchiato.size = '大';
+		macchiato.price = 80;
+		macchiato.hot = false;
+		macchiato.printInfo();
 	}
 
 }
