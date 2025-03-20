@@ -11,6 +11,11 @@ public class CoffeeShop2 {
 		Coffee c5 = new Coffee("義式濃縮", '小', 55, true); 
 		Coffee c6 = new Coffee("巧克力脆片", '大', 120, false);
 		
+		// 建立一個咖啡陣列來存放咖啡
+		Coffee[] coffees = {c1, c2, c3, c4, c5, c6};
+		
+		// 印出商品資訊
+		
 	}
 
 }
