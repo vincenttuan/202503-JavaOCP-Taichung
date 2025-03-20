@@ -21,9 +21,10 @@ public class OutfitStore {
 		Outfit outfit1 = new Outfit("運動風", top1, bottom1, hat1);
 		Outfit outfit2 = new Outfit("安全風", top2, bottom2, hat2);
 		Outfit outfit3 = new Outfit("紳士風", top3, bottom3, hat3);
+		Outfit outfit4 = new Outfit("自由風", top3, bottom1, hat2);
 		
 		// 購物車
-		Outfit[] outfits = {outfit1, outfit2, outfit3};
+		Outfit[] outfits = {outfit1, outfit2, outfit3, outfit4};
 		for(int i=0;i<outfits.length;i++) {
 			outfits[i].printInfo();
 		}
