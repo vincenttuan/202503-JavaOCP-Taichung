@@ -30,6 +30,14 @@ public class McDonalds {
 		}
 		System.out.printf("總價 $%d%n", total1);
 		System.out.println("---------------");
+		System.out.println("二號餐");
+		int total2 = 0;
+		for(int i=0;i<no2.length;i++) {
+			no2[i].printInfo();
+			total2 += no2[i].price;
+		}
+		System.out.printf("總價 $%d%n", total2);
+		System.out.println("---------------");
 		
 	}
 	
