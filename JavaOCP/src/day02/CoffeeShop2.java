@@ -15,7 +15,9 @@ public class CoffeeShop2 {
 		Coffee[] coffees = {c1, c2, c3, c4, c5, c6};
 		
 		// 印出商品資訊
-		
+		for(int i=0;i<coffees.length;i++) {
+			coffees[i].printInfo();
+		}
 	}
 
 }
