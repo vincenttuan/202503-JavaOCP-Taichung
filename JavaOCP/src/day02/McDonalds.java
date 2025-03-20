@@ -15,7 +15,11 @@ public class McDonalds {
 		FastFood[] no2 = {m1, s2, d2}; // 二號餐
 		
 		// 單點菜單
-		
+		System.out.println("== 單點 ========");
+		FastFood[] fastFoods = {m1, m2, s1, s2, d1, d2};
+		for(int i=0;i<fastFoods.length;i++) {
+			fastFoods[i].printInfo();
+		}
 		
 		
 		

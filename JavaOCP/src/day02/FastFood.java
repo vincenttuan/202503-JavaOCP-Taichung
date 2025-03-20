@@ -14,7 +14,7 @@ public class FastFood {
 	}
 	
 	public void printInfo() {
-		System.out.printf("%s %s $%d%n", type, name, price);
+		System.out.printf("%s %s\t$%d%n", type, name, price);
 	}
 	
 }
