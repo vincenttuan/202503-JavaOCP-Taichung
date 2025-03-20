@@ -23,6 +23,11 @@ public class CoffeeShop2 {
 		// cart 購物車 (2杯中熱拿鐵, 3杯大熱美式, 4杯大冰巧克力脆片)
 		Coffee[] cart = {c1, c1, c3, c3, c3, c6, c6, c6, c6};
 		System.out.printf("買了 %d 杯%n", cart.length);
+		int total = 0;
+		for(int i=0;i<cart.length;i++) {
+			total += cart[i].price; // 累計
+		}
+		System.out.printf("總價: $%,d%n", total);
 	}
 
 }
