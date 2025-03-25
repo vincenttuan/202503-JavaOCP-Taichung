@@ -21,11 +21,13 @@ public class GuessNumber {
 			}
 			// B
 			int bCount = 0;
+			outer:
 			for(int i=0;i<4;i++) {
+				inner:
 				for(int k=0;k<4;k++) {
 					if(ans[i] == guessArray[k]) {
 						bCount++;
-						break;
+						break inner;
 					}
 				}
 			}
