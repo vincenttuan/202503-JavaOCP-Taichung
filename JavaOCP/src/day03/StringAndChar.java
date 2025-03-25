@@ -19,7 +19,7 @@ public class StringAndChar {
 		String s4 = "Java"; // 字面值宣告(字串內容可以共用)
 		System.out.println(s3 == s4); // true (共用)
 		System.out.println(s3.equals(s4));
-		
+		// 總結:在實務上不應用 == 來比較字串內容而是用 equals() 來進行比較 
 		
 	}
 
