@@ -24,7 +24,12 @@ public class Account {
 	// 提款
 	public void withdraw(int amount) {
 		if(amount <= 0) {
-			System.out.println("提款資料不正確: " + amount);
+			System.out.printf("提款資料不正確: %,d%n", amount);
+			return;
+		}
+		if(amount > balance) {
+			System.out.printf("提款 $%,d 失敗 餘額不足! 餘額: %,d%n", amount, balance);
+			return;
 		}
 		System.out.printf("提款: $%,d%n", amount);
 		balance -= amount;
