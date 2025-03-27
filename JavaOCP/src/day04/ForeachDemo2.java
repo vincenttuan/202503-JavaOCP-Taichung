@@ -10,11 +10,18 @@ public class ForeachDemo2 {
 			}
 		}
 		System.out.println("------");
+		// 三維陣列
 		int[][][] scores2 = {
 								{{100, 90}, {80, 70}}, 
 								{{60, 50}, {40, 30}}, 
 								{{20, 10}, {5, 1}}
 							};
-		
+		for(int[][] row2 : scores2) {
+			for(int[] row : row2) {
+				for(int score : row) {
+					System.out.println(score);
+				}
+			}
+		}
 	}
 }
