@@ -17,6 +17,7 @@ public class Account {
 			System.out.println("存款資料不正確: " + amount);
 			return;
 		}
+		System.out.printf("存款: $%,d%n", amount);
 		balance += amount;
 	}
 	
@@ -25,6 +26,7 @@ public class Account {
 		if(amount <= 0) {
 			System.out.println("提款資料不正確: " + amount);
 		}
+		System.out.printf("提款: $%,d%n", amount);
 		balance -= amount;
 	}
 	
