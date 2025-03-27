@@ -12,13 +12,19 @@ public class Book {
 		System.out.println("呼叫 Book() 建構子");
 	}
 	
-	// 封裝
+	// 封裝 setter
 	public void setPrice(int price) {
 		if(price > 0) {
 			this.price = price;
 		} else {
 			System.out.println("價格輸入錯誤");
 		}
+	}
+	
+	// 封裝 getter
+	public int getPrice() {
+		//return this.price;
+		return price;
 	}
 	
 	public void printInfo() {
