@@ -12,6 +12,8 @@ public class BookStore {
 		System.out.println(book1.getPrice());
 		
 		Book book2 = new Book("唐詩300首", 300, 150);
+		book2.printInfo();
+		
 	}
 
 }
