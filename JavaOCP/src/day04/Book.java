@@ -11,4 +11,8 @@ public class Book {
 	public Book() {
 		System.out.println("呼叫 Book() 建構子");
 	}
+	
+	public void printInfo() {
+		System.out.printf("%s $%d %d頁%n", name, price, pages);
+	}
 }
