@@ -35,6 +35,19 @@ public class Account {
 		balance -= amount;
 	}
 	
+	// 轉帳
+	public void transfer(int amount, Account account2) {
+		// 判斷 amount 是否夠轉 
+		if(amount > balance) {
+			System.out.printf("轉帳 $%,d 失敗 餘額不足! 餘額: %,d%n", amount, balance);
+			return;
+		}
+		// 自己(提款)
+		this.withdraw(amount);
+		// 對方(存款)
+		account2.deposit(amount);
+	}
+	
 	// 列印帳戶資料
 	public void printInfo() {
 		System.out.printf("帳戶餘額: %,d%n", balance);
