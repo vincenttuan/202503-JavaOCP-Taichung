@@ -9,6 +9,12 @@ public class ForeachDemo2 {
 				System.out.println(score);
 			}
 		}
+		System.out.println("------");
+		int[][][] scores2 = {
+								{{100, 90}, {80, 70}}, 
+								{{60, 50}, {40, 30}}, 
+								{{20, 10}, {5, 1}}
+							};
 		
 	}
 }
