@@ -12,6 +12,13 @@ public class Book {
 		System.out.println("呼叫 Book() 建構子");
 	}
 	
+	// 有參數建構子
+	public Book(String name, int price, int pages) {
+		setName(name);
+		setPrice(price);
+		setPages(pages);
+	}
+	
 	// 封裝 setter
 	public void setName(String name) {
 		this.name = name;

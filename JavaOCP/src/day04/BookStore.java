@@ -10,6 +10,8 @@ public class BookStore {
 		book1.printInfo();
 		// 單獨可以印出價格
 		System.out.println(book1.getPrice());
+		
+		Book book2 = new Book("唐詩300首", 300, 150);
 	}
 
 }
