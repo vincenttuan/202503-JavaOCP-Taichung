@@ -13,9 +13,9 @@ public class Book {
 	}
 	
 	// 封裝
-	public void setPrice(int p) {
-		if(p > 0) {
-			price = p;
+	public void setPrice(int price) {
+		if(price > 0) {
+			this.price = price;
 		} else {
 			System.out.println("價格輸入錯誤");
 		}
