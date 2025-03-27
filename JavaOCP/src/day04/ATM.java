@@ -11,7 +11,7 @@ public class ATM {
 		account1.deposit(-2000);
 		account1.printInfo();
 		// 提款
-		account1.withdraw(15000);
+		account1.withdraw(8000);
 		account1.printInfo();
 		// 可以再提款嗎 ?
 		account1.withdraw(5000);
