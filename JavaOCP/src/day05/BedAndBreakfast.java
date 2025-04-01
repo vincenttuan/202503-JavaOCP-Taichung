@@ -15,11 +15,15 @@ public class BedAndBreakfast {
 		Room room2 = new Room("工業風", 2, 2000, breakfastA, self);
 		// 房型資料列印出
 		Object[] rooms = {room1, room2};
+		int total = 0;
 		for(Object room : rooms) {
 			System.out.println(room);
+			if(room instanceof Room) {
+				total += ((Room)room).getPrice();
+			}
 		}
 		System.out.println("----------------------------------");
-		
+		System.out.printf("總價:%,d%n", total);
 		
 		
 
