@@ -15,11 +15,31 @@ public class Room {
 		this.breakfast = breakfast;
 		this.transport = transport;
 	}
-	
-	
-	
-	
-	
-	
+
+	public String getStyle() {
+		return style;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public Breakfast getBreakfast() {
+		return breakfast;
+	}
+
+	public Transport getTransport() {
+		return transport;
+	}
+
+	@Override
+	public String toString() {
+		return "Room [style=" + style + ", size=" + size + ", price=" + price + ", breakfast=" + breakfast
+				+ ", transport=" + transport + "]";
+	}
 	
 }
