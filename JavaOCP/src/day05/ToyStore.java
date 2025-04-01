@@ -20,13 +20,10 @@ public class ToyStore {
 		CarToy carToy2 = new CarToy("砲彈飛車", 100, wheelsA, batteryAAAA);
 		DollToy dollToy1 = new DollToy("芭比娃娃", 750);
 		DollToy dollToy2 = new DollToy("電動芭比", 800, batteryAAA);
-		// 玩具展示
+		// 玩具展示(武力展示)
 		System.out.println(carToy1);
 		System.out.println(carToy2);
 		System.out.println(dollToy1);
 		System.out.println(dollToy2);
-		
-		
-		
 	}
 }
