@@ -7,4 +7,18 @@ public class CarToy {
 	private Wheel[] wheels;
 	private Battery battery;
 	
+	public CarToy(String name, int price, Wheel[] wheels, Battery battery) {
+		this.name = name;
+		this.wheels = wheels;
+		this.battery = battery;
+		this.price = price + battery.getPrice(); // 車車基本價 + 電池價格
+		// 加入輪胎的價格
+		if(wheels != null && wheels.length > 0) {
+			for(Wheel wheel : wheels) {
+				this.price += wheel.getPrice();
+			}
+		}
+	}
+	
+	
 }
