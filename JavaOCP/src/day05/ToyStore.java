@@ -29,5 +29,14 @@ public class ToyStore {
 		int total = carToy1.getPrice() + carToy2.getPrice() + dollToy1.getPrice() + dollToy2.getPrice();
 		System.out.printf("總價: %,d%n", total);
 		
+		// 利用物件陣列將所有玩具放在一個陣列中 
+		Object[] toys = {carToy1, carToy2, dollToy1, dollToy2};
+		for(Object toy : toys) {
+			if(toy instanceof CarToy) { // 判斷 toy 是否是 CarToy
+				System.out.printf("汽車玩具:%s", ((CarToy)toy).getName()); // 轉型後取名字
+			} else if(toy instanceof DollToy) { // 判斷 toy 是否是 DollToy
+				System.out.printf("娃娃玩具:%s", ((DollToy)toy).getName()); // 轉型後取名字
+			}
+		}
 	}
 }
