@@ -5,4 +5,5 @@ public class DollToy {
 	private String name;
 	private int price;
 	private Battery battery;
+	
 }
