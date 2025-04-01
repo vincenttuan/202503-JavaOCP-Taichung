@@ -25,5 +25,9 @@ public class ToyStore {
 		System.out.println(carToy2);
 		System.out.println(dollToy1);
 		System.out.println(dollToy2);
+		// 總價
+		int total = carToy1.getPrice() + carToy2.getPrice() + dollToy1.getPrice() + dollToy2.getPrice();
+		System.out.printf("總價: %,d%n", total);
+		
 	}
 }
