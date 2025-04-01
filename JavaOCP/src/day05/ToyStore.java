@@ -16,6 +16,15 @@ public class ToyStore {
 		Wheel[] wheelsC = {wheelC, wheelC, wheelC, wheelC};
 		Wheel[] wheelsF = {wheelA, wheelB, wheelC, wheelC};
 		// 玩具組合
+		CarToy carToy1 = new CarToy("藍寶堅尼", 250, wheelsC, batteryA);
+		CarToy carToy2 = new CarToy("砲彈飛車", 100, wheelsA, batteryAAAA);
+		DollToy dollToy1 = new DollToy("芭比娃娃", 750);
+		DollToy dollToy2 = new DollToy("電動芭比", 800, batteryAAA);
+		// 玩具展示
+		System.out.println(carToy1);
+		System.out.println(carToy2);
+		System.out.println(dollToy1);
+		System.out.println(dollToy2);
 		
 		
 		
