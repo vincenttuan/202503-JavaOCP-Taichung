@@ -1,5 +1,7 @@
 package day05;
 
+import java.util.Arrays;
+
 // 車車
 public class CarToy {
 	private String name;
@@ -20,5 +22,25 @@ public class CarToy {
 		}
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public Battery getBattery() {
+		return battery;
+	}
+	
+	public Wheel[] getWheels() {
+		return wheels;
+	}
+	
+	public String toString() {
+		return String.format("CarToy name:%s price:%d battery:%s wheels:%s", 
+				name, price, battery, Arrays.toString(wheels));
+	}
 	
 }
