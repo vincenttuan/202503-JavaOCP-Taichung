@@ -3,13 +3,16 @@ package day06;
 // 結帳
 public class Checkout {
 	
-	private static Checkout checkout = new Checkout();
+	private static Checkout checkout;
 	
 	private Checkout() {
 		
 	}
 	
 	public static Checkout getInstance() {
+		if(checkout == null) {
+			checkout = new Checkout();
+		}
 		return checkout;
 	}
 	
