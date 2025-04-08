@@ -10,6 +10,8 @@ public class UtilTest {
 		System.out.println(util.add(10, 20, 30));
 		int[] array = {10, 20, 30, 40, 50};
 		System.out.println(util.add(array));
+		System.out.println(util.add());
+		System.out.println(util.add(1, 2, 3, 4, 5, 6, 7, 8, 9));
 	}
 
 }
