@@ -11,8 +11,8 @@ public class WrapperTest2 {
 		System.out.println(x1);
 		System.out.println(x2);
 		System.out.println(x3);
-		System.out.println(x1 == x2);
-		System.out.println(x1 == x3);
+		System.out.println(x2 == x1); // auto-unboxing, x2 == x1.intValue() 
+		System.out.println(x2 == x3); // auto-unboxing, x2 == x3.intValue()
 		
 		
 	}
