@@ -3,6 +3,16 @@ package day06;
 // 結帳
 public class Checkout {
 	
+	private static Checkout checkout = new Checkout();
+	
+	private Checkout() {
+		
+	}
+	
+	public static Checkout getInstance() {
+		return checkout;
+	}
+	
 	public void submit(int cash) {
 		System.out.printf("現金:%d 結帳%n", cash);
 	}
