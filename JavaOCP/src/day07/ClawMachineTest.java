@@ -9,6 +9,9 @@ public class ClawMachineTest {
 		clawMachine.insertCoin();
 		clawMachine.play();
 		clawMachine.play();
+		if(clawMachine instanceof DeluxeClawMachine) {
+			((DeluxeClawMachine)clawMachine).playMusic(); // 透過轉型來呼叫 playMusic()
+		}
 		System.out.println("-------------------------");
 		
 		DeluxeClawMachine deluxeClawMachine = new DeluxeClawMachine();
