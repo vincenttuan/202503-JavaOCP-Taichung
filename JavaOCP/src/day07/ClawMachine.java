@@ -3,7 +3,7 @@ package day07;
 // 基本夾娃娃機
 public class ClawMachine {
 	
-	private int coinCount; // 儲存投幣數量
+	protected int coinCount; // 儲存投幣數量
 	
 	// 投幣功能
 	public void insertCoin() {
