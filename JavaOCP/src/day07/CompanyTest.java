@@ -14,7 +14,17 @@ public class CompanyTest {
 		System.out.println(supervisor.salary); // 50000
 		System.out.println(supervisor.budget); // 70000
 		System.out.println(supervisor.stock);  // 120000
+		System.out.println("--------------------");
 		
+		Employee[] employees = {employee, manager, supervisor};
+		System.out.println(employees[0].salary);
+		System.out.println(employees[1].salary);
+		System.out.println(employees[2].salary);
+		System.out.println("--------------------");
+		
+		for(int i=0;i<employees.length;i++) {
+			System.out.println(employees[i].salary);
+		}
 	}
 
 }
