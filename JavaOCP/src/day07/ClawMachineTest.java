@@ -6,7 +6,7 @@ public class ClawMachineTest {
 		ClawMachine clawMachine = new ClawMachine();
 		clawMachine.insertCoin();
 		clawMachine.play();
-
+		clawMachine.play();
 	}
 
 }
