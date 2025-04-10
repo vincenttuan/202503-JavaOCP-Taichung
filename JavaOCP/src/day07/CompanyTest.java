@@ -32,6 +32,8 @@ public class CompanyTest {
 		}
 		System.out.println("--------------------");
 		
+		Manager[] managers = {manager, supervisor};
+		
 	}
 
 }
