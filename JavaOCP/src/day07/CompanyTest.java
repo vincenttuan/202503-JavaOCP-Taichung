@@ -25,6 +25,13 @@ public class CompanyTest {
 		for(int i=0;i<employees.length;i++) {
 			System.out.println(employees[i].salary);
 		}
+		System.out.println("--------------------");
+		
+		for(Employee emp : employees) {
+			System.out.println(emp.salary);
+		}
+		System.out.println("--------------------");
+		
 	}
 
 }
