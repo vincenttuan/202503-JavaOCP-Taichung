@@ -14,7 +14,11 @@ public class DeluxeClawMachine extends ClawMachine {
 	@Override
 	public void play() {
 		if(coinCount > 0) {
-			
+			coinCount--;
+			playMusic(); // 播放音樂
+			System.out.println("豪華版夾娃娃機 開始夾娃娃");
+		} else {
+			System.out.println("請先投幣 !");
 		}
 	}
 	
