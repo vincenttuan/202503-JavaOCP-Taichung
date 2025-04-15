@@ -38,7 +38,7 @@ public class Student {
 		// 印出學生姓名與剩餘預算
 		System.out.printf("%s 的逢甲夜市冒險開始 ! (剩下 $%d)%n", name, budget);
 		// 印出每一項夜市活動
-		for(int i=0;i<activityCount;activityCount++) {
+		for(int i=0;i<activityCount;i++) {
 			plan[i].doActivity();
 		}
 		
