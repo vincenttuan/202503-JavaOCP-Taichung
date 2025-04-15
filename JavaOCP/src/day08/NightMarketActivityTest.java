@@ -1,6 +1,6 @@
 package day08;
 
-public class NigntMarketActivityTest {
+public class NightMarketActivityTest {
 
 	public static void main(String[] args) {
 		// 夜市活動
@@ -16,6 +16,7 @@ public class NigntMarketActivityTest {
 			activity.doActivity();
 			System.out.printf("\t費用 $%d%n", activity.getCost());
 		}
+		// 預算200, 請問總共花多少錢? 還剩下多少?
 		
 		
 	}
