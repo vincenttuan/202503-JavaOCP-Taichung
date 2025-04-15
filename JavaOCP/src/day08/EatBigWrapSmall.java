@@ -11,5 +11,4 @@ public class EatBigWrapSmall extends NightMarketActivity {
 		System.out.println("吃一份大腸包小腸🌭🍙 ！外Q內糯，蒜味🧄十足～");
 	}
 	
-	
 }
