@@ -20,11 +20,10 @@ public class StudentTest {
 		ben.addActivity(new SingStreetShow());
 		ben.addActivity(new EatBigWrapSmall());
 		
+		System.out.println("夜市活動開始");
 		amy.playNightMarketActivity();
+		System.out.println();
 		ben.playNightMarketActivity();
-		
-		
-
 	}
 
 }
