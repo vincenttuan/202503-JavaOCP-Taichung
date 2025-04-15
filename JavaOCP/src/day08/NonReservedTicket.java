@@ -9,7 +9,7 @@ public class NonReservedTicket extends Ticket {
 
 	@Override
 	public void ticketInfo() {
-		System.out.printf("🎫自由座票(不保證有位子) $%d%n", price);
+		System.out.printf("🎫自由座票(不保證有位子) $%,d%n", price);
 	}
 	
 }

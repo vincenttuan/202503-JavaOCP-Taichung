@@ -9,7 +9,7 @@ public class BusinessTicket extends Ticket {
 
 	@Override
 	public void ticketInfo() {
-		System.out.printf("🎫商務座票(有吃有喝) $%d%n", price);
+		System.out.printf("🎫商務座票(有吃有喝) $%,d%n", price);
 	}
 	
 }

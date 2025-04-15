@@ -8,7 +8,7 @@ public class ReservedTicket extends Ticket {
 
 	@Override
 	public void ticketInfo() {
-		System.out.printf("🎫對號座票 $%d%n", price);
+		System.out.printf("🎫對號座票 $%,d%n", price);
 	}
 	
 }
