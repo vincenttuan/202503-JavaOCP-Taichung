@@ -2,7 +2,6 @@ package day09.case1;
 
 // 鹽酥雞
 public class SaltedChicken implements Snack {
-	
 	private String name;
 	private int price;
 	
