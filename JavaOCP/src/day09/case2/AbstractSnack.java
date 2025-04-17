@@ -19,6 +19,10 @@ public abstract class AbstractSnack implements Snack {
 		this.price = this.price * this.size;
 	}
 	
+	public int getSize() {
+		return size;
+	}
+	
 	public String getName() {
 		return name;
 	}
