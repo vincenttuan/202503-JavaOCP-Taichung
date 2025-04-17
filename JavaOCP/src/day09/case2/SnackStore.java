@@ -11,6 +11,8 @@ public class SnackStore {
 			abstractSnack.makeSnack();
 		}
 		
+		// 請問總共花了多少錢 ?
+		
 		
 		//Snack[] snacks = {saltedChicken, tempura, tofu};
 		
