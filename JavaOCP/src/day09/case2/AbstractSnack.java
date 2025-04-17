@@ -40,7 +40,9 @@ public abstract class AbstractSnack implements Snack {
 	
 	// 加入一個製作流程與包裝方法 
 	public void makeSnack() {
-		System.out.printf("===== 開始製作:%s =====%n", name);
+		String[] sizeName = {"", "小", "中", "大", "特大", "全家福"};
+		//                   0    1     2    3     4       5    <- index
+		System.out.printf("===== 開始製作:%s(%s份) =====%n", name, sizeName[size]);
 		prepare();
 		cook();
 		serve();
