@@ -16,6 +16,13 @@ public class SnackStore {
 		System.out.printf("===== 售價:NT %d =====%n", saltedChicken.getPrice());
 		System.out.printf("===== 製作完成:%s =====%n", saltedChicken.getName());
 		
+		// 製作甜不辣餐點
+		System.out.printf("===== 開始製作:%s =====%n", tempura.getName());
+		tempura.prepare();
+		tempura.cook();
+		tempura.serve();
+		System.out.printf("===== 售價:NT %d =====%n", tempura.getPrice());
+		System.out.printf("===== 製作完成:%s =====%n", tempura.getName());
 		
 	}
 
