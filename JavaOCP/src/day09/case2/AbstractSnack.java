@@ -3,8 +3,8 @@ package day09.case2;
 // 小吃抽象類
 // 用來實現 name 與 price
 public abstract class AbstractSnack implements Snack {
-	private String name;
-	private int price;
+	protected String name;
+	protected int price;
 	
 	public AbstractSnack(String name, int price) {
 		this.name = name;
