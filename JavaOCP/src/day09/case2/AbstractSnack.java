@@ -7,6 +7,8 @@ public abstract class AbstractSnack implements Snack {
 	protected int price;
 	private final int fixedPrice; // 固定價, 用來計算 price 與 size 時的種子
 	protected int size = 1; // 1:小份, 2:中份, 3:大份, 4:特大份, 5:全家福
+	private final String[] sizeName = {"", "小", "中", "大", "特大", "全家福"};
+	//                                 0    1     2    3     4       5    <- index
 	
 	public AbstractSnack(String name, int price) {
 		this.name = name;
@@ -40,8 +42,6 @@ public abstract class AbstractSnack implements Snack {
 	
 	// 加入一個製作流程與包裝方法 
 	public void makeSnack() {
-		String[] sizeName = {"", "小", "中", "大", "特大", "全家福"};
-		//                   0    1     2    3     4       5    <- index
 		System.out.printf("===== 開始製作:%s(%s份) =====%n", name, sizeName[size]);
 		prepare();
 		cook();
