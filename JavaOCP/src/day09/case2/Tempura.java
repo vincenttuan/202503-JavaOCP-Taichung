@@ -16,10 +16,5 @@ public class Tempura extends AbstractSnack {
 	public void cook() {
 		System.out.println("炸到蓬鬆(油溫180度約4分鐘)之後加入蜜醬汁");
 	}
-
-	@Override
-	public void serve() {
-		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋%n", name);
-	}
 	
 }

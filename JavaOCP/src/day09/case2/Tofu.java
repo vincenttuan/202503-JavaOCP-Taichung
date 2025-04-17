@@ -17,8 +17,4 @@ public class Tofu extends AbstractSnack {
 		System.out.println("炸到外酥內嫩, 撒上蔥花與辣椒");
 	}
 
-	@Override
-	public void serve() {
-		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋%n", name);
-	}
 }

@@ -18,4 +18,9 @@ public abstract class AbstractSnack implements Snack {
 	public int getPrice() {
 		return price;
 	}
+	
+	@Override
+	public void serve() {
+		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋%n", name);
+	}
 }
