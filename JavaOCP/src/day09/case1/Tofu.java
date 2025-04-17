@@ -32,7 +32,7 @@ public class Tofu implements Snack {
 
 	@Override
 	public void serve() {
-		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋");
+		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋%n", name);
 	}
 	
 }
