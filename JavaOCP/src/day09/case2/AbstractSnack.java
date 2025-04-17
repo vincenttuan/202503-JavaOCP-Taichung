@@ -23,4 +23,15 @@ public abstract class AbstractSnack implements Snack {
 	public void serve() {
 		System.out.printf("將 %s 灑上胡椒粉後裝入紙袋%n", name);
 	}
+	
+	// 加入一個製作流程與包裝方法 
+	public void makeSnack() {
+		System.out.printf("===== 開始製作:%s =====%n", name);
+		prepare();
+		cook();
+		serve();
+		System.out.printf("===== 售價:NT %d =====%n", price);
+		System.out.printf("===== 製作完成:%s =====%n", name);
+	}
+	
 }
