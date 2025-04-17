@@ -5,18 +5,20 @@ package day09.case2;
 public abstract class AbstractSnack implements Snack {
 	protected String name;
 	protected int price;
+	private final int fixedPrice; // 固定價, 用來計算 price 與 size 時的種子
 	protected int size = 1; // 1:小份, 2:中份, 3:大份, 4:特大份, 5:全家福
 	
 	public AbstractSnack(String name, int price) {
 		this.name = name;
 		this.price = price;
+		fixedPrice = price;
 	}
 	
 	public void setSize(int size) {
 		// 變更 size
 		this.size = size;
 		// 影響價格
-		this.price = this.price * this.size;
+		this.price = this.fixedPrice * this.size;
 	}
 	
 	public int getSize() {
