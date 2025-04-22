@@ -7,6 +7,7 @@ public class FaceWash extends ManscareProduct {
 	}
 	 
 	public void deepClean() {
+		System.out.printf("🧼%s深層清潔皮膚油脂與髒汙%n", name);
 	}
 	 
 }
