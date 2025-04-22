@@ -23,7 +23,7 @@ public class ProductMain {
 		Product[] products = {toner, lotion, serum};
 		Stream.of(products)
 			  .forEach(p -> System.out.printf("%s $%,d%n", p.getName(), p.getPrice()));
-		
+		// 請計算 products 內容物總價 = ?
 	}
 
 }
