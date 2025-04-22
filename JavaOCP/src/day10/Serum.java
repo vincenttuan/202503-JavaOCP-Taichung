@@ -7,6 +7,7 @@ public class Serum extends SkincareProduct {
 	}
 	 
 	public void repairSkin() {
+		System.out.printf("🧪%s高效修護, 改善肌膚狀況%n", name);
 	}
 	 
 }
