@@ -7,6 +7,7 @@ public class Aftershave extends ManscareProduct {
 	}
 	 
 	public void sootheskin() {
+		System.out.printf("💦%s舒緩刮鬍後的肌,避免刺痛%n", name);
 	}
 	 
 }

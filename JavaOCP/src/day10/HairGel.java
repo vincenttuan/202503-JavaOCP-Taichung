@@ -7,6 +7,7 @@ public class HairGel extends ManscareProduct {
 	}
 	 
 	public void styleHair() {
+		System.out.printf("💇‍♂️%s打造帥氣造型, 持久不坍塌%n", name);
 	}
 	 
 }
