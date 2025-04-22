@@ -1,22 +1,11 @@
 package day10;
 
-public class ManscareProduct implements Product {
+public class ManscareProduct extends CareProduct {
  
-	protected String name;
-	protected int price;
-	 
 	public ManscareProduct(String  name, int price) {
-		this.name = name;
-		this.price = price;
+		super(name, price);
 	}
-	 
-	public String getName() {
-		return name;
-	}
-	 
-	public int getPrice() {
-		return price;
-	}
+	
 	 
 }
  

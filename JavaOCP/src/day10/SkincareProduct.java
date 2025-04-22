@@ -1,22 +1,11 @@
 package day10;
 
-public abstract class SkincareProduct implements Product {
+public abstract class SkincareProduct extends CareProduct {
  
-	protected String name;
-	protected int price;
-	 
 	public SkincareProduct(String name, int price) {
-		this.name = name;
-		this.price = price;
+		super(name, price);
 	}
 	 
-	public String getName() {
-		return name;
-	}
-	 
-	public int getPrice() {
-		return price;
-	}
 	 
 }
  
