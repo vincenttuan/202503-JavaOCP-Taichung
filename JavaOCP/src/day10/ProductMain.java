@@ -24,6 +24,10 @@ public class ProductMain {
 		Stream.of(products)
 			  .forEach(p -> System.out.printf("%s $%,d%n", p.getName(), p.getPrice()));
 		// 請計算 products 內容物總價 = ?
+		int sum = Stream.of(products)                // [toner]->[lotion]->[serum] 
+						.mapToInt(p -> p.getPrice()) // [850]->[1250]->[1680] 
+						.sum();
+		System.out.println(sum);
 	}
 
 }
