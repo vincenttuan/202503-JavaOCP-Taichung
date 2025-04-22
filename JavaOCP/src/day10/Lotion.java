@@ -6,6 +6,7 @@ public class Lotion extends SkincareProduct {
 		super(name, price);
 	}
 	public void moisture() {
+		System.out.printf("🧴%s鎖住水分防止乾燥%n", name);
 	}
 	 
 }
