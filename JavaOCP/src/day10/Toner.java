@@ -7,6 +7,7 @@ public class Toner extends SkincareProduct {
 	}
 	 
 	public void refreshSkin() {
+		System.out.printf("💧%s幫助肌膚保濕與收斂毛孔~%n", name);
 	}
 	 
 }
