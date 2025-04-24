@@ -29,6 +29,10 @@ public class IKEAWardrobe {
 	
 	// 靜態內部類(目錄)
 	public static class Catalog {
+		private String catalogName;
+		public Catalog(String catalogName) {
+			this.catalogName = catalogName;
+		}
 		private String[] items = {
 				"PAX001 PAX衣櫃 $3500",
 				"KOM002 KOM抽屜 $1200",
@@ -36,7 +40,7 @@ public class IKEAWardrobe {
 		};
 		
 		public void display() {
-			System.out.println("2025 家具目錄:");
+			System.out.println(catalogName + ":");
 			for(int i=0;i<items.length;i++) {
 				System.out.printf("項目 %d: %s%n", (i+1), items[i]);
 			}
