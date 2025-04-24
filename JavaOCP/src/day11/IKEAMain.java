@@ -8,7 +8,8 @@ public class IKEAMain {
 		IKEAWardrobe.AssemblyGuide assemblyGuide = ikeaWardrobe.new AssemblyGuide();
 		assemblyGuide.printSteps();
 		// 靜態內部類別
-		
+		IKEAWardrobe.Catalog catalog = new IKEAWardrobe.Catalog();
+		catalog.display();
 	}
 
 }
