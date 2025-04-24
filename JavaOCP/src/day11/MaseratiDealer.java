@@ -45,9 +45,29 @@ public class MaseratiDealer {
 		
 	}
 	
-	// 試駕安排:方法內部類別
+	// 試駕安排
 	public void arrangeTestDrive() {
-		
+		final String testDriveProcedure = "標準試駕流程";
+		// 方法內部類別
+		class TestDrive {
+			private String[] steps = {
+					"驗證駕駛執照",
+					"車輛功能講解",
+					"指定駕駛路線",
+					"安全事項說明",
+					"試駕反饋說明"
+			};
+			
+			public void showSteps() {
+				System.out.println(testDriveProcedure);
+				for(int i=0;i<steps.length;i++) {
+					System.out.printf("步驟 %d - %s%n", (i+1), steps[i]);
+				}
+			}
+		}
+		// 建立 TestDrive 物件
+		TestDrive testDrive = new TestDrive();
+		testDrive.showSteps();
 	}
 	
 	// 客戶反饋:介面
