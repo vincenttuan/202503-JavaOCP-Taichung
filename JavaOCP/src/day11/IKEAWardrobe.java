@@ -67,4 +67,9 @@ public class IKEAWardrobe {
 		
 	}
 	
+	// 顧客回函(介面)
+	interface FeedbackFrom {
+		void submit(String message);
+	}
+	
 }
