@@ -41,7 +41,6 @@ public class IKEAWardrobe {
 				System.out.printf("項目 %d: %s%n", (i+1), items[i]);
 			}
 		}
-		
 	}
 	
 }
