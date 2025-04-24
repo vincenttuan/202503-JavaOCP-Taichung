@@ -49,12 +49,13 @@ public class IKEAWardrobe {
 	
 	// 檢查行為
 	public void checkComponent() {
-		String action = "檢查是否組件完整"; // 區域變數
+		final String action = "檢查是否組件完整"; // final 區域變數
+			
 		// 方法內部類別(檢查是否組件完整)
 		class Checker {
 			private String[] items = {"抽屜", "掛衣桿", "層板"};
 			public void check() {
-				System.out.println(action + ":");
+				System.out.println(action + ":"); // 只能取得 checkComponent()方法所提供的 final 區域變數
 				for(int i=0;i<items.length;i++) {
 					System.out.printf("檢查項目 %d: %s%n", (i+1), items[i]);
 				}
