@@ -29,6 +29,19 @@ public class MaseratiDealer {
 	
 	// 金融貸款服務:靜態內部類別
 	public static class FinancialService {
+		public String[] options = {
+				"24個月0利率貸款",
+				"36個月低利率貸款",
+				"彈性尾款方案",
+				"全款現金購車折扣"
+		};
+		
+		public void showOptions() {
+			System.out.println("瑪莎拉蒂專屬金融服務選項:");
+			for(int i=0;i<options.length;i++) {
+				System.out.printf("選項 %d - %s%n", (i+1), options[i]);
+			}
+		}
 		
 	}
 	
