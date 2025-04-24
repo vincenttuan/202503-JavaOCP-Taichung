@@ -21,6 +21,9 @@ public class IKEAWardrobe {
 		public void printSteps() {
 			//System.out.printf("%s 衣櫃組裝步驟:%n", IKEAWardrobe.this.model);
 			System.out.printf("%s 衣櫃組裝步驟:%n", model);
+			for(int i=0;i<steps.length;i++) {
+				System.out.printf("步驟 %d: %s%n", (i+1), steps[i]);
+			}
 		}
 	}
 	
