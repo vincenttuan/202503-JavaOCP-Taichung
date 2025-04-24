@@ -17,11 +17,11 @@ public class IKEAMain {
 
 			@Override
 			public void submit(String message) {
-				// TODO Auto-generated method stub
-				
+				System.out.printf("回函內容: %s%n", message);
 			}
 			
 		};
+		feedbackForm.submit("不錯用~ CP值高 !");
 	}
 
 }
