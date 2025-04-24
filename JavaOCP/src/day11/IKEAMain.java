@@ -7,6 +7,8 @@ public class IKEAMain {
 		IKEAWardrobe ikeaWardrobe = new IKEAWardrobe("PAX 標準衣櫃");
 		IKEAWardrobe.AssemblyGuide assemblyGuide = ikeaWardrobe.new AssemblyGuide();
 		assemblyGuide.printSteps();
+		// 靜態內部類別
+		
 	}
 
 }
