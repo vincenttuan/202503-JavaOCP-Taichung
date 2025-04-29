@@ -19,6 +19,7 @@ public class StreamDemo2 {
 		System.out.println(check3);
 		
 		// 最大, 最小, 總和, 平均, 個數 => 統計資訊
+		System.out.println("統計資訊");
 		IntSummaryStatistics stat = Arrays.stream(scores).summaryStatistics();
 		System.out.println(stat);
 		System.out.println(stat.getMax());
@@ -27,6 +28,11 @@ public class StreamDemo2 {
 		System.out.println(stat.getAverage());
 		System.out.println(stat.getCount());
 		
+		// 排序分數
+		System.out.println("排序分數");
+		Arrays.stream(scores)
+			  .sorted()
+			  .forEach(System.out::println);
 
 	}
 }
