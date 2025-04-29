@@ -18,7 +18,9 @@ public class PredicateTest {
 		// Function:  利用 mapToInt 將字串(名字)轉數字(名字長度)
 		// Consumer:  利用 foreach 將資料印出
 		Stream.of(names)
-			  
+			  .filter(name -> name != null)
+			  .mapToInt(name -> name.length())
+			  .forEach(nameLength -> System.out.println(nameLength));
 	}
 
 }
