@@ -10,6 +10,7 @@ public class ConsumerDemo {
 		
 		Consumer<String> c2 = (t) -> System.out.println(t+t);
 		c2.accept("30");
+		c2.accept("A");
 		
 
 	}
