@@ -1,6 +1,7 @@
 package day12;
 
 import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.stream.Stream;
 
 public class StreamDemo1 {
@@ -15,6 +16,15 @@ public class StreamDemo1 {
 							  .getAsInt();
 		System.out.println(passScore);
 		
+		// 找出一筆及格的分數
+		OptionalInt optInt = Arrays.stream(scores)
+								   .filter(score -> score >= 60)
+								   .findAny();
+		if(optInt.isPresent()) {
+			System.out.println(optInt.getAsInt());
+		} else {
+			System.out.println("查無資料");
+		}
 
 	}
 
