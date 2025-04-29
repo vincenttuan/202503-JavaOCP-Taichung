@@ -3,6 +3,7 @@ package day12;
 public class LambdaDemo1 {
 	
 	// 計算器
+	@FunctionalInterface // interface 只有一個抽象方法
 	interface Calc {
 		int getResult(int x, int y);
 	}
