@@ -1,6 +1,8 @@
 package day12;
 
 import java.util.function.Consumer;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ConsumerDemo {
 
@@ -12,7 +14,14 @@ public class ConsumerDemo {
 		c2.accept("30");
 		c2.accept("A");
 		
+		Stream.of("john", "mary", "jack", "rose")
+			  .forEach(c2);
+		
+		Stream.of("john", "mary", "jack", "rose")
+		  .forEach(t -> System.out.println(t));
 
+		Stream.of("john", "mary", "jack", "rose")
+		  .forEach(System.out::println);
 	}
 
 }
