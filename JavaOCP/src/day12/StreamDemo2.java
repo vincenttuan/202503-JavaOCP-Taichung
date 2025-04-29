@@ -33,6 +33,12 @@ public class StreamDemo2 {
 		Arrays.stream(scores)
 			  .sorted()
 			  .forEach(System.out::println);
-
+		
+		// 及格與不及格的比率
+		long total = scores.length; // 所有人數
+		long pass = Arrays.stream(scores).filter(score -> score >= 60).count(); // 及格人數
+		long fail = total - pass; // 不及格人數
+		System.out.println("及格率: " + pass*100.0/total + "%");
+		System.out.println("不及格率: " + fail*100.0/total + "%");
 	}
 }
