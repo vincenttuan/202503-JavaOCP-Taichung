@@ -13,6 +13,13 @@ public class WeekDemo {
 		//---------------------------------------
 		monkeyDay2(Week2.星期日);
 		monkeyDay2(Week2.星期四);
+		//---------------------------------------
+		monkeyDay3(Week3.星期日);
+		monkeyDay3(Week3.星期四);
+	}
+	
+	public static void monkeyDay3(Week3 w) {
+		System.out.println(w.getAction());
 	}
 	
 	public static void monkeyDay2(Week2 w) {
