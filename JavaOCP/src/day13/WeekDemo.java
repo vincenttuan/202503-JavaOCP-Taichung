@@ -12,6 +12,32 @@ public class WeekDemo {
 		monkeyDay(8); // ?? 誤用
 	}
 	
+	public static void monkeyDay2(Week2 w) {
+		switch (w) {
+			case 星期日:
+				System.out.println("猴子去教堂");
+				break;
+			case 星期一:
+				System.out.println("猴子穿新衣");
+				break;
+			case 星期二:
+				System.out.println("猴子肚子餓");
+				break;
+			case 星期三:
+				System.out.println("猴子去爬山");
+				break;
+			case 星期四:
+				System.out.println("猴子去考試");
+				break;
+			case 星期五:
+				System.out.println("猴子去跳舞");
+				break;
+			case 星期六:
+				System.out.println("猴子去斗六");
+				break;
+		}
+	}
+	
 	public static void monkeyDay(int w) {
 		switch (w) {
 			case Week.星期日:
