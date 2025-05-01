@@ -3,7 +3,8 @@ package day13;
 public class WeekDemo {
 	
 	public static void main(String[] args) {
-		
+		monkeyDay(Week.星期日);
+		monkeyDay(1);
 	}
 	
 	public static void monkeyDay(int w) {
