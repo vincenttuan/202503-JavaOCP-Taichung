@@ -10,6 +10,9 @@ public class WeekDemo {
 		monkeyDay(0); // ?? 誤用
 		monkeyDay(-1); // ?? 誤用
 		monkeyDay(8); // ?? 誤用
+		//---------------------------------------
+		monkeyDay2(Week2.星期日);
+		monkeyDay2(Week2.星期四);
 	}
 	
 	public static void monkeyDay2(Week2 w) {
