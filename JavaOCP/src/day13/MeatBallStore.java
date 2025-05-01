@@ -7,7 +7,8 @@ public class MeatBallStore {
 		MeatBall meatBall2 = new MeatBall("豬肉", true, 55);
 		System.out.println(meatBall1); // 會自動呼叫 toString() 方法
 		System.out.println(meatBall2); // 會自動呼叫 toString() 方法
-		
+		System.out.println(meatBall1 == meatBall2); // false
+		System.out.println(meatBall1.equals(meatBall2));
 	}
 	
 }
