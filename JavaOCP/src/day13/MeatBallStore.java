@@ -9,6 +9,8 @@ public class MeatBallStore {
 		System.out.println(meatBall2); // 會自動呼叫 toString() 方法
 		System.out.println(meatBall1 == meatBall2); // false
 		System.out.println(meatBall1.equals(meatBall2));
+		System.out.println(meatBall1.hashCode());
+		System.out.println(meatBall2.hashCode());
 	}
 	
 }

@@ -30,7 +30,6 @@ public class MeatBall {
 		return isFried == other.isFried && price == other.price && Objects.equals(stuffing, other.stuffing);
 	}
 
-
 	@Override
 	public String toString() {
 		return "MeatBall [stuffing=" + stuffing + ", isFried=" + isFried + ", price=" + price + "]";
