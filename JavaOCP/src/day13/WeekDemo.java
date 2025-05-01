@@ -7,6 +7,9 @@ public class WeekDemo {
 		monkeyDay(1);
 		monkeyDay(Week.星期四);
 		monkeyDay(5);
+		monkeyDay(0); // ??
+		monkeyDay(-1); // ??
+		monkeyDay(8); // ??
 	}
 	
 	public static void monkeyDay(int w) {
