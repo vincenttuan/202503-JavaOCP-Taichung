@@ -5,6 +5,8 @@ public class WeekDemo {
 	public static void main(String[] args) {
 		monkeyDay(Week.星期日);
 		monkeyDay(1);
+		monkeyDay(Week.星期四);
+		monkeyDay(5);
 	}
 	
 	public static void monkeyDay(int w) {
