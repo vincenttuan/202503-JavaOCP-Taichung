@@ -33,7 +33,13 @@ public class SetDemo4 {
 		System.out.println("13:00".compareTo("14:00") >= 0); // false
 		
 		// 請幫我列出下午要做的事 13:00~17:00
-		
+		for(Task task : dailyTasks) {
+			String time = task.getTime();
+			// 簡單字串比對(13:00~17:00之間)
+			if(time.compareTo("13:00") >= 0 && time.compareTo("17:00") <= 0) {
+				System.out.println(task.getTime() + ":" + task.getDescription());
+			}
+		}
 		
 	}
 	
