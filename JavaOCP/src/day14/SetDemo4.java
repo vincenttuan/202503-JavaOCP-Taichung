@@ -26,6 +26,8 @@ public class SetDemo4 {
 		dailyTasks.add(new Task("04:00", "睡回籠覺"));
 		
 		System.out.println("任務項目:" + dailyTasks.size());
+		// 請幫我列出下午要做的事 13:00~17:00
+		
 		
 	}
 	
