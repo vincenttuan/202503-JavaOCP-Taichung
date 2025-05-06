@@ -34,5 +34,10 @@ public class SetDemo2 {
 		Set<Integer> difference = new HashSet<>(set1);
 		difference.removeAll(set2); // [1, 2]
 		System.out.println("差集:" + difference);
+		
+		// union 中使否有包含 5
+		boolean check = union.contains(5);
+		System.out.println(check);
+		
 	}
 }
