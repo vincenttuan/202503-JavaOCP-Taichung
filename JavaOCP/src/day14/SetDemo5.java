@@ -15,6 +15,14 @@ public class SetDemo5 {
 		gifts.add(new Gift("紅包", "現金", 600, "媽媽請省點用 心意比較重要"));
 		System.out.println(gifts);
 		// 請問此次母親節總共花費多少 ?
+		int total = 0;
+		for(Gift gift : gifts) {
+			total += gift.getPrice();
+		}
+		System.out.printf("%,d%n", total);
+		//-----------------------------------------------------------------
+		int total2 = gifts.stream().mapToInt(gift -> gift.getPrice()).sum();
+		System.out.printf("%,d%n", total2);
 		
 	}
 
