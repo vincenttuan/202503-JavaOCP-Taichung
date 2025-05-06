@@ -25,7 +25,8 @@ public class SetDemo5 {
 		//-----------------------------------------------------------------
 		int total2 = gifts.stream()
 						  .filter(gift -> gift.getPrice() != null)
-						  .mapToInt(gift -> gift.getPrice()).sum();
+						  //.mapToInt(gift -> gift.getPrice()).sum();
+						  .mapToInt(Gift::getPrice).sum();
 		System.out.printf("%,d%n", total2);
 		
 	}
