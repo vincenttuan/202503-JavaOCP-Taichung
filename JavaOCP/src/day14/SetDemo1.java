@@ -21,7 +21,9 @@ public class SetDemo1 {
 			System.out.println(data);
 		}
 		// 利用 stream 的 foreach 逐一尋訪元素
-		scores.stream().forEach(data -> System.out.println(data));
+		//scores.stream().forEach(data -> System.out.println(data));
+		scores.stream().forEach(System.out::println);
+		
 	}
 
 }
