@@ -23,7 +23,9 @@ public class SetDemo5 {
 		}
 		System.out.printf("%,d%n", total);
 		//-----------------------------------------------------------------
-		int total2 = gifts.stream().mapToInt(gift -> gift.getPrice()).sum();
+		int total2 = gifts.stream()
+						  .filter(gift -> gift.getPrice() != null)
+						  .mapToInt(gift -> gift.getPrice()).sum();
 		System.out.printf("%,d%n", total2);
 		
 	}
