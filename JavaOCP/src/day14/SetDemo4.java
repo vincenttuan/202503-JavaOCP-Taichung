@@ -26,6 +26,12 @@ public class SetDemo4 {
 		dailyTasks.add(new Task("04:00", "睡回籠覺"));
 		
 		System.out.println("任務項目:" + dailyTasks.size());
+		
+		// HH:mm 格式
+		System.out.println("13:00".compareTo("14:00") < 0); // true
+		System.out.println("13:00".compareTo("13:00") == 0); // true
+		System.out.println("13:00".compareTo("14:00") > 0); // false
+		
 		// 請幫我列出下午要做的事 13:00~17:00
 		
 		
