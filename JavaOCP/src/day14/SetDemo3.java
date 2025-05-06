@@ -29,6 +29,9 @@ public class SetDemo3 {
 		for(String task : dailyTasks) {
 			System.out.println(task);
 		}
+		
+		// 請找出含有"午休"的 task
+		
 	}
 
 }
