@@ -28,9 +28,9 @@ public class SetDemo4 {
 		System.out.println("任務項目:" + dailyTasks.size());
 		
 		// HH:mm 格式
-		System.out.println("13:00".compareTo("14:00") < 0); // true
+		System.out.println("13:00".compareTo("14:00") <= 0); // true
 		System.out.println("13:00".compareTo("13:00") == 0); // true
-		System.out.println("13:00".compareTo("14:00") > 0); // false
+		System.out.println("13:00".compareTo("14:00") >= 0); // false
 		
 		// 請幫我列出下午要做的事 13:00~17:00
 		
