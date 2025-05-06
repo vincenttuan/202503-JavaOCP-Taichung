@@ -53,8 +53,5 @@ public class Gift {
 	public String toString() {
 		return "Gift [name=" + name + ", kind=" + kind + ", price=" + price + ", message=" + message + "]";
 	}
-
-	
-	
 	
 }
