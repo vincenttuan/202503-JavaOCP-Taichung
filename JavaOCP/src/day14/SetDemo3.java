@@ -1,6 +1,7 @@
 package day14;
 
 import java.util.LinkedHashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class SetDemo3 {
@@ -30,8 +31,14 @@ public class SetDemo3 {
 			System.out.println(task);
 		}
 		
+		System.out.println("------------------------------------");
 		// 請找出含有"午休"的 task
-		
+		Optional<String> optTask = dailyTasks.stream().filter(task -> task.contains("午休")).findFirst();
+		if(optTask.isPresent()) {
+			System.out.println(optTask.get()); // 印出有午休關鍵字的 task
+		} else {
+			System.out.println("無此 task");
+		}
 	}
 
 }
