@@ -10,7 +10,7 @@ public class SetDemo1 {
 	public static void main(String[] args) {
 		// HashSet(無序), LinkedHashSet(有序), TreeSet(排序)
 		Set scores = new HashSet();
-		scores.add(90); // Integer 不是 int
+		scores.add(90); // Integer 不是 int, 放入後會自動轉型成 Object
 		scores.add(70);
 		scores.add(80);
 		scores.add(100);
