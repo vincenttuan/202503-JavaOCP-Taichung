@@ -1,5 +1,6 @@
 package day14;
 
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,6 +22,17 @@ public class SetDemo2 {
 		System.out.println(set1);
 		System.out.println(set2);
 		
+		// 交集 intersection, 聯集 union, 差集 difference
+		Set<Integer> intersection = new HashSet<>(set1);
+		intersection.retainAll(set2); // [3, 4]
+		System.out.println("交集:" + intersection);
 		
+		Set<Integer> union = new HashSet<>(set1);
+		union.addAll(set2); // [1, 2, 3, 4, 5, 6]
+		System.out.println("聯集:" + union);
+		
+		Set<Integer> difference = new HashSet<>(set1);
+		difference.removeAll(set2); // [1, 2]
+		System.out.println("差集:" + difference);
 	}
 }
