@@ -48,6 +48,11 @@ public class Gift {
 		return Objects.equals(kind, other.kind) && Objects.equals(message, other.message)
 				&& Objects.equals(name, other.name) && Objects.equals(price, other.price);
 	}
+
+	@Override
+	public String toString() {
+		return "Gift [name=" + name + ", kind=" + kind + ", price=" + price + ", message=" + message + "]";
+	}
 	
 	
 }
