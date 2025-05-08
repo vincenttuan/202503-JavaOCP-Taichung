@@ -18,7 +18,7 @@ public class SetDemo7 {
 		scores.add(null);
 		System.out.println("過濾前:" + scores);
 		// 利用 removeIf
-		
+		scores.removeIf(data -> data == null || data < 0);
 		System.out.println("過濾後:" + scores);
 	}
 
