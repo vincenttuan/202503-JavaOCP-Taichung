@@ -31,6 +31,8 @@ public class ListDemo1 {
 		// 走訪元素 III
 		//scores.forEach(System.out::println);
 		scores.forEach(score -> System.out.println(score));
+		//scores.stream().filter(score -> score == 100).forEach(score -> System.out.println(score));
+		
 			
 	}
 	
