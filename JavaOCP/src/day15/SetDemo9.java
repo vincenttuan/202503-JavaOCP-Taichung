@@ -15,7 +15,7 @@ public class SetDemo9 {
 		// 可以修改元素內的屬性資料
 		// 將 上兵 加 800 元
 		soldiers.forEach(soldier -> {
-			if(soldier.getLevel().equals("上兵")) {
+			if(soldier.getLevel().equals(Level.上兵)) {
 				soldier.setSalary(soldier.getSalary() + 800);
 			}
 		});
