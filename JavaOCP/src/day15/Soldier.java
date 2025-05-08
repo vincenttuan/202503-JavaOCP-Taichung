@@ -45,7 +45,7 @@ public class Soldier {
 		if (getClass() != obj.getClass())
 			return false;
 		Soldier other = (Soldier) obj;
-		return Objects.equals(level, other.level) && Objects.equals(salary, other.salary);
+		return level == other.level && Objects.equals(salary, other.salary);
 	}
 
 	@Override
