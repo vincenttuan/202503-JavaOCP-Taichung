@@ -3,23 +3,23 @@ package day15;
 import java.util.Objects;
 
 public class Soldier {
-	private String level;   // 二等兵, 一等兵, 上兵, 下士, 中士, 上士, 三等士官長, 二等士官長, 一等士官長
+	private Level level;   // 二等兵, 一等兵, 上兵, 下士, 中士, 上士, 三等士官長, 二等士官長, 一等士官長
 	private Integer salary; // 4500  5000  6000  9000
 	
 	public Soldier() {
 	
 	}
 
-	public Soldier(String level, Integer salary) {
+	public Soldier(Level level, Integer salary) {
 		this.level = level;
 		this.salary = salary;
 	}
 
-	public String getLevel() {
+	public Level getLevel() {
 		return level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(Level level) {
 		this.level = level;
 	}
 
