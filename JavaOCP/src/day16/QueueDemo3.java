@@ -37,7 +37,8 @@ public class QueueDemo3 {
 				Thread.sleep(3000);
 			} else {
 				System.out.println("❌ " + name + " 過號, 後退 3 格");
-				((LinkedList<String>)patientQueue).add(3, name);
+				int insertIndex = Math.min(3, patientQueue.size());
+				((LinkedList<String>)patientQueue).add(insertIndex, name);
 				System.out.println("🏥最後排隊名單: " + patientQueue);
 			}
 		}
