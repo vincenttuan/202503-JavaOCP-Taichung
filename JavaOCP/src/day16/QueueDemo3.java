@@ -41,6 +41,7 @@ public class QueueDemo3 {
 				((LinkedList<String>)patientQueue).add(insertIndex, name);
 				System.out.println("🏥最後排隊名單: " + patientQueue);
 			}
+			scanner.close();
 		}
 		
 	}
