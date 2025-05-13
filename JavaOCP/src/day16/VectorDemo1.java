@@ -14,8 +14,6 @@ public class VectorDemo1 {
 		System.out.println("size: " + v.size());
 		System.out.println("capacity: " + v.capacity());
 		System.out.println("free: " + (v.capacity() - v.size()));
-		
-
 	}
 
 }
