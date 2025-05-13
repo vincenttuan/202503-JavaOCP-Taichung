@@ -21,7 +21,11 @@ public class QueueDemo4 {
 		// 請依序將步驟印出
 		System.out.println("開始製作蝦仁蛋炒飯");
 		
+		while (!steps.isEmpty()) {
+			System.out.println("步驟 => " + steps.poll());
+		}
 		
+		System.out.println(steps);
 	}
 	
 }
