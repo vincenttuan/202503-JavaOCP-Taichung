@@ -20,8 +20,16 @@ public class QueueDemo3 {
         patientQueue.offer("吳九 👩‍⚕️");
         patientQueue.offer("鄭十 🧕");
 		
-		System.out.println("排隊: " + patientQueue);
-
+		System.out.println("🏥初始排隊名單: " + patientQueue);
+		
+		String name = patientQueue.poll();
+		System.out.println("📢 叫號中... 👉 " + name);
+		System.out.println("🏥排隊名單: " + patientQueue);
+		
+		System.out.println("❌ " + name + " 過號, 後退 3 格");
+		((LinkedList<String>)patientQueue).add(3, name);
+		
+		System.out.println("🏥最後排隊名單: " + patientQueue);
 	}
 
 }
