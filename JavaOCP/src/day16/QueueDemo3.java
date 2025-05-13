@@ -34,7 +34,7 @@ public class QueueDemo3 {
 			if(arrived.equals("y")) {
 				System.out.println("✅ " + name + " 到場, 看診中...");
 				System.out.println("🏥最後排隊名單: " + patientQueue);
-				Thread.sleep(3000);
+				Thread.sleep(1000);
 			} else {
 				System.out.println("❌ " + name + " 過號, 後退 3 格");
 				int insertIndex = Math.min(3, patientQueue.size());
