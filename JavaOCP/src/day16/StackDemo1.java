@@ -16,7 +16,10 @@ public class StackDemo1 {
 		pathStack.push("學校");
 		System.out.println(pathStack);
 		// 返家
-		
+		while (!pathStack.isEmpty()) {
+			System.out.println("導航紀錄: " + pathStack.pop());
+		}
+		System.out.println(pathStack);
 		
 	}
 
