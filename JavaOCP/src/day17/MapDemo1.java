@@ -39,6 +39,12 @@ public class MapDemo1 {
 		   .ifPresent(entry -> out.println(entry.getKey())); // 若有找到則印出 key 值
 		
 		// 算出平均
+		double avg = map.values() 
+						.stream() // 95 -> 100 -> 70 -> 80 <- Integer
+						.mapToInt(score -> score.intValue()) // 95 -> 100 -> 70 -> 80 <- int
+						.average() // 計算平均
+						.getAsDouble(); // 取得平均 double 值
+		System.out.println(avg);
 		
 	}
 
