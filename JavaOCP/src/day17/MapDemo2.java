@@ -16,7 +16,12 @@ public class MapDemo2 {
 		marketMap = Map.of("台指期", 17410, "原油期", 75,   "黃金期", 2035);
 		// 損益 = (市場價格 - 進場價格) * 每點價值 * 持有口數
 		for(String symbol : lotsMap.keySet()) { // "台指期"-"原油期"-"黃金期"
-			System.out.println(symbol);
+			int lots = lotsMap.get(symbol);
+			int point = pointMap.get(symbol);
+			int entry = entryMap.get(symbol);
+			int market = marketMap.get(symbol);
+			System.out.printf("%s 口數:%d 每點價值:%4d 進場價格:%5d 市場價格:%5d%n", symbol, lots, point, entry, market);
+			
 		}
 	}
 }
