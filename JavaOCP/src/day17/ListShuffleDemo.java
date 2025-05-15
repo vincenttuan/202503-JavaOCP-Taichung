@@ -32,9 +32,20 @@ public class ListShuffleDemo {
 			allCards.set(idx1, n2);
 			allCards.set(idx2, n1);
 		}
+		//System.out.println(allCards);
 		
-		System.out.println(allCards);
-		
+		// 將 allCards 放到 Queue
+		Queue<String> poker = new LinkedList<>(allCards);
+		// 拿五張
+		System.out.println("- 拿五張 ------------");
+		System.out.print(poker.poll() + " ");
+		System.out.print(poker.poll() + " ");
+		System.out.print(poker.poll() + " ");
+		System.out.print(poker.poll() + " ");
+		System.out.println(poker.poll());
+		System.out.println("-------------------");
+		// 剩下
+		System.out.println(poker);
 	}
 
 }
