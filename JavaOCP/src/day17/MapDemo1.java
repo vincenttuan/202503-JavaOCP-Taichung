@@ -7,6 +7,9 @@ import java.util.OptionalDouble;
 
 import static java.util.Map.Entry;
 import static java.util.Map.Entry.comparingByValue;
+
+import java.util.IntSummaryStatistics;
+
 import static java.lang.System.out;
 
 public class MapDemo1 {
@@ -52,7 +55,20 @@ public class MapDemo1 {
 			System.out.println("無法計算平均");
 		}
 		
+		// 算出總分
+		int sum = map.values()
+					 .stream()
+					 .mapToInt(score -> score.intValue())
+					 .sum();
+		System.out.println("總分: " + sum);
 		
+		// 利用統計物件
+		IntSummaryStatistics stat = map.values().stream().mapToInt(Integer::intValue).summaryStatistics();
+		System.out.println("平均: " + stat.getAverage());
+		System.out.println("總分: " + stat.getSum());
+		System.out.println("最大: " + stat.getMax());
+		System.out.println("最小: " + stat.getMin());
+		System.out.println("個數: " + stat.getCount());
 		
 	}
 
