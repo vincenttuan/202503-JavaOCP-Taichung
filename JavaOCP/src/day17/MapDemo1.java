@@ -18,7 +18,7 @@ public class MapDemo1 {
 		System.out.println(map.get("英文")); // O(1)
 		// 列出所有元素
 		for(Map.Entry<String, Integer> entry : map.entrySet()) {
-			System.out.printf("科目: %s 分數: %s%n", entry.getKey(), entry.getValue());
+			System.out.printf("科目: %s 分數: %d%n", entry.getKey(), entry.getValue());
 		}
 		
 		// 找出最高分的科目
