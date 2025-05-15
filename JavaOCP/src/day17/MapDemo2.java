@@ -20,7 +20,9 @@ public class MapDemo2 {
 			int point = pointMap.get(symbol);
 			int entry = entryMap.get(symbol);
 			int market = marketMap.get(symbol);
-			System.out.printf("%s 口數:%d 每點價值:%4d 進場價格:%5d 市場價格:%5d%n", symbol, lots, point, entry, market);
+			int balance = (market - entry) * point * lots;
+			System.out.printf("%s 口數:%d 每點價值:%4d 進場價格:%5d 市場價格:%5d 損益:%5d%n", 
+					symbol, lots, point, entry, market, balance);
 			
 		}
 	}
