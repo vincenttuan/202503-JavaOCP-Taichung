@@ -23,12 +23,15 @@ public class ListShuffleDemo {
 		System.out.println(allCards);
 		// 洗牌(換位子)
 		Random random = new Random();
-		int idx1 = random.nextInt(52); // 0~51;
-		int idx2 = random.nextInt(52); // 0~51;
-		String n1 = allCards.get(idx1);
-		String n2 = allCards.get(idx2);
-		allCards.set(idx1, n2);
-		allCards.set(idx2, n1);
+		
+		for(int i=0;i<1000;i++) {
+			int idx1 = random.nextInt(52); // 0~51;
+			int idx2 = random.nextInt(52); // 0~51;
+			String n1 = allCards.get(idx1);
+			String n2 = allCards.get(idx2);
+			allCards.set(idx1, n2);
+			allCards.set(idx2, n1);
+		}
 		
 		System.out.println(allCards);
 		
