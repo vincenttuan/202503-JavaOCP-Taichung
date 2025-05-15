@@ -2,6 +2,9 @@ package day17;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalDouble;
+
 import static java.util.Map.Entry;
 import static java.util.Map.Entry.comparingByValue;
 import static java.lang.System.out;
@@ -39,12 +42,17 @@ public class MapDemo1 {
 		   .ifPresent(entry -> out.println(entry.getKey())); // 若有找到則印出 key 值
 		
 		// 算出平均
-		double avg = map.values() 
+		OptionalDouble optAvg = map.values() 
 						.stream() // 95 -> 100 -> 70 -> 80 <- Integer
 						.mapToInt(score -> score.intValue()) // 95 -> 100 -> 70 -> 80 <- int
-						.average() // 計算平均
-						.getAsDouble(); // 取得平均 double 值
-		System.out.println(avg);
+						.average(); // 計算平均
+		if(optAvg.isPresent()) { // optAvg 有將平均計算出來
+			System.out.println("平均:" + optAvg.getAsDouble());
+		} else {
+			System.out.println("無法計算平均");
+		}
+		
+		
 		
 	}
 
