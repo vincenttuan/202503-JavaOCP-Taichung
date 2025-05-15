@@ -14,6 +14,9 @@ public class MapDemo2 {
 		pointMap  = Map.of("台指期", 200,   "原油期", 1000, "黃金期", 50);
 		entryMap  = Map.of("台指期", 17250, "原油期", 78,   "黃金期", 2020);
 		marketMap = Map.of("台指期", 17410, "原油期", 75,   "黃金期", 2035);
-		
+		// 損益 = (市場價格 - 進場價格) * 每點價值 * 持有口數
+		for(String symbol : lotsMap.keySet()) { // "台指期"-"原油期"-"黃金期"
+			System.out.println(symbol);
+		}
 	}
 }
