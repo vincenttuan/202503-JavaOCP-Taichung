@@ -1,6 +1,7 @@
 package day17;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -22,8 +23,8 @@ public class ListShuffleDemo {
 		allCards.addAll(card4);
 		System.out.println(allCards);
 		// 洗牌(換位子)
+		/*
 		Random random = new Random();
-		
 		for(int i=0;i<1000;i++) {
 			int idx1 = random.nextInt(52); // 0~51;
 			int idx2 = random.nextInt(52); // 0~51;
@@ -32,6 +33,8 @@ public class ListShuffleDemo {
 			allCards.set(idx1, n2);
 			allCards.set(idx2, n1);
 		}
+		*/
+		Collections.shuffle(allCards); // 內建洗牌方法
 		//System.out.println(allCards);
 		
 		// 將 allCards 放到 Queue
