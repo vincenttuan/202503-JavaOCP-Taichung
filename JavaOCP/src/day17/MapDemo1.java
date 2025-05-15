@@ -37,6 +37,9 @@ public class MapDemo1 {
 		   .stream()
 		   .max(comparingByValue()) // 根據 value 來找最大值的元素(entry)
 		   .ifPresent(entry -> out.println(entry.getKey())); // 若有找到則印出 key 值
+		
+		// 算出平均
+		
 	}
 
 }
