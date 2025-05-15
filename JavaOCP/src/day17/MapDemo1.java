@@ -22,8 +22,13 @@ public class MapDemo1 {
 		}
 		
 		// 找出最高分的科目
-		
-		
+		Map.Entry<String, Integer> highest = null;
+		for(Map.Entry<String, Integer> entry : map.entrySet()) {
+			if(highest == null || entry.getValue() > highest.getValue()) {
+				highest = entry;
+			}
+		}
+		System.out.println(highest.getKey());
 	}
 
 }
