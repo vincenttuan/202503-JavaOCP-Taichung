@@ -36,7 +36,13 @@ public class TaichungMain {
 									 .min((a1, a2) -> (int)(a1.getCp()*1000 - a2.getCp()*1000))
 									 .orElse(null);
 		System.out.printf("CP 最低的景點: %s%n", low);
-		
+		System.out.println("----------------------------------------");
+		// 4.請印出 CP 最高的前三名景點
+		// 因為 sorted 預設排序是由小到大, 所以要加上 reversed
+		attractions.stream()
+				   .sorted(Comparator.comparingDouble(Attraction::getCp).reversed())
+				   .limit(3)
+				   .forEach(System.out::println);
 		
 		
 	}
