@@ -41,7 +41,7 @@ public class TaichungMain {
 		// 因為 sorted 預設排序是由小到大, 所以要加上 reversed
 		attractions.stream()
 				   .sorted(Comparator.comparingDouble(Attraction::getCp).reversed())
-				   .limit(3)
+				   .limit(10)
 				   .forEach(System.out::println);
 		
 		
