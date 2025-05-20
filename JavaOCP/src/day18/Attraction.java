@@ -21,7 +21,7 @@ public class Attraction {
 		this.trans = List.of(array[3].split(","));
 		this.pop = Integer.parseInt(array[4]);
 		this.cost = Integer.parseInt(array[5]);
-		this.cp = (double) (this.pop/this.cost);
+		this.cp = this.pop / (double)this.cost;
 	}
 
 	public String getType() {
