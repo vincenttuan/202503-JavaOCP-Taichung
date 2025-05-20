@@ -23,7 +23,7 @@ public class TaichungMain {
 		System.out.println("----------------------------------------");
 		// 2.請印出 CP 最高的景點
 		Attraction best = attractions.stream()
-									 .max((a1, a2) -> (int)(a1.getCp() - a2.getCp()))
+									 .max((a1, a2) -> (int)(a1.getCp()*1000 - a2.getCp()*1000))
 									 .orElse(null);
 		System.out.printf("CP 最高的景點: %s%n", best);
 	}
