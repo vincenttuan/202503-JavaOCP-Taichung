@@ -14,7 +14,7 @@ public class Attraction {
 	
 	public Attraction(String row) {
 		// row => 自然|台中公園|珍珠奶茶,魷魚羹|公車,捷運|75|100
-		String[] array = row.split("|");
+		String[] array = row.split("\\|");
 		this.type = array[0];
 		this.name = array[1];
 		this.foods = List.of(array[2].split(","));
