@@ -49,7 +49,8 @@ public class TaichungMain {
 		System.out.printf("有賣%s的景點:%n", foodName);
 		attractions.stream()
 				   .filter(a -> a.getFoods().contains(foodName))
-				   .forEach(System.out::println);
+				   //.forEach(System.out::println);
+				   .forEach(a -> System.out.println(a.getName()));
 		// 6.請問有公車可以到達的景點有哪些?
 	}
 
