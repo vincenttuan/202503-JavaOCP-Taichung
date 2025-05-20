@@ -20,9 +20,12 @@ public class TaichungMain {
 		System.out.printf("景點數量: %d%n", attractions.size());
 		// 1.請印出所有的景點
 		attractions.forEach(System.out::println);
-		
+		System.out.println("----------------------------------------");
 		// 2.請印出 CP 最高的景點
-		
+		Attraction best = attractions.stream()
+									 .max((a1, a2) -> (int)(a1.getCp() - a2.getCp()))
+									 .orElse(null);
+		System.out.printf("CP 最高的景點: %s%n", best);
 	}
 
 }
