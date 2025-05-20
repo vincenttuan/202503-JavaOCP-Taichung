@@ -26,6 +26,11 @@ public class TaichungMain {
 									 .max((a1, a2) -> (int)(a1.getCp()*1000 - a2.getCp()*1000))
 									 .orElse(null);
 		System.out.printf("CP 最高的景點: %s%n", best);
+		// 3.請印出 CP 最低的景點
+		Attraction low = attractions.stream()
+									 .min((a1, a2) -> (int)(a1.getCp()*1000 - a2.getCp()*1000))
+									 .orElse(null);
+		System.out.printf("CP 最低的景點: %s%n", low);
 	}
 
 }
