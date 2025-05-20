@@ -3,6 +3,9 @@ package day18;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TaichungMain {
 
@@ -59,7 +62,18 @@ public class TaichungMain {
 				   .filter(a -> a.getTrans().contains(tranName))
 				   .forEach(System.out::println);
 				   //.forEach(a -> System.out.println(a.getName()));
-		
+		System.out.println("----------------------------------------");
+		// 7.請印出每一個 type 最高 cp 的景點
+		Map<String, Optional<Attraction>> maxCPByType = attractions.stream()
+				.collect(Collectors.groupingBy(
+						Attraction::getType, 
+						Collectors.maxBy(Comparator.comparingDouble(Attraction::getCp))
+				));
+		maxCPByType.forEach((type, optAttraction) -> {
+			if(optAttraction.isPresent()) {
+				System.out.println(type + " => " + optAttraction.get());
+			}
+		});
 	}
 
 }
