@@ -43,7 +43,13 @@ public class TaichungMain {
 				   .sorted(Comparator.comparingDouble(Attraction::getCp).reversed())
 				   .limit(10)
 				   .forEach(System.out::println);
-		
+		// 5.請問有賣珍珠奶茶的景點有哪些?
+		System.out.println("----------------------------------------");
+		String foodName = "珍珠奶茶";
+		System.out.printf("有賣%s的景點:%n", foodName);
+		attractions.stream()
+				   .filter(a -> a.getFoods().contains(foodName))
+				   .forEach(System.out::println);
 		
 	}
 
