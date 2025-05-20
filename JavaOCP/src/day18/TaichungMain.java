@@ -51,7 +51,15 @@ public class TaichungMain {
 				   .filter(a -> a.getFoods().contains(foodName))
 				   //.forEach(System.out::println);
 				   .forEach(a -> System.out.println(a.getName()));
+		System.out.println("----------------------------------------");
 		// 6.請問有公車可以到達的景點有哪些?
+		String tranName = "公車";
+		System.out.printf("%s可以到達的景點:%n", tranName);
+		attractions.stream()
+				   .filter(a -> a.getTrans().contains(tranName))
+				   .forEach(System.out::println);
+				   //.forEach(a -> System.out.println(a.getName()));
+		
 	}
 
 }
