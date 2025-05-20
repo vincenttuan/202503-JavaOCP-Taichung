@@ -18,6 +18,8 @@ public class TaichungMain {
 		}
 		
 		System.out.printf("景點數量: %d%n", attractions.size());
+		// 請印出 CP 最高的景點
+		
 	}
 
 }
