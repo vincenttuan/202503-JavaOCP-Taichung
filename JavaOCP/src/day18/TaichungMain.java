@@ -50,7 +50,7 @@ public class TaichungMain {
 		attractions.stream()
 				   .filter(a -> a.getFoods().contains(foodName))
 				   .forEach(System.out::println);
-		
+		// 6.請問有公車可以到達的景點有哪些?
 	}
 
 }
