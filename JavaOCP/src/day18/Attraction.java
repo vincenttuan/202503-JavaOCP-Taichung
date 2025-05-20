@@ -7,7 +7,7 @@ public class Attraction {
 	private String type;        // 類型
 	private String name;        // 景點名稱
 	private List<String> foods; // 推薦美食
-	private List<String> trains;// 交通方式
+	private List<String> trans;// 交通方式
 	private Integer pop;        // 人氣指數
 	private Integer cost;       // 平均每人消費
 	private Double cp;          // CP 值
@@ -18,7 +18,7 @@ public class Attraction {
 		this.type = array[0];
 		this.name = array[1];
 		this.foods = List.of(array[2].split(","));
-		this.trains = List.of(array[3].split(","));
+		this.trans = List.of(array[3].split(","));
 		this.pop = Integer.parseInt(array[4]);
 		this.cost = Integer.parseInt(array[5]);
 		this.cp = (double) (this.pop/this.cost);
@@ -36,8 +36,8 @@ public class Attraction {
 		return foods;
 	}
 
-	public List<String> getTrains() {
-		return trains;
+	public List<String> getTrans() {
+		return trans;
 	}
 
 	public Integer getPop() {
@@ -54,7 +54,7 @@ public class Attraction {
 
 	@Override
 	public String toString() {
-		return "Attraction [type=" + type + ", name=" + name + ", foods=" + foods + ", trains=" + trains + ", pop="
+		return "Attraction [type=" + type + ", name=" + name + ", foods=" + foods + ", trans=" + trans + ", pop="
 				+ pop + ", cost=" + cost + ", cp=" + cp + "]";
 	}
 	
