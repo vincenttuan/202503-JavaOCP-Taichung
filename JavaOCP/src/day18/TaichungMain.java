@@ -66,12 +66,13 @@ public class TaichungMain {
 		// 7.請印出每一個 type 最高 cp 的景點
 		Map<String, Optional<Attraction>> maxCPByType = attractions.stream()
 				.collect(Collectors.groupingBy(
-						Attraction::getType, 
-						Collectors.maxBy(Comparator.comparingDouble(Attraction::getCp))
+						Attraction::getType, // String
+						Collectors.maxBy(Comparator.comparingDouble(Attraction::getCp)) // Optional<Attraction>
 				));
 		maxCPByType.forEach((type, optAttraction) -> {
 			if(optAttraction.isPresent()) {
-				System.out.println(type + " => " + optAttraction.get());
+				Attraction attraction = optAttraction.get();
+				System.out.println(type + " => " + attraction);
 			}
 		});
 	}
