@@ -8,6 +8,7 @@ public class ExceptionDemo6 {
 		} catch (EmptyValueException e) {
 			System.out.println(e.getLocalizedMessage()); //L10n
 			System.out.println(e.getMessage()); //i18n
+			e.how2Do(); // 呼叫自訂方法
 		}
 		
 		System.out.println("看到我表示程式正常結束");
