@@ -4,8 +4,9 @@ public class ExceptionDemo1 {
 
 	public static void main(String[] args) {
 		div(10, 2);
-		div(10, 5);
 		div(10, null);
+		div(10, 5);
+		System.out.println("看到我表示程式正常結束");
 	}
 	
 	// 除法
@@ -20,7 +21,6 @@ public class ExceptionDemo1 {
 			System.out.println("完整錯誤訊息(如下):");
 			e.printStackTrace(System.out); // 完整錯誤訊息
 		}
-		
 	}
 
 }
