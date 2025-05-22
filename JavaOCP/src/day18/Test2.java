@@ -4,7 +4,7 @@ public class Test2 {
 
 	public static void main(String[] args) {
 		try {
-			System.out.println(10/0.0);
+			System.out.println(10/0);
 			
 			int[] scores = new int[2]; // 維度: 0, 1
 			scores[0] = 100;
