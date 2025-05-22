@@ -4,7 +4,7 @@ public class ExceptionDemo6 {
 
 	public static void main(String[] args) {
 		try {
-			div(10, null);
+			div(10, 0);
 		} catch (EmptyValueException e) {
 			System.out.println(e.getLocalizedMessage()); //L10n
 			System.out.println(e.getMessage()); //i18n
@@ -15,10 +15,14 @@ public class ExceptionDemo6 {
 	}
 	
 	// 除法
-	private static void div(Integer x, Integer y) throws EmptyValueException  {
+	private static void div(Integer x, Integer y) throws EmptyValueException, ZeroValueException  {
 		// 先判斷 y 是否有值 ?
 		if(y == null) {
 			EmptyValueException ne = new EmptyValueException("分母為空值");
+			throw ne;
+		}
+		if(y == 0) {
+			ZeroValueException ne = new ZeroValueException("分母 = 0");
 			throw ne;
 		}
 		
