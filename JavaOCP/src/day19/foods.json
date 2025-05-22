@@ -1,0 +1,212 @@
+[
+  {
+    "name": "大甲芋頭牛奶",
+    "description": "使用大甲芋頭現煮製作，濃郁香滑的芋頭牛奶。",
+    "price": 50,
+    "location": "文華路入口附近",
+    "type": "飲品"
+  },
+  {
+    "name": "激旨燒鳥",
+    "description": "日式串燒專賣店，口味多樣且價格親民。",
+    "price": 25,
+    "location": "福星路近慶和街",
+    "type": "燒烤"
+  },
+  {
+    "name": "韓式炸雞",
+    "description": "外酥內嫩，搭配辣醬或蜂蜜醬的韓式炸雞。",
+    "price": 100,
+    "location": "文華路中段",
+    "type": "炸物"
+  },
+  {
+    "name": "小A起司馬鈴薯",
+    "description": "焗烤馬鈴薯搭配豐富配料與起司。",
+    "price": 70,
+    "location": "慶和街",
+    "type": "焗烤"
+  },
+  {
+    "name": "章魚燒",
+    "description": "經典日式章魚燒，外脆內軟。",
+    "price": 50,
+    "location": "福星路側邊巷弄",
+    "type": "日式"
+  },
+  {
+    "name": "熊掌包",
+    "description": "超人氣創意中式刈包，外型像熊掌。",
+    "price": 60,
+    "location": "文華路",
+    "type": "創意料理"
+  },
+  {
+    "name": "逢甲地瓜球",
+    "description": "外酥內Q，地瓜香濃，人氣小吃。",
+    "price": 40,
+    "location": "文華路入口",
+    "type": "炸物"
+  },
+  {
+    "name": "奶油螃蟹",
+    "description": "香濃奶油與螃蟹融合的海鮮美食。",
+    "price": 180,
+    "location": "福星路",
+    "type": "海鮮"
+  },
+  {
+    "name": "一口臭豆腐",
+    "description": "小巧臭豆腐，一口一個，酥脆可口。",
+    "price": 50,
+    "location": "文華路巷弄",
+    "type": "炸物"
+  },
+  {
+    "name": "黑糖珍珠鮮奶",
+    "description": "手炒黑糖與Q彈珍珠融合的濃郁鮮奶。",
+    "price": 60,
+    "location": "福星路尾端",
+    "type": "飲品"
+  },
+  {
+    "name": "鹽水雞",
+    "description": "現點現切，低油健康選擇，搭配多樣蔬菜。",
+    "price": 70,
+    "location": "慶和街入口",
+    "type": "鹹食"
+  },
+  {
+    "name": "炙燒牛排丼飯",
+    "description": "炙燒牛肉鋪滿整碗飯，香氣十足。",
+    "price": 120,
+    "location": "福星路美食廣場內",
+    "type": "主食"
+  },
+  {
+    "name": "酥炸魷魚",
+    "description": "金黃酥脆的魷魚圈，搭配椒鹽風味。",
+    "price": 90,
+    "location": "文華路後段",
+    "type": "炸物"
+  },
+  {
+    "name": "手工甜不辣",
+    "description": "Q彈甜不辣搭配獨家醬料，台灣味十足。",
+    "price": 50,
+    "location": "逢甲大學側門",
+    "type": "台式"
+  },
+  {
+    "name": "鴨血臭豆腐",
+    "description": "香濃湯頭搭配鴨血與臭豆腐，適合愛重口味者。",
+    "price": 80,
+    "location": "文華路中段",
+    "type": "湯品"
+  },
+  {
+    "name": "泰式涼拌木瓜絲",
+    "description": "酸辣開胃的泰國小吃，清爽不油膩。",
+    "price": 60,
+    "location": "福星路近入口",
+    "type": "涼拌"
+  },
+  {
+    "name": "蜂蜜雞蛋糕",
+    "description": "小巧可愛造型雞蛋糕，甜而不膩。",
+    "price": 40,
+    "location": "文華路巷弄",
+    "type": "甜點"
+  },
+  {
+    "name": "脆皮雞排",
+    "description": "外皮酥脆，肉汁飽滿的經典雞排。",
+    "price": 75,
+    "location": "福星路側邊",
+    "type": "炸物"
+  },
+  {
+    "name": "芒果冰沙",
+    "description": "消暑聖品，使用新鮮芒果打製。",
+    "price": 65,
+    "location": "逢甲夜市入口處",
+    "type": "飲品"
+  },
+  {
+    "name": "麻辣關東煮",
+    "description": "多樣關東煮食材，搭配微辣湯頭。",
+    "price": 50,
+    "location": "慶和街轉角",
+    "type": "湯品"
+  },
+  {
+    "name": "炸牛奶",
+    "description": "外酥內滑的創意甜點，一咬爆漿。",
+    "price": 45,
+    "location": "福星路近大學",
+    "type": "甜點"
+  },
+  {
+    "name": "爆漿玉子燒",
+    "description": "滑嫩玉子燒內餡爆漿，口感豐富。",
+    "price": 60,
+    "location": "文華路中段",
+    "type": "日式"
+  },
+  {
+    "name": "炭烤雞腿堡",
+    "description": "炭火燒烤雞腿肉，搭配特製醬料。",
+    "price": 90,
+    "location": "福星路美食區",
+    "type": "漢堡"
+  },
+  {
+    "name": "炒泡麵",
+    "description": "獨特調味，結合蔬菜與蛋的台式炒泡麵。",
+    "price": 65,
+    "location": "文華路夜市核心區",
+    "type": "主食"
+  },
+  {
+    "name": "酥脆炸蝦",
+    "description": "大尾炸蝦裹粉酥炸，口感扎實。",
+    "price": 100,
+    "location": "福星路",
+    "type": "海鮮"
+  },
+  {
+    "name": "烤玉米",
+    "description": "醬料刷得恰到好處，炭香濃郁。",
+    "price": 60,
+    "location": "文華路中段",
+    "type": "燒烤"
+  },
+  {
+    "name": "香酥雞皮",
+    "description": "雞皮炸得酥脆不油，香氣逼人。",
+    "price": 50,
+    "location": "福星路入口旁",
+    "type": "炸物"
+  },
+  {
+    "name": "現烤麻糬",
+    "description": "炭火現烤，外酥內Q，撒上花生粉或芝麻粉。",
+    "price": 45,
+    "location": "文華路尾端",
+    "type": "甜點"
+  },
+  {
+    "name": "滷味拼盤",
+    "description": "多種滷味自由搭配，夜市經典小吃。",
+    "price": 60,
+    "location": "福星路",
+    "type": "鹹食"
+  },
+  {
+    "name": "炸冰淇淋",
+    "description": "冰與火的組合，外皮酥熱內部冰涼。",
+    "price": 55,
+    "location": "文華路中段",
+    "type": "甜點"
+  }
+]
