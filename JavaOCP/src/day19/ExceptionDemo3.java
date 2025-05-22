@@ -19,7 +19,7 @@ public class ExceptionDemo3 {
 		
 		// 先判斷 y 是否 = 0 ?
 		if(y == 0) {
-			System.out.println("分母不可是 null");
+			System.out.println("分母不可是 0");
 			return;
 		}
 		
