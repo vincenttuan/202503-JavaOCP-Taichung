@@ -6,8 +6,8 @@ public class ExceptionDemo5 {
 		try {
 			div(10, null);
 		} catch (Exception e) {
-			System.out.println(e.getLocalizedMessage());
-			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage()); //L10n
+			System.out.println(e.getMessage()); //i18n
 		}
 		
 		System.out.println("看到我表示程式正常結束");
