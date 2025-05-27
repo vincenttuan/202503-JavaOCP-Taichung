@@ -48,6 +48,8 @@ public class SnackUtil {
 												double lon2 = snack.getLongitude();
 												// 與小吃店的距離
 												double d = Haversine.distance(lat1, lon1, lat2, lon2);
+												// 設定 distance
+												snack.setDistance(d);
 												return d <= m;
 											})
 											.toList();
@@ -60,7 +62,7 @@ public class SnackUtil {
 		List<Snack> snackList = findNearest(24.1761, 120.6402, 600);
 		System.out.printf("找到筆數:%d%n", snackList.size());
 		for(Snack snack : snackList) {
-			System.out.printf("%s %s%n", snack.getName(), snack.getLocation());
+			System.out.printf("%s %s %.2f%n", snack.getName(), snack.getLocation(), snack.getDistance());
 		}
 	}
 	
