@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Snack {
-	private String name;
-	private String description;
-	private Integer price;
-	private String location;
-	private String type;
-	
+public class Snack { // 小吃
+	private String name; // 名稱
+	private String description; // 敘述
+	private Integer price; // 價格
+	private String location; // 地址
+	private String type; // 類型
+	private Double latitude; // 緯度
+	private Double longitude; // 經度
 }
