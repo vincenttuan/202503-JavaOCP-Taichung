@@ -25,9 +25,12 @@ public class SnackTest1 {
 			// 利用一個小視窗可以讓使用者輸入1~30的數字
 			String input = JOptionPane.showInputDialog("請選擇要觀看第幾筆資料:");
 			System.out.printf("input = %s%n", input);
-			
-			System.out.printf("第一筆資料:%s%n", snacks[0]);
-			System.out.printf("第一筆資料的名稱:%s%n", snacks[0].getName());
+			int index = Integer.parseInt(input) - 1;
+			// 將所選的資料顯示在 console 內
+			System.out.printf("第一筆資料:%s%n", snacks[index]);
+			System.out.printf("第一筆資料的名稱:%s%n", snacks[index].getName());
+			// 將所選的資料顯示在 GUI 中
+			JOptionPane.showMessageDialog(null, snacks[index].getName() + " $" + snacks[index].getPrice());
 			
 		} catch (IOException e) {
 			System.err.printf("發生錯誤:%s%n", e.getMessage());
