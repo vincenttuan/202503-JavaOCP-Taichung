@@ -15,4 +15,6 @@ public class Snack { // 小吃
 	private String type; // 類型
 	private Double latitude; // 緯度
 	private Double longitude; // 經度
+	//-------------------------------
+	private Double distance; // 距離
 }
