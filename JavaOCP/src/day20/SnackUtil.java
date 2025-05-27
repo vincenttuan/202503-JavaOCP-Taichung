@@ -35,10 +35,22 @@ public class SnackUtil {
 	}
 	
 	// 找距離最近的小吃
+	// 原始資料: snackList
 	// 你的位置: lat1, lon1 (經緯度)
 	// 距離你的位置: m (公尺)
 	public static List<Snack> findNearest(double lat1, double lon1, double m) {
-		return null;
+		List<Snack> snackList = findAllSnacks();
+		List<Snack> newSnackList = snackList.stream()
+											.filter(snack -> {
+												// 小吃店的經緯度
+												double lat2 = snack.getLatitude();
+												double lon2 = snack.getLongitude();
+												// 與小吃店的距離
+												double d = Haversine.distance(lat1, lon1, lat2, lon2);
+												return d <= m;
+											})
+											.toList();
+		return newSnackList;
 	}
 	
 	
