@@ -62,7 +62,7 @@ public class SnackUtil {
 		List<Snack> snackList = findNearest(24.1761, 120.6402, 600);
 		System.out.printf("找到筆數:%d%n", snackList.size());
 		for(Snack snack : snackList) {
-			System.out.printf("%s %s %.2f%n", snack.getName(), snack.getLocation(), snack.getDistance());
+			System.out.printf("%s %s %,.2f%n", snack.getName(), snack.getLocation(), snack.getDistance());
 		}
 	}
 	
