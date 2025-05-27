@@ -1,4 +1,4 @@
-package day19;
+package day20;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,7 @@ public class SnackTest1 {
 		// 如何利用 Files 抓取 snacks.json 並透過 Gson 將資料匯入到 Snack[] 陣列中
 		// 在要 pom.xml 當中設定 Gson 資源依賴
 		// 1. 透過 Files 抓取 snacks.json 資料
-		Path path = Path.of("src/day19/snacks.json");
+		Path path = Path.of("src/day20/snacks.json");
 		try {
 			String json = Files.readString(path);
 			//System.out.println(json);

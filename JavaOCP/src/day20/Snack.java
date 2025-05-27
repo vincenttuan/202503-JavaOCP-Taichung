@@ -1,4 +1,4 @@
-package day19;
+package day20;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
