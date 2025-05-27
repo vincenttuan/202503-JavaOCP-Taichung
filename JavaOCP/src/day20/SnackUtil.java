@@ -31,8 +31,14 @@ public class SnackUtil {
 		} catch (IOException e) {
 			System.err.printf("發生錯誤:%s%n", e.getMessage());
 		}
-		
 		return snackList;
+	}
+	
+	// 找距離最近的小吃
+	// 你的位置: lat1, lon1 (經緯度)
+	// 距離你的位置: m (公尺)
+	public static List<Snack> findNearest(double lat1, double lon1, double m) {
+		return null;
 	}
 	
 	
