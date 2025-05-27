@@ -52,6 +52,7 @@ public class SnackUtil {
 												snack.setDistance(d);
 												return d <= m;
 											})
+											.sorted(Comparator.comparingDouble(Snack::getDistance))
 											.toList();
 		return newSnackList;
 	}
@@ -59,10 +60,10 @@ public class SnackUtil {
 	// 測試
 	public static void main(String[] args) {
 		// 巨匠逢甲分校經緯度:(緯度)24.1761, (經度)120.6402
-		List<Snack> snackList = findNearest(24.1761, 120.6402, 600);
+		List<Snack> snackList = findNearest(24.1761, 120.6402, 650);
 		System.out.printf("找到筆數:%d%n", snackList.size());
 		for(Snack snack : snackList) {
-			System.out.printf("%s %s %,.2f%n", snack.getName(), snack.getLocation(), snack.getDistance());
+			System.out.printf("%s %s %,.2fm%n", snack.getName(), snack.getLocation(), snack.getDistance());
 		}
 	}
 	
