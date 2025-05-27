@@ -48,7 +48,7 @@ public class SnackUtil {
 												double lon2 = snack.getLongitude();
 												// 與小吃店的距離
 												double d = Haversine.distance(lat1, lon1, lat2, lon2);
-												// 設定 distance
+												// 設定 distance (偷塞)
 												snack.setDistance(d);
 												return d <= m;
 											})
