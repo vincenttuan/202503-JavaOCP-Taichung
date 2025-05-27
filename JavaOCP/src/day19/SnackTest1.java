@@ -30,7 +30,10 @@ public class SnackTest1 {
 			System.out.printf("第一筆資料:%s%n", snacks[index]);
 			System.out.printf("第一筆資料的名稱:%s%n", snacks[index].getName());
 			// 將所選的資料顯示在 GUI 中
-			JOptionPane.showMessageDialog(null, snacks[index].getName() + " $" + snacks[index].getPrice());
+			String msg = snacks[index].getName() + " $" + snacks[index].getPrice() + "\n"
+						+ snacks[index].getDescription() + "\n"
+						+ "地點:" + snacks[index].getLocation() + "\n";
+			JOptionPane.showMessageDialog(null, msg);
 			
 		} catch (IOException e) {
 			System.err.printf("發生錯誤:%s%n", e.getMessage());
