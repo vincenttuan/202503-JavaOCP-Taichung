@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import javax.swing.JOptionPane;
+
 import com.google.gson.Gson;
 
 public class SnackTest1 {
@@ -20,6 +22,10 @@ public class SnackTest1 {
 			Gson gson = new Gson();
 			Snack[] snacks = gson.fromJson(json, Snack[].class);
 			System.out.printf("筆數:%d%n", snacks.length);
+			// 利用一個小視窗可以讓使用者輸入1~30的數字
+			String input = JOptionPane.showInputDialog("請選擇要觀看第幾筆資料:");
+			System.out.printf("input = %s%n", input);
+			
 			System.out.printf("第一筆資料:%s%n", snacks[0]);
 			System.out.printf("第一筆資料的名稱:%s%n", snacks[0].getName());
 			
