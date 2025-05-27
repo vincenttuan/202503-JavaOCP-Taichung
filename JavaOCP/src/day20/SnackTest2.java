@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -42,7 +43,7 @@ public class SnackTest2 {
 			// 利用 stream 找到合適的一筆資訊
 			Optional<Snack> optSnack = Arrays.stream(snacks)
 											 .filter(snack -> snack.getPrice() <= balance)
-											 .findAny();
+											 .max((s1, s2) -> s1.getPrice() - s2.getPrice());
 			String msg = "金額不足今日禁食一天";
 			if(optSnack.isPresent()) { // 有找到符合的資料
 				Snack snack = optSnack.get();
