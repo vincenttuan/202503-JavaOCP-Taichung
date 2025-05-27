@@ -60,10 +60,24 @@ public class SnackUtil {
 		// 巨匠逢甲分校經緯度:(緯度)24.1761, (經度)120.6402
 		int m = Integer.parseInt(JOptionPane.showInputDialog("請輸入距離(m)?"));
 		List<Snack> snackList = findNearest(24.1761, 120.6402, m);
+		
 		System.out.printf("距離:%dm, 找到筆數:%d%n", m, snackList.size());
 		for(Snack snack : snackList) {
 			System.out.printf("%s %s %,.2fm%n", snack.getName(), snack.getLocation(), snack.getDistance());
 		}
+		
+		String msg = "無資料";
+		if(snackList.size() > 0) { // 有找到符合的資料
+			msg = "";
+			for(Snack snack : snackList) {
+				msg += "距離:" + String.format("%.2fm", snack.getDistance()) + "\n"
+						+ snack.getName() + " $" + snack.getPrice() + "\n"
+						+ snack.getDescription() + "\n"
+						+ "地點:" + snack.getLocation() + "\n\n";
+			}
+		}
+		JOptionPane.showMessageDialog(null, msg);
+		
 	}
 	
 }
