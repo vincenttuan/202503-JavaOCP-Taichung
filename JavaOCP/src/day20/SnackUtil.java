@@ -3,6 +3,7 @@ package day20;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,7 +26,7 @@ public class SnackUtil {
 			Gson gson = new Gson();
 			Snack[] snacks = gson.fromJson(json, Snack[].class);
 			// Snack[] 轉 List<Snack>
-			snackList = List.of(snacks);
+			snackList = new ArrayList<>(List.of(snacks));
 			// 洗牌
 			Collections.shuffle(snackList);
 		} catch (IOException e) {
@@ -53,5 +54,14 @@ public class SnackUtil {
 		return newSnackList;
 	}
 	
+	// 測試
+	public static void main(String[] args) {
+		// 巨匠逢甲分校經緯度:(緯度)24.1761, (經度)120.6402
+		List<Snack> snackList = findNearest(24.1761, 120.6402, 600);
+		System.out.printf("找到筆數:%d%n", snackList.size());
+		for(Snack snack : snackList) {
+			System.out.printf("%s %s%n", snack.getName(), snack.getLocation());
+		}
+	}
 	
 }
