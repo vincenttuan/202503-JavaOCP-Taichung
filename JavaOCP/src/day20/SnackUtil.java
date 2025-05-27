@@ -64,8 +64,9 @@ public class SnackUtil {
 	// 測試
 	public static void main(String[] args) {
 		// 巨匠逢甲分校經緯度:(緯度)24.1761, (經度)120.6402
-		List<Snack> snackList = findNearest(24.1761, 120.6402, 650);
-		System.out.printf("找到筆數:%d%n", snackList.size());
+		int m = Integer.parseInt(JOptionPane.showInputDialog("請輸入距離(m)?"));
+		List<Snack> snackList = findNearest(24.1761, 120.6402, m);
+		System.out.printf("距離:%dm, 找到筆數:%d%n", m, snackList.size());
 		for(Snack snack : snackList) {
 			System.out.printf("%s %s %,.2fm%n", snack.getName(), snack.getLocation(), snack.getDistance());
 		}
