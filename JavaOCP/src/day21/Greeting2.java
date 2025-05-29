@@ -6,17 +6,16 @@ import java.util.Scanner;
 public class Greeting2 {
 
 	public static void main(String[] args) {
-		char[] chars  = {'a','e','i','o','s','t'};
-		char[] values = {'4','3','1','0','5','7'};
+		String keys  = "aeiost";
+		String values = "431057";
 		String allName = "maRy lin";
 		// 全部轉小寫
 		allName = allName.toLowerCase(); // mary lin
 		char[] allChars = allName.toCharArray(); // {'m','a','r','y',' ','l','i','n',}
-		//System.out.println(Arrays.binarySearch(chars, 'm'));
 		for(int i=0;i<allChars.length;i++) {
-			int idx = Arrays.binarySearch(chars, allChars[i]);
+			int idx = keys.indexOf(allChars[i] + "");
 			if(idx >= 0) {
-				allChars[i] = values[idx];
+				allChars[i] = values.charAt(idx);
 			}
 		}
 		System.out.println(allChars); // m4ry l1n
