@@ -9,7 +9,7 @@ import lombok.Data;
 public class Gym {
 	private String name;
 	
-	public Pokemon fight(Pokemon pokemon1, Pokemon pokemon2) {
+	public static Pokemon fight(Pokemon pokemon1, Pokemon pokemon2) {
 		// 如果 pokemon1 的等級高於 pokemon2，則 pokemon1 獲勝。
 		// 如果 pokemon2 的等級高於 pokemon1，則 pokemon2 獲勝。
 		if(pokemon1.getLevel() > pokemon2.getLevel()) {
