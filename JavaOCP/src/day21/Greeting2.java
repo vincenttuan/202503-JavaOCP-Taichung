@@ -13,7 +13,7 @@ public class Greeting2 {
 		allName = allName.toLowerCase(); // mary lin
 		char[] allChars = allName.toCharArray(); // {'m','a','r','y',' ','l','i','n',}
 		for(int i=0;i<allChars.length;i++) {
-			int idx = keys.indexOf(allChars[i] + "");
+			int idx = keys.indexOf(allChars[i] + ""); // indexOf 指定字串在哪一個位置
 			if(idx >= 0) {
 				allChars[i] = values.charAt(idx);
 			}
