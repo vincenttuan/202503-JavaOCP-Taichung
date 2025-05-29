@@ -12,4 +12,10 @@ public class PokemonUtil {
 		int idx = random.nextInt(types.length); // 0~2
 		return types[idx];
 	}
+	
+	// generateLevel()：回傳一個隨機等級（int），範圍從 1 到 MAX_LEVEL 之間的整數。
+	public static int generateLevel() {
+		Random random = new Random();
+		return random.nextInt(MAX_LEVEL) + 1;
+	}
 }
