@@ -12,9 +12,7 @@ public class Pokemon {
 	
 	public Pokemon(String name) {
 		this.name = name;
-		/*
 		this.type = PokemonUtil.generateType();
-		*/
 		this.level = PokemonUtil.generateLevel();
 		this.candy = PokemonUtil.generateCandy();
 		
