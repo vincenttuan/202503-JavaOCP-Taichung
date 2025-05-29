@@ -10,7 +10,11 @@ public class CarGame {
 	public static void main(String[] args) {
 		Car car1 = new Car("Car1");
 		Car car2 = new Car("Car2");
-		
+		System.out.printf("參賽名稱:%s、車款:%s、最終馬力:%d%n", 
+				car1.getName(), car1.getModel(), car1.getFinalHorsePower());
+		System.out.printf("參賽名稱:%s、車款:%s、最終馬力:%d%n", 
+				car2.getName(), car2.getModel(), car2.getFinalHorsePower());
+		System.out.println("-----------------------------------------");
 		Car winnerCar = Track.race(car1, car2);
 		System.out.printf("勝者名稱:%s、車款:%s、最終馬力:%d%n", 
 				winnerCar.getName(), winnerCar.getModel(), winnerCar.getFinalHorsePower());
