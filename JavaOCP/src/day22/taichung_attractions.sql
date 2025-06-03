@@ -61,4 +61,6 @@ select category, count(*) as count from taichung_attractions
 group by category;
 
 -- 4. 查詢所有景點名稱中有「公園」二字的資料
--- homework
+select id, name, location, ticket_price, category, description 
+from taichung_attractions
+where name like '%公園%';
