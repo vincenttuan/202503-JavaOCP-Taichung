@@ -24,7 +24,6 @@ public class ReadUsers3 {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sqlstr);) {
 			
-			System.out.println("連線已開啟:" + !conn.isClosed());
 			while (rs.next()) { // 逐筆運作
 				String username   = rs.getString("username");
 				String gender     = rs.getString("gender");
