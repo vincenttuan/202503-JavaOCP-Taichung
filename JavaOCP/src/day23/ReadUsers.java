@@ -42,14 +42,28 @@ public class ReadUsers {
 				System.out.printf("%2d%5s%2s%10s%10s%20s%20s%n", 
 						id, username, gender, birthday, interests, selfIntro, appearance);
 			}
-			// 4.關閉資源
-			rs.close();
-			stmt.close();
-			conn.close();
-			System.out.println("連線已關閉:" + conn.isClosed());
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			
+			// 4.關閉資源
+			try {
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				if(stmt != null) stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				if(conn != null) conn.close();
+				System.out.println("連線已關閉:" + conn.isClosed());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
 		
 	}
