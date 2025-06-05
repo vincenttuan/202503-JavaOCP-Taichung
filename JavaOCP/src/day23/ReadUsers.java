@@ -23,6 +23,13 @@ public class ReadUsers {
 		
 		try {
 			conn = DriverManager.getConnection(url, username, password);
+			System.out.println("連線已開啟:" + !conn.isClosed());
+			
+			rs = stmt.executeQuery("select id, username, gender, birthday, interests, self_intro, appearance from users");
+			
+			
+			conn.close();
+			System.out.println("連線已關閉:" + conn.isClosed());
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
