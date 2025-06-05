@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 
 public class ReadUsers3 {
-
+	
+	// 此版本會有 SQL 注入式攻擊 (SQL injection)
 	public static void main(String[] args) {
 		// 只要查詢女姓(F)或男姓(M)的使用者名字
 		//String genderValue = "F"; // "M"
