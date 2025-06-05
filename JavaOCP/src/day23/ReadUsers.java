@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 // 查詢 users 資料表中的資訊
 public class ReadUsers {
@@ -18,15 +19,29 @@ public class ReadUsers {
 		ResultSet  rs   = null;
 		
 		String url = "jdbc:mysql://localhost:3306/mydb";
-		String username = "root";
+		String user = "root";
 		String password = "12345678";
 		
 		try {
-			conn = DriverManager.getConnection(url, username, password);
+			// 1.建立連線
+			conn = DriverManager.getConnection(url, user, password);
 			System.out.println("連線已開啟:" + !conn.isClosed());
-			
+			// 2.執行查詢
+			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select id, username, gender, birthday, interests, self_intro, appearance from users");
-			
+			// 3.分析結果
+			while (rs.next()) { // 逐筆運作
+				int    id         = rs.getInt("id");
+				String username   = rs.getString("username");
+				String gender     = rs.getString("gender");
+				Date   birthday   = rs.getDate("birthday");
+				String interests  = rs.getString("interests");
+				String selfIntro  = rs.getString("self_intro");
+				String appearance = rs.getString("appearance");
+				
+				System.out.printf("%2d%10s%10s%10s%10s%20s%20s%n", 
+						id, username, gender, birthday, interests, selfIntro, appearance);
+			}
 			
 			conn.close();
 			System.out.println("連線已關閉:" + conn.isClosed());
