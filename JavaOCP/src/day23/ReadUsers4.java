@@ -14,7 +14,7 @@ public class ReadUsers4 {
 		// 只要查詢女姓(F)或男姓(M)的使用者名字
 		//String genderValue = "F"; // "M"
 		String genderValue = "a' or '1'='1"; // "M"
-		String sqlstr = "select username, gender from users where gender = ? and username = ?";
+		String sqlstr = "select username, gender from users where gender = ?";
 		System.out.println(sqlstr);
 		//----------------------------------------------------------------------------------------
 		String url = "jdbc:mysql://localhost:3306/mydb";
