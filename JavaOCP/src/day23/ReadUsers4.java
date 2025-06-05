@@ -13,7 +13,7 @@ public class ReadUsers4 {
 	public static void main(String[] args) {
 		// 只要查詢女姓(F)或男姓(M)的使用者名字
 		//String genderValue = "F"; // "M"
-		String genderValue = "a' or '1'='1"; // "M"
+		String genderValue = "a' or '1'='1"; // sql 攻擊指令
 		String sqlstr = "select username, gender from users where gender = ?";
 		System.out.println(sqlstr);
 		//----------------------------------------------------------------------------------------
