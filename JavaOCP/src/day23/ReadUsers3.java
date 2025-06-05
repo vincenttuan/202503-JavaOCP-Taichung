@@ -27,7 +27,6 @@ public class ReadUsers3 {
 			while (rs.next()) { // 逐筆運作
 				String username   = rs.getString("username");
 				String gender     = rs.getString("gender");
-				
 				System.out.printf("%5s%2s%n", username, gender);
 			}
 		} catch (SQLException e) {
