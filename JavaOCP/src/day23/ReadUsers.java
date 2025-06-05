@@ -39,7 +39,7 @@ public class ReadUsers {
 				String selfIntro  = rs.getString("self_intro");
 				String appearance = rs.getString("appearance");
 				
-				System.out.printf("%2d%10s%10s%10s%10s%20s%20s%n", 
+				System.out.printf("%2d%5s%2s%20s%15s%20s%20s%n", 
 						id, username, gender, birthday, interests, selfIntro, appearance);
 			}
 			
