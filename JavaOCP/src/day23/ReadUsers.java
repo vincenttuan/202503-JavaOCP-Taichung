@@ -45,7 +45,6 @@ public class ReadUsers {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			
 			// 4.關閉資源
 			try {
 				if(rs != null) rs.close();
@@ -63,7 +62,6 @@ public class ReadUsers {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			
 		}
 		
 	}
