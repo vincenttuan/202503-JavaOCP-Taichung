@@ -39,10 +39,12 @@ public class ReadUsers {
 				String selfIntro  = rs.getString("self_intro");
 				String appearance = rs.getString("appearance");
 				
-				System.out.printf("%2d%5s%2s%20s%15s%20s%20s%n", 
+				System.out.printf("%2d%5s%2s%10s%10s%20s%20s%n", 
 						id, username, gender, birthday, interests, selfIntro, appearance);
 			}
-			
+			// 4.關閉資源
+			rs.close();
+			stmt.close();
 			conn.close();
 			System.out.println("連線已關閉:" + conn.isClosed());
 			
