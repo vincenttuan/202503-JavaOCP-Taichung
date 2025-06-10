@@ -17,7 +17,8 @@ public class RacingGame {
 		t1.join();
 		t2.join();
 		
-		System.out.println("比賽結束");
+		System.out.println("比賽結束 Winner:" + Horse.winner);
+		
 	}
 
 }
