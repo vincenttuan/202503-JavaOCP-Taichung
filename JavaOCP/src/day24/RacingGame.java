@@ -43,6 +43,8 @@ public class RacingGame {
 		} else {
 			System.out.println("槓龜");
 		}
+		
+		scanner.close();
 	}
 
 }
