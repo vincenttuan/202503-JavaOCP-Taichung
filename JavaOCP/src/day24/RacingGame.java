@@ -2,7 +2,7 @@ package day24;
 
 public class RacingGame {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Horse horse1 = new Horse();
 		Horse horse2 = new Horse();
 		
@@ -13,6 +13,9 @@ public class RacingGame {
 		
 		t1.start();
 		t2.start();
+		
+		t1.join();
+		t2.join();
 		
 		System.out.println("比賽結束");
 	}
