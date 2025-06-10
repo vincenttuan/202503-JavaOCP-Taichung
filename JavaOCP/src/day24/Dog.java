@@ -1,8 +1,7 @@
 package day24;
 
-// 賽馬
-public class Horse implements Runnable {
-	public static String winner = null;
+// 賽狗
+public class Dog implements Runnable {
 	
 	@Override
 	public void run() {
@@ -11,8 +10,8 @@ public class Horse implements Runnable {
 			System.out.printf("%s 跑了 %d 步%n", horseName, i);
 		}
 		// 跑完了, 修改 winner
-		if(winner == null) {
-			winner = horseName;
+		if(Horse.winner == null) {
+			Horse.winner = horseName;
 		}
 	}
 	
