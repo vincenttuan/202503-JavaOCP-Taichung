@@ -12,7 +12,8 @@ public class Father extends Thread {
 		Worker worker = new Worker();
 		worker.start();
 		
-		
+		System.out.println("爸爸開始洗熱水澡");
+		System.out.println("爸爸洗完澡了");
 		
 	}
 	
