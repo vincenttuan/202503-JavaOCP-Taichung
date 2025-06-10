@@ -6,7 +6,7 @@ public class Worker extends Thread {
 	public void run() {
 		System.out.println("瓦斯工人開始送瓦斯");
 		
-		for(int i=1;i<=5;i++) {
+		for(int i=1;i<=5000;i++) {
 			try {
 				System.out.printf("%d 秒鐘 ", i);
 				Thread.sleep(1000); // 模擬運送途中的延遲

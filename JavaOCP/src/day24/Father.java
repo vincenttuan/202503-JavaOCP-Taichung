@@ -14,6 +14,8 @@ public class Father extends Thread {
 		
 		try {
 			worker.join();
+			//worker.join(10000);
+			//Thread.sleep(20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
