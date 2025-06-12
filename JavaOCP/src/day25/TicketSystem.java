@@ -1,5 +1,7 @@
 package day25;
 
+import static day25.TicketGrabDemo.resultMap;
+
 public class TicketSystem {
 	private Integer tickets = 500; // 只有 500 張票可以搶
 	
@@ -10,6 +12,8 @@ public class TicketSystem {
 	public synchronized boolean grabTicket(String user) {
 		if(tickets > 0) {
 			System.out.printf("%s 搶到一張票!", user);
+			resultMap.put(user, resultMap.get(user) + 1);
+			
 			tickets--;
 			System.out.printf("剩餘票數:%d 張%n", tickets);
 			return true;

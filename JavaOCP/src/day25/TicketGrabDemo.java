@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TicketGrabDemo {
 	// 用來記錄每一個人搶到的張數
-	private static Map<String, Integer> resultMap;
+	public static Map<String, Integer> resultMap;
 	
 	public static void main(String[] args) throws InterruptedException {
 		TicketSystem ticketSystem = new TicketSystem();
