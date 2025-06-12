@@ -1,6 +1,6 @@
 package day25;
 
-// 提款執行緒(進行提款作業用)
+// 提款工作(進行提款作業用)
 public class Withdraw implements Runnable {
 	private Account account; // 帳號
 	private Integer amount;  // 提款金額
