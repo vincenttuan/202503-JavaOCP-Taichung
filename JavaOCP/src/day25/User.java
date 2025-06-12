@@ -12,7 +12,10 @@ public class User extends Thread {
 
 	@Override
 	public void run() {
-		ticketSystem.grabTicket(name);
+		while (ticketSystem.hasTickets()) {
+			ticketSystem.grabTicket(name);
+		}
+		
 	}
 	
 }
