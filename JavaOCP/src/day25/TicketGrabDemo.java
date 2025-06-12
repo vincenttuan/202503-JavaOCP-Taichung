@@ -7,7 +7,7 @@ public class TicketGrabDemo {
 	// 用來記錄每一個人搶到的張數
 	private static Map<String, Integer> resultMap;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		TicketSystem ticketSystem = new TicketSystem();
 		
 		resultMap = new ConcurrentHashMap<>();
@@ -27,6 +27,11 @@ public class TicketGrabDemo {
 		user3.start();
 		user4.start();
 		
+		user1.join();
+		user2.join();
+		user3.join();
+		user4.join();
+		System.out.println(resultMap);
 
 	}
 
