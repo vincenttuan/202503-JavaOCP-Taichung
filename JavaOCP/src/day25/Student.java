@@ -4,6 +4,7 @@ public class Student extends Thread {
 	private PhilippineTour tour;
 	private String name;
 	private int signupCount = 2; // 每人最多報名次數
+	
 	public Student(PhilippineTour tour, String name) {
 		this.tour = tour;
 		this.name = name;
@@ -11,7 +12,7 @@ public class Student extends Thread {
 	
 	@Override
 	public void run() {
-		while(signupCount < 2) {
+		while(signupCount != 0) {
 			boolean success = tour.signup(name);
 			if(success) {
 				signupCount--;
