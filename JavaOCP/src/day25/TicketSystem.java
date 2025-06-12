@@ -3,6 +3,10 @@ package day25;
 public class TicketSystem {
 	private Integer tickets = 5; // 只有 5 張票可以搶
 	
+	public boolean hasTickets() {
+		return tickets > 0;
+	}
+	
 	public boolean grabTicket(String user) {
 		if(tickets > 0) {
 			System.out.printf("%s 搶到一張票!", user);
