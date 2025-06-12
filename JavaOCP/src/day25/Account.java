@@ -13,6 +13,10 @@ public class Account {
 		System.out.printf("%s 開始提款%n", threadName);
 		// 取得餘額
 		int myBalance = balance;
+		
+		// 模擬運作延遲時間
+		for(int i=0;i<999999;i++);
+		
 		// 檢查餘額是否足夠 ?
 		if(myBalance < amount) {
 			System.out.printf("%s 要提款:%d 失敗 目前餘額: %d 餘額不足%n",
