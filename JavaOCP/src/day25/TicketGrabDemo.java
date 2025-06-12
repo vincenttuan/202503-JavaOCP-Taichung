@@ -1,9 +1,20 @@
 package day25;
 
-public class TicketGrabDemo {
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
+public class TicketGrabDemo {
+	// 用來記錄每一個人搶到的張數
+	private static Map<String, Integer> resultMap;
+	
 	public static void main(String[] args) {
 		TicketSystem ticketSystem = new TicketSystem();
+		
+		resultMap = new ConcurrentHashMap<>();
+		resultMap.put("班長", 0);
+		resultMap.put("班長婆", 0);
+		resultMap.put("副班長", 0);
+		resultMap.put("副班長婆", 0);
 		
 		// 有 4 個人要搶票
 		User user1 = new User(ticketSystem, "班長");
