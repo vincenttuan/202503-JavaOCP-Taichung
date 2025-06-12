@@ -1,5 +1,7 @@
 package day25;
 
+import java.util.Arrays;
+
 public class PhilippineTourDemo {
 
 	public static void main(String[] args) {
@@ -12,8 +14,10 @@ public class PhilippineTourDemo {
 				new Student(tour, "小段")
 		};
 		
+		Arrays.stream(students)
+			  //.forEach(student -> student.start());
+			  .forEach(Student::start);
 		
-
 	}
 
 }
