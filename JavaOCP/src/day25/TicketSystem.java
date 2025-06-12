@@ -1,7 +1,7 @@
 package day25;
 
 public class TicketSystem {
-	private Integer tickets = 5; // 只有 5 張票可以搶
+	private Integer tickets = 50; // 只有 50 張票可以搶
 	
 	public boolean hasTickets() {
 		return tickets > 0;
