@@ -8,7 +8,7 @@ public class Account {
 		this.balance = balance;
 	}
 	
-	public void widthdraw(int amount) {
+	public synchronized void widthdraw(int amount) {
 		String threadName = Thread.currentThread().getName();
 		System.out.printf("%s 開始提款%n", threadName);
 		// 取得餘額
