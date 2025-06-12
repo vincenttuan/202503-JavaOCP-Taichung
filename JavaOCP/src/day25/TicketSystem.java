@@ -1,0 +1,17 @@
+package day25;
+
+public class TicketSystem {
+	private Integer tickets = 5; // 只有 5 張票可以搶
+	
+	public boolean grabTicket(String user) {
+		if(tickets > 0) {
+			System.out.printf("%s 搶到一張票!", user);
+			tickets--;
+			System.out.printf("剩餘票數:%d 張%n", tickets);
+			return true;
+		} else {
+			System.out.printf("%s 沒搶到票, 票已售罄!%n");
+			return false;
+		}
+	}
+}
