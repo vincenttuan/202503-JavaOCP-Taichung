@@ -6,7 +6,10 @@ public class CarDemo {
 
 	public static void main(String[] args) {
 		int n = 4;
-		CyclicBarrier cb = new CyclicBarrier(n);
+		Runnable eat = () -> {
+			System.out.println("吃台中肉圓");
+		};
+		CyclicBarrier cb = new CyclicBarrier(n, eat);
 		
 		Car[] cars = {
 				new Car(cb, "小鄧"),
