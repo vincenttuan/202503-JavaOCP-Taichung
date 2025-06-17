@@ -28,7 +28,7 @@ public class DeliverySystem {
 			Package pkg = packages.poll(); // 拿出包裹, 同時也把包裹從 packages 中移除
 			// 若 pkg 已經送達就不派遣送貨員
 			if(pkg.getDelivered()) {
-				return;
+				continue;
 			}
 			// 派遣一位快遞員送貨
 			service.submit(() -> {
