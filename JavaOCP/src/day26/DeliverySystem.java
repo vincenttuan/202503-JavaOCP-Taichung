@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -24,8 +25,7 @@ public class DeliverySystem {
 		ExecutorService service = Executors.newFixedThreadPool(3);
 		
 		// 開始送貨
-		while (!packages.isEmpty()) {
-			Package pkg = packages.poll(); // 拿出包裹, 同時也把包裹從 packages 中移除
+		for (Package pkg : packages) {
 			// 若 pkg 已經送達就不派遣送貨員
 			if(pkg.getDelivered()) {
 				continue;
@@ -33,19 +33,18 @@ public class DeliverySystem {
 			// 派遣一位快遞員送貨
 			service.submit(() -> {
 				String tName = Thread.currentThread().getName();
-				System.out.printf("%s 正在送 [%d] 包裹 %s%n", tName, pkg.getId(), pkg.getAddress());
+				System.out.printf("%s 正在送 [%s] 包裹 %s%n", tName, pkg.getId(), pkg.getAddress());
 				// 模擬派送時間
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(new Random().nextInt(2000));
 				} catch (Exception e) {
 				}
 				// 已送達
 				pkg.setDelivered(true);
-				System.out.printf("%s 已送達 [%d] 包裹 %s%n", tName, pkg.getId(), pkg.getAddress());
+				System.out.printf("%s 已送達 [%s] 包裹 %s%n", tName, pkg.getId(), pkg.getAddress());
 			});
 		}
 		
-		System.out.printf("包裹數量:%d%n", packages.size());
 		service.shutdown(); // 服務關閉
 	}
 	
