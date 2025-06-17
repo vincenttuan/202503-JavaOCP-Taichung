@@ -19,12 +19,12 @@ public class RedPacketGame {
 			players.submit(() -> {
 				String tName = Thread.currentThread().getName();
 				try {
-					Thread.sleep(new Random().nextInt(500));
+					Thread.sleep(new Random().nextInt(500)); // 0~499
 				} catch (Exception e) {
 					System.out.printf("%s 被中斷%n", tName);
 					return;
 				}
-				System.out.printf("%s 搶到紅包$%d%n", tName, redPacket);
+				System.out.printf("%s 搶到紅包 $%,d%n", tName, redPacket);
 			});
 		}
 		
