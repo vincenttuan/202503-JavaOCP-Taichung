@@ -7,8 +7,9 @@ public class Car extends Thread {
 	
 	private CyclicBarrier cb;
 	
-	public Car(CyclicBarrier cb) {
+	public Car(CyclicBarrier cb, String tName) {
 		this.cb = cb;
+		setName(tName);
 	}
 	
 	@Override
