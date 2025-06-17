@@ -21,6 +21,8 @@ public class RedPacketGame {
 				try {
 					Thread.sleep(new Random().nextInt(500));
 				} catch (Exception e) {
+					System.out.printf("%s 被中斷%n", tName);
+					return;
 				}
 				System.out.printf("%s 搶到紅包$%d%n", tName, redPacket);
 			});
