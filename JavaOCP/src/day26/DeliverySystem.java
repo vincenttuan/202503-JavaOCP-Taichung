@@ -22,6 +22,8 @@ public class DeliverySystem {
 		
 		// 建立 3 個快遞員
 		ExecutorService service = Executors.newFixedThreadPool(3);
+		
+		// 開始送貨
 		while (!packages.isEmpty()) {
 			Package pkg = packages.poll(); // 拿出包裹, 同時也把包裹從 packages 中移除
 			// 若 pkg 已經送達就不派遣送貨員
