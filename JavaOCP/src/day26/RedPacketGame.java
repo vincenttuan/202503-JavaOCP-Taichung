@@ -30,9 +30,10 @@ public class RedPacketGame {
 		
 		// 限時 2000ms(2秒)
 		Thread.sleep(2000);
-		System.out.println("時間到, 遊戲結束");
 		// 強制將 players 結束
 		players.shutdownNow();
+		System.out.println("時間到, 遊戲結束");
+		
 
 	}
 
