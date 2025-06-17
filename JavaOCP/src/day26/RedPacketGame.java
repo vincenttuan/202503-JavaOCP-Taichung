@@ -1,6 +1,8 @@
 package day26;
 
+import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -8,7 +10,8 @@ import java.util.concurrent.Executors;
 public class RedPacketGame {
 
 	public static void main(String[] args) throws InterruptedException {
-		
+		// 計算每一個執行緒得到的紅包總金額
+		Map<String, Integer> earnings = new ConcurrentHashMap<>();
 		// 三個人來搶紅包
 		ExecutorService players = Executors.newFixedThreadPool(3);
 		int redPacket = 2000;
@@ -25,6 +28,9 @@ public class RedPacketGame {
 					return;
 				}
 				System.out.printf("%s 搶到紅包 $%,d%n", tName, redPacket);
+				// 累加該執行緒的紅包金額
+				//earnings.merge(tName, redPacket, (t, u) -> t + u);
+				earnings.merge(tName, redPacket, Integer::sum);
 			});
 		}
 		
@@ -33,6 +39,7 @@ public class RedPacketGame {
 		// 強制將 players 結束
 		players.shutdownNow();
 		System.out.println("時間到, 遊戲結束");
+		System.out.println(earnings);
 		
 
 	}
