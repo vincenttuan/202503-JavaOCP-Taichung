@@ -11,22 +11,23 @@
 				<legend>測驗題目</legend>
 				<div>
 					問題 1: 您喜歡安靜還是熱鬧 ?
-					<input type="radio" id="q1" name="q1" />安靜
-					<input type="radio" id="q1" name="q1" />熱鬧
+					<input type="radio" id="q1" name="q1" value="1" />安靜
+					<input type="radio" id="q1" name="q1" value="2" />熱鬧
 				</div>
 				<div>
 					問題 2: 您喜歡冒險還是穩定 ?
-					<input type="radio" id="q2" name="q2" />冒險
-					<input type="radio" id="q2" name="q2" />穩定
+					<input type="radio" id="q2" name="q2" value="1" />冒險
+					<input type="radio" id="q2" name="q2" value="2" />穩定
 				</div>
 				<div>
 					問題 3: 您喜歡獨處還是群體 ?
-					<input type="radio" id="q3" name="q3" />獨處
-					<input type="radio" id="q3" name="q3" />群體
+					<input type="radio" id="q3" name="q3" value="1" />獨處
+					<input type="radio" id="q3" name="q3" value="2" />群體
 				</div>
-				<button type="submit">看結果</button>
+				<button type="button" onclick="checkResult()">看結果</button>
 			</fieldset>
-			
 		</form>
+		<div id="result"></div>
+		
 	</body>
 </html>
