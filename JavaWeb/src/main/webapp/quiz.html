@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>趣味性向測驗</title>
+		<script>
+			function checkResult() {
+				const q1 = document.querySelector('input[name="q1"]:checked');
+				alert(q1.value);
+			}
+		</script>
 	</head>
 	<body>
 		<h1>趣味性向測驗, 您像哪一種動物?</h1>
