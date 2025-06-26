@@ -3,6 +3,12 @@ function checkResult() {
 	const q1 = document.querySelector('input[name="q1"]:checked');
 	const q2 = document.querySelector('input[name="q2"]:checked');
 	const q3 = document.querySelector('input[name="q3"]:checked');
+	
+	if(q1 == null || q2 == null || q3 == null) {
+		alert('請先回答完問題!');
+		return;
+	}
+	
 	//alert(q1.value + ", " + q2.value + ", " + q3.value);
 	const a1 = q1.value;
 	const a2 = q2.value;
