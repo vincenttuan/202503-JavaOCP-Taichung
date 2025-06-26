@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BMI 計算</title>
+		<script type="text/javascript" src="/JavaWeb/js/color.js"></script>
+	</head>
+	<body style="padding: 20px">
+		<!-- BMI 輸入表單 -->
+		<form class="pure-form">
+			<fieldset>
+				<legend>BMI 計算</legend>
+				身高: <input type="number" min="50" max="300" placeholder="請輸入身高" id="height" name="height" required /><br />
+				體重: <input type="number" min="1" max="300" placeholder="請輸入體重" id="weight" name="weight" required /><br />
+				<button type="button" class="pure-button pure-button-primary">計算</button>
+			</fieldset>
+		</form>
+		<!-- 放置結果 -->
+		<div id="result"></div>
+	</body>
+</html>
