@@ -26,7 +26,7 @@
 				console.log(result, color);
 				
 				// 顯示資料
-				document.getElementById('result').innerHTML = `BMI:${bmi} 診斷:${result}`;
+				document.getElementById('result').innerHTML = `BMI:${bmi.toFixed(2)} 診斷:<span style="color:${color}">${result}</span>`;
 				
 			}
 		</script>
