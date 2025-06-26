@@ -4,6 +4,16 @@
 		<meta charset="UTF-8">
 		<title>BMI 計算</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<script>
+			function checkResult() {
+				console.log('檢查資料');
+				const height = document.querySelector('input[name="height"]');
+				const weight = document.querySelector('input[name="weight"]');
+				const h = height.value;
+				const w = weight.value;
+				console.log("身高", h, "體重", w);
+			}
+		</script>
 	</head>
 	<body style="padding: 20px">
 		<!-- BMI 輸入表單 -->
@@ -12,7 +22,7 @@
 				<legend>BMI 計算</legend>
 				身高: <input type="number" min="50" max="300" placeholder="請輸入身高" id="height" name="height" required /><p />
 				體重: <input type="number" min="1" max="300" placeholder="請輸入體重" id="weight" name="weight" required /><p />
-				<button type="button" class="pure-button pure-button-primary">計算</button>
+				<button type="button" onclick="checkResult()" class="pure-button pure-button-primary">計算</button>
 			</fieldset>
 		</form>
 		<!-- 放置結果 -->
