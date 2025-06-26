@@ -3,44 +3,44 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>性格色彩測驗</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 	</head>
 	<body style="padding: 20px">
 		<h1>性格色彩測驗</h1>
 		<form class="pure-form">
 			<fieldset>
 				<legend>測驗項目</legend>
-				第 1 題: 遇到困難時，你會怎麼做？<br />
+				第 <span style="font-size: 50px">1</span> 題: 遇到困難時，你會怎麼做？<br />
 				<input type="radio" id="q1" name="q1" value="A"> A.直接行動，想辦法解決<br /> 
 				<input type="radio" id="q1" name="q1" value="B"> B.分析後再行動，考慮周全<br /> 
 				<input type="radio" id="q1" name="q1" value="C"> C.尋求他人意見，一起討論<br /> 
 				<input type="radio" id="q1" name="q1" value="D"> D.保持樂觀，順其自然<p /> 
 				
-				第 2 題: 你喜歡哪種聚會？<br />
+				第 <span style="font-size: 50px">2</span> 題: 你喜歡哪種聚會？<br />
 				<input type="radio" id="q2" name="q2" value="A"> A.熱鬧的派對<br />
 				<input type="radio" id="q2" name="q2" value="B"> B.小型討論會<br />
 				<input type="radio" id="q2" name="q2" value="C"> C.安靜的聚餐<br />
 				<input type="radio" id="q2" name="q2" value="D"> D.創意有趣的活動<p />
 				
-				第 3 題: 你最重視什麼？<br />
+				第 <span style="font-size: 50px">3</span> 題: 你最重視什麼？<br />
 				<input type="radio" id="q3" name="q3" value="A"> A.成功與成就<br />
 				<input type="radio" id="q3" name="q3" value="B"> B.邏輯與思考<br />
 				<input type="radio" id="q3" name="q3" value="C"> C.和諧與友誼<br />
 				<input type="radio" id="q3" name="q3" value="D"> D.快樂與創意<p />
 				
-				第 4 題: 你的朋友認為你是什麼樣的人？<br />
+				第 <span style="font-size: 50px">4</span> 題: 你的朋友認為你是什麼樣的人？<br />
 				<input type="radio" id="q4" name="q4" value="A"> A.熱情、行動派<br />
 				<input type="radio" id="q4" name="q4" value="B"> B.理性、冷靜<br />
 				<input type="radio" id="q4" name="q4" value="C"> C.友善、溫暖<br />
 				<input type="radio" id="q4" name="q4" value="D"> D.有趣、樂觀<p />		
 				
-				第 5 題: 你喜歡哪種學習方式？<br />
+				第 <span style="font-size: 50px">5</span> 題: 你喜歡哪種學習方式？<br />
 				<input type="radio" id="q5" name="q5" value="A"> A.動手實作<br />
 				<input type="radio" id="q5" name="q5" value="B"> B.思考分析<br />
 				<input type="radio" id="q5" name="q5" value="C"> C.團隊討論<br />
 				<input type="radio" id="q5" name="q5" value="D"> D.自由發揮<p />
 				
-				<button type="button" class="pure-button pure-button-primary">計算</button>
+				<button type="button" onclick="checkResult()" class="pure-button pure-button-primary">看結果</button>
 				
 			</fieldset>
 		</form>
