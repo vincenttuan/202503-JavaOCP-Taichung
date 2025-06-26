@@ -7,8 +7,11 @@
 		<script>
 			function checkResult() {
 				console.log('檢查資料');
-				const height = document.querySelector('input[name="height"]');
-				const weight = document.querySelector('input[name="weight"]');
+				//const height = document.querySelector('input[name="height"]');
+				//const weight = document.querySelector('input[name="weight"]');
+				const height = document.getElementById('height');
+				const weight = document.getElementById('weight');
+				
 				const h = height.value;
 				const w = weight.value;
 				console.log("身高", h, "體重", w);
