@@ -20,7 +20,31 @@ function checkResult() {
 		scores[colorMap[q.value]] += 1;
 	});
 	
-	alert(scores);
-		
+	//alert(scores['紅色']);
 	
+	// 找出最高分的顏色
+	let maxScore = -1;
+	let maxColor = null;
+	
+	for(const color in scores) {
+		if(scores[color] > maxScore) {
+			maxScore = scores[color];
+			maxColor = color;	
+		}
+	}
+	//alert('最高分的顏色:' + maxColor);
+	
+	// 性格說明:
+	const descriptions = {
+		'紅色':'熱情、行動派、有衝勁、喜歡挑戰、積極主動',
+		'藍色':'理性、冷靜、思考型、邏輯強、重視計畫與分析',
+		'綠色':'友善、和平、重視和諧、關心他人、喜歡團隊合作',
+		'黃色':'樂觀、創意、喜歡自由、幽默風趣、善於表達'	
+	}
+	
+	// 印出結果
+	const result = '你是一個' + descriptions[maxColor] + "的人";
+	document.getElementById('result').innerHTML = result;	
 }
+
+
