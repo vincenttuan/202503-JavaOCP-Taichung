@@ -25,10 +25,14 @@ public class EnglishClassLevelServlet extends HttpServlet {
 		resp.setContentType("text/html;charset=UTF-8"); // 將文件型態回應給瀏覽器
 		// 回應內容
 		resp.getWriter().print("Hello Servlet<p/>");
-		resp.getWriter().print("context path:" + getServletContext().getContextPath() + "<p/>");
-		resp.getWriter().print("servlet path:" + req.getServletPath() + "<p/>");
-		resp.getWriter().print("path info:" + req.getPathInfo() + "<p/>");
-		
+		resp.getWriter().print("context path:" + getServletContext().getContextPath() + "<br />");
+		resp.getWriter().print("servlet path:" + req.getServletPath() + "<br />");
+		resp.getWriter().print("path info:" + req.getPathInfo() + "<br />");
+		resp.getWriter().print("<hr />");
+		resp.getWriter().print("name:" + name + "<br />");
+		resp.getWriter().print("country:" + country + "<br />");
+		resp.getWriter().print("age:" + age + "<br />");
+		resp.getWriter().print("level:" + level + "<br />");
 	}
 	
 }
