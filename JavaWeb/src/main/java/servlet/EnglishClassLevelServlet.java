@@ -48,6 +48,19 @@ public class EnglishClassLevelServlet extends HttpServlet {
 		resp.getWriter().print("country:" + country + "<br />");
 		resp.getWriter().print("age:" + age + "<br />");
 		resp.getWriter().print("level:" + level + "<br />");
+		resp.getWriter().print("<hr />");
+		resp.getWriter().print("資料紀錄:" + "<br />");
+		resp.getWriter().print("<ol>");
+		for(Student st : students) {
+			resp.getWriter().print("<li>");
+			resp.getWriter().print("姓名:" + st.getName());
+			resp.getWriter().print("國別:" + st.getCountry());
+			resp.getWriter().print("年齡:" + st.getAge());
+			resp.getWriter().print("程度:" + st.getLevel());
+			resp.getWriter().print("</li>");
+		}
+		resp.getWriter().print("</ol>");
+		
 	}
 	
 }
