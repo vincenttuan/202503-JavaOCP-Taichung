@@ -36,7 +36,8 @@ public class EnglishClassLevelServlet extends HttpServlet {
 		// 在集合中注入資料
 		students.add(student);
 		// ----------------------------------------------------------------
-		
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=UTF-8"); // 將文件型態回應給瀏覽器
 		// 回應內容
 		resp.getWriter().print("Hello Servlet<p/>");
