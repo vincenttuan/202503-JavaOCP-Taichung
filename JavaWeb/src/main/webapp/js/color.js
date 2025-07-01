@@ -26,6 +26,8 @@ function checkResult() {
 	let maxScore = -1;
 	let maxColor = null;
 	
+	console.log(scores);
+	
 	for(const color in scores) {
 		if(scores[color] > maxScore) {
 			maxScore = scores[color];

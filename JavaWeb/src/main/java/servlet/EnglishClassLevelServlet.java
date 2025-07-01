@@ -61,6 +61,8 @@ public class EnglishClassLevelServlet extends HttpServlet {
 			resp.getWriter().print("</li>");
 		}
 		resp.getWriter().print("</ol>");
+		// 回上頁
+		resp.getWriter().print("<a href='/JavaWeb/english_class_levels.html'>回上頁</a>");
 		
 	}
 	
