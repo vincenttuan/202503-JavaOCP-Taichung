@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>遊學英文能力分班大冒險</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+	</head>
+	<body style="padding: 20px">
+		
+		<form class="pure-table">
+			<fieldset>
+				<legend>英文能力分班表單</legend>
+				姓名:<input type="text" name="name" placeholder="請輸入名字" required /><p />
+				國別:<select name="country">
+						<option value="">請選擇國別</option>
+						<option value="TW">台灣(TW)</option>
+						<option value="JP">日本(JP)</option>
+						<option value="CN">大陸(CN)</option>
+						<option value="KR">韓國(KR)</option>
+						<option value="VN">越南(VN)</option>
+						<option value="ID">印尼(ID)</option>
+					</select><p />
+				年齡:<input type="number" name="age" value="18" min="12" max="99" required /><p />	
+				說明:
+				<ol>
+					<li>初級班(Beginner/A1): 能夠簡單用英文自我介紹</li>
+					<li>中級班(Intermediate/B1): 能夠溝通日常主題, 並可以用英文描述想法與計畫</li>
+					<li>高級班(Advanced/B2): 能夠深入探討專業與抽象議題, 應可以撰寫結構完整的文章</li>
+					<li>菁英班(Elite/C1): 能夠靈活應用英文進行學術交流, 可以流暢表達複雜觀點</li>
+				</ol><p />
+				程度:<input type="radio" name="level" value="A1" />初級班(Beginner/A1)
+				    <input type="radio" name="level" value="B1" />中級班(Intermediate/B1)
+				    <input type="radio" name="level" value="B2" />高級班(Advanced/B2)
+				    <input type="radio" name="level" value="C1" />菁英班(Elite/C1)<p />
+					
+			</fieldset>
+			
+		</form>
+		
+	</body>
+</html>
