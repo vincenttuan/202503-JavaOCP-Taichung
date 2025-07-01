@@ -1,16 +1,22 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Student;
 
 // 設定 servlet path
 @WebServlet(urlPatterns = {"/english/class/level", "/eng", "/eng.php", "/eng/*"})
 public class EnglishClassLevelServlet extends HttpServlet {
+	
+	// InMemory 集合
+	private static List<Student> students = new CopyOnWriteArrayList<>();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
