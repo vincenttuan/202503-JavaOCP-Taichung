@@ -26,6 +26,15 @@ public class EnglishClassLevelServlet extends HttpServlet {
 		String age = req.getParameter("age");
 		String level = req.getParameter("level");
 		
+		// 建立 Student 物件 
+		Student student = new Student();
+		student.setName(name);
+		student.setCountry(country);
+		student.setAge(Integer.valueOf(age));
+		student.setLevel(level);
+		
+		// 在集合中注入資料
+		students.add(student);
 		// ----------------------------------------------------------------
 		
 		resp.setContentType("text/html;charset=UTF-8"); // 將文件型態回應給瀏覽器
