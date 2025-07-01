@@ -19,6 +19,12 @@ public class EnglishClassLevelServlet extends HttpServlet {
 	private static List<Student> students = new CopyOnWriteArrayList<>();
 	
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 自動重新導向到 "/JavaWeb/english_class_levels.html"
+		resp.sendRedirect("/JavaWeb/english_class_levels.html");
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 接收資料
 		String name = req.getParameter("name");
