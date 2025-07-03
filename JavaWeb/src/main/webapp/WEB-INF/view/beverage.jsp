@@ -60,7 +60,7 @@
 								<% } %>
 							</tbody>
 							<tfoot>
-								<tr>
+								<tr style="background-color: #aaaaaa">
 									<td colspan="2" align="right">小計</td>
 									<td align="right"><%=beverages.size()*10 %></td>
 								</tr>
