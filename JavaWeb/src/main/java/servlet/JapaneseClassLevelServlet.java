@@ -48,7 +48,7 @@ public class JapaneseClassLevelServlet extends HttpServlet {
 		req.setAttribute("students", students); // 所有的學生資料
 		
 		// 建立分派器, 要將任務份派給指定 jsp 去執行
-		RequestDispatcher rd = req.getRequestDispatcher("/japanese_class_result.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/japanese_class_result.jsp");
 		rd.forward(req, resp); // 任務派出由 jsp 繼續接手, 此時的 servlet 任務結束
 	}
 	
