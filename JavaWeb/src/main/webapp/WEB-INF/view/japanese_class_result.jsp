@@ -31,12 +31,14 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
+							<th>Index</th><th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
 						</tr>
 					</thead>
 					<tbody>
-						<% for(Student st : students) { %>
+						<% for(int i=0;i<students.size();i++) { 
+							Student st = students.get(i);       %>
 							<tr>
+								<td><%=i %></td>
 								<td><%=st.getName() %></td>
 								<td><%=st.getCountry() %></td>
 								<td><%=st.getAge() %></td>
