@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>飲料訂購</title>
+		<title>10 商店-飲料訂購</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 	</head>
 	<body style="padding: 20px">
@@ -20,7 +20,7 @@
 				<!-- 飲料訂購表單 -->
 				<form method="post" action="/JavaWeb/beverage" class="pure-form">
 					<fieldset>
-						<legend>飲料訂購表單</legend>
+						<legend>10 元飲料訂購表單</legend>
 						飲品:
 						<ol>
 							<li><input type="radio" id="name" name="name" value="紅茶" /> 紅茶</li>
@@ -42,7 +42,7 @@
 				<!-- 飲料訂購紀錄 -->
 				<div class="pure-form">
 					<fieldset>
-						<legend>飲料訂購紀錄</legend>
+						<legend>10 元飲料訂購紀錄</legend>
 						<table class="pure-table pure-table-bordered">
 							<thead>
 								<tr>
@@ -59,6 +59,12 @@
 									</tr>
 								<% } %>
 							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2" align="right">小計</td>
+									<td align="right"><%=beverages.size()*10 %></td>
+								</tr>
+							</tfoot>
 						</table>
 					</fieldset>
 				</div>
