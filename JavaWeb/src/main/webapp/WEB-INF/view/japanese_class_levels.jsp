@@ -56,7 +56,16 @@
 								</tr>
 							</thead>
 							<tbody>
-								
+								<% for(int i=0;i<students.size();i++) { 
+									Student st = students.get(i);       %>
+									<tr>
+										<td><%=i %></td>
+										<td><%=st.getName() %></td>
+										<td><%=st.getCountry() %></td>
+										<td><%=st.getAge() %></td>
+										<td><%=st.getLevel() %></td>
+									</tr>
+								<% } %>
 							</tbody>
 						</table>
 					</fieldset>
