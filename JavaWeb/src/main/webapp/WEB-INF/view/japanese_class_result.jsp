@@ -31,7 +31,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>Index</th><th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
+							<th>Id</th><th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
 						</tr>
 					</thead>
 					<tbody>
