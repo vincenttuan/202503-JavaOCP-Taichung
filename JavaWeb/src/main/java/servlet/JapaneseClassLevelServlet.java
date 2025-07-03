@@ -30,7 +30,14 @@ public class JapaneseClassLevelServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 自動重新導向到 "/JavaWeb/japanese_class_levels.html"
-		resp.sendRedirect("/JavaWeb/japanese_class_levels.html");
+		//resp.sendRedirect("/JavaWeb/japanese_class_levels.html");
+		
+		// 設定要傳遞給 jsp 的資訊
+		req.setAttribute("students", students); // 所有的學生資料
+		
+		// 建立分派器, 要將任務份派給指定 jsp 去執行
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/japanese_class_levels.jsp");
+		rd.forward(req, resp);
 	}
 	
 	@Override
