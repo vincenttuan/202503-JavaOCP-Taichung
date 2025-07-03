@@ -5,7 +5,7 @@
 <%
 	// 接收 servlet 傳來的資料
 	Student student = (Student)request.getAttribute("student");
-	List<Student> students = (List)request.getAttribute("students");
+	List<Student> students = (List<Student>)request.getAttribute("students");
 %>    
     
 <!DOCTYPE html>
