@@ -45,7 +45,7 @@ public class BeverageServlet extends HttpServlet {
 		
 		// 訂購完成
 		//resp.getWriter().print("訂購完成");
-		// 回到飲料訂購單首頁
+		// 回到飲料訂購單首頁(通知瀏覽器去執行 GET http://localhost:8080/JavaWeb/beverage)
 		resp.sendRedirect("/JavaWeb/beverage");
 	}
 	
