@@ -19,8 +19,12 @@ public class JapaneseClassLevelServlet extends HttpServlet {
 	// InMemory 集合
 	private static List<Student> students = new CopyOnWriteArrayList<>();
 	
-	static {
-		students.add(new Student());
+	static { // 加入預設資料
+		students.add(new Student("John", "TW", 18, "N3"));
+		students.add(new Student("Mary", "US", 19, "N2"));
+		students.add(new Student("Jack", "CN", 20, "N4"));
+		students.add(new Student("Rose", "KR", 21, "N5"));
+		students.add(new Student("Helen", "TW", 19, "N1"));
 	}
 	
 	@Override
