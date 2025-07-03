@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 	</head>
 	<body style="padding: 20px">
-		<div id="pure-form">
+		<div class="pure-form">
 			<fieldset>
 				<legend>新增學生</legend>
 				姓名: <%=student.getName() %><p />
@@ -25,10 +25,10 @@
 				程度: <%=student.getLevel() %><p />
 			</fieldset>
 		</div>
-		<div id="pure-form">
+		<div class="pure-form">
 			<fieldset>
 				<legend>所有學生資料</legend>
-				<table id="pure-table pure-table-bordered">
+				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
 							<th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
