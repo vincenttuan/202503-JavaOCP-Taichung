@@ -53,9 +53,9 @@
 								<% for(int i=0;i<beverages.size();i++) { 
 									Beverage be = beverages.get(i);       %>
 									<tr>
-										<td><%=i %></td>
-										<td><%=be.getName() %></td>
-										<td><%=be.getSize() %></td>
+										<td align="middle"><%=i %></td>
+										<td align="middle"><%=be.getName() %></td>
+										<td align="middle"><%=be.getSize() %></td>
 									</tr>
 								<% } %>
 							</tbody>
