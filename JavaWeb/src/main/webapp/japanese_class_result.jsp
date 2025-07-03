@@ -25,5 +25,27 @@
 				程度: <%=student.getLevel() %><p />
 			</fieldset>
 		</div>
+		<div id="pure-form">
+			<fieldset>
+				<legend>所有學生資料</legend>
+				<table id="pure-table pure-table-bordered">
+					<thead>
+						<tr>
+							<th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(Student st : students) { %>
+							<tr>
+								<td><%=st.getName() %></td>
+								<td><%=st.getCountry() %></td>
+								<td><%=st.getAge() %></td>
+								<td><%=st.getLevel() %></td>
+							</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</fieldset>
+		</div>
 	</body>
 </html>
