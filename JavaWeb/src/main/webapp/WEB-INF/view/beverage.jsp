@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>
 <%
 	// 接收 servlet 傳來的資料
-	List<Beverage> beverages = (List<Beverage>)request.getAttribute("bverages");
+	List<Beverage> beverages = (List<Beverage>)request.getAttribute("beverages");
 %>    
 <!DOCTYPE html>
 <html>
