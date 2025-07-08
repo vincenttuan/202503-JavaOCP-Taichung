@@ -10,7 +10,7 @@
 	</head>
 	<body style="padding: 20px">
 		
-		<!-- 飲料訂購表單 -->
+		<!-- 登入頁面表單 -->
 		<form method="post" action="/JavaWeb/login" class="pure-form">
 			<fieldset>
 				<legend>登入頁面</legend>
