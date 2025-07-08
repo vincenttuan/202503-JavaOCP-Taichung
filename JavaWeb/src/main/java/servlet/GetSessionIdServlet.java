@@ -22,6 +22,7 @@ public class GetSessionIdServlet extends HttpServlet {
 		} else {
 			resp.getWriter().print("Session 已存在");
 		}
+		resp.getWriter().print("<p />");
 		String sessionId = session.getId();
 		resp.getWriter().print("session id: " + sessionId);
 	}
