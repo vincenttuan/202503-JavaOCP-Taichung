@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		HttpSession session = req.getSession();
-		session.setAttribute("username", username);
+		session.setAttribute("username", username); // 登入成功之後才有的 username
 		
 		resp.getWriter().print("Hi " + username + " 您好!");
 		resp.getWriter().print("<p />");
