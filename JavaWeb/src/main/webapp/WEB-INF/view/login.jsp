@@ -14,9 +14,9 @@
 		<form method="post" action="/JavaWeb/login" class="pure-form">
 			<fieldset>
 				<legend>登入頁面</legend>
-				🤵 <input type="text" name="username" placeholder="請輸入帳號" /><p />
-				🔑 <input type="password" name="password" placeholder="請輸入密碼" /><p />
-				<button type="submit">傳送</button>
+				🤵 <input type="text" name="username" placeholder="請輸入帳號" required /><p />
+				🔑 <input type="password" name="password" placeholder="請輸入密碼" required /><p />
+				<button type="submit" class="pure-button pure-button-primary">傳送</button>
 			</fieldset>
 		</form>
 			
