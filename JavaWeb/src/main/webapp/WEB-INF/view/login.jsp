@@ -16,6 +16,9 @@
 				<legend>登入頁面</legend>
 				🤵 <input type="text" name="username" placeholder="請輸入帳號" required /><p />
 				🔑 <input type="password" name="password" placeholder="請輸入密碼" required /><p />
+				🐴 <input type="number" name="code" placeholder="請輸入驗證碼" required />
+				   <img src="/JavaWeb/code/image" alt="驗證碼" title="我是驗證碼" valign="middle" />
+				<p />
 				<button type="submit" class="pure-button pure-button-primary">傳送</button>
 			</fieldset>
 		</form>
