@@ -17,7 +17,7 @@ public class CancelSessionServlet extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		HttpSession session = req.getSession(false);
 		if(session == null) {
-			resp.getWriter().print("您沒有建立任何 session 或 session 已經過期");
+			resp.getWriter().print("您沒有建立任何 session 或 session 已經過期/取消");
 		} else {
 			session.invalidate();
 			resp.getWriter().print("session 已取消");
