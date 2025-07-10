@@ -2,10 +2,20 @@ package util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Base64;
 
 // 利用 SHA-256 來生成雜湊
 public class PasswordHash {
+	
+	// 產生隨機鹽
+	public static String generateSalt() {
+		SecureRandom sr = new SecureRandom();
+		byte[] salt = new byte[16];
+		sr.nextBytes(salt);
+		return Base64.getEncoder().encodeToString(salt); // 將 byte[] 透過 Base64 編碼後輸出
+	}
 	
 	// 密碼雜湊涵式
 	public static String getHashPassword(String password) {
@@ -32,7 +42,8 @@ public class PasswordHash {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(getHashPassword("1234"));
+		System.out.println("密碼: 1234 Hash: " + getHashPassword("1234"));
+		System.out.println("密碼: 5678 Hash: " + getHashPassword("5678"));
 	}
 	
 }
