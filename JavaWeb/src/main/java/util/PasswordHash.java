@@ -18,11 +18,13 @@ public class PasswordHash {
 	}
 	
 	// 密碼雜湊涵式
-	public static String getHashPassword(String password) {
+	public static String getHashPassword(String password, String salt) {
 		
 		try {
 			// 建立一個 SHA-256 的雜湊演算法實例
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			// 加鹽
+			md.update(salt.getBytes());
 			// 將密碼字串轉成位元組陣列並進行雜湊運算
 			byte[] hashBytes = md.digest(password.getBytes());
 			// 建立一個 StringBuffer 用來組合雜湊後的16進位字串
