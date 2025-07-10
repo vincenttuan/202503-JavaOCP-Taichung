@@ -54,6 +54,12 @@ public class PasswordHash {
 		hash = getHashPassword(password, salt); // 密碼(加鹽)雜湊
 		System.out.printf("密碼明文:%s 鹽:%s 雜湊:%s%n", password, salt, hash);
 		
+		password = "1234"; // 密碼明文
+		salt = generateSalt(); // 鹽
+		hash = getHashPassword(password, salt); // 密碼(加鹽)雜湊
+		System.out.printf("密碼明文:%s 鹽:%s 雜湊:%s%n", password, salt, hash);
+		
+		
 		
 	}
 	
