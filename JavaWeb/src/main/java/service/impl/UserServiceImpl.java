@@ -39,8 +39,21 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void changePasswordById(Integer id, String oldPassword, String newPassword) {
-		// TODO Auto-generated method stub
-		
+		// 判斷 oldPassword 是否有效 ?
+		User user = getUserById(id);
+		if(user == null) {
+			throw new RuntimeException("查無使用者");
+		}
+		String oldSalt = user.getSalt(); // 原始的鹽(目前存放在資料表中的鹽)
+		String oldHash = user.getHash(); // 原始哈希(目前存放在資料表中的哈希)
+		// oldPassword + oldSalt != oldHash 表示 oldPassword 輸入錯誤
+		if(!PasswordHash.getHashPassword(oldPassword, oldSalt).equals(oldHash)) {
+			throw new RuntimeException("舊密碼輸入錯誤");
+		}
+		// 進行新密碼更改
+		String newSalt = PasswordHash.generateSalt(); // 取得新鹽
+		String newHash = PasswordHash.getHashPassword(newPassword, newSalt); // 取得新哈希
+		userDao.changePasswordById(id, newHash, newSalt);
 	}
 
 	@Override
