@@ -146,7 +146,20 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
 	@Override
 	public void deleteUserById(Integer id) {
-		// TODO Auto-generated method stub
+		String sql = "delete from user where id = ?";
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			
+			pstmt.setInt(1, id);
+			
+			int rowcount = pstmt.executeUpdate();
+			
+			if(rowcount == 0) {
+				throw new SQLException("刪除失敗~");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
