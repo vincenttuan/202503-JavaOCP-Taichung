@@ -125,7 +125,22 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
 	@Override
 	public void changePasswordById(Integer id, String newHash, String newSalt) {
-		String sql = "update user set ";
+		String sql = "update user set hash = ?, salt = ? where id = ?";
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			
+			pstmt.setString(1, newHash);
+			pstmt.setString(2, newSalt);
+			pstmt.setInt(3, id);
+			
+			int rowcount = pstmt.executeUpdate();
+			
+			if(rowcount == 0) {
+				throw new SQLException("變更密碼失敗~");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
