@@ -124,8 +124,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	}
 
 	@Override
-	public void changePasswordById(Integer id, String newPassword) {
-		// TODO Auto-generated method stub
+	public void changePasswordById(Integer id, String newHash, String newSalt) {
+		String sql = "update user set ";
 		
 	}
 
