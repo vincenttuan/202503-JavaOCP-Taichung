@@ -9,9 +9,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.User;
+import service.UserService;
+import service.impl.UserServiceImpl;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+	
+	private UserService userService = new UserServiceImpl();
 	
 	// 重新導向到 /WEB-INF/view/login.jsp 登入表單
 	@Override
@@ -31,14 +36,16 @@ public class LoginServlet extends HttpServlet {
 		String code = req.getParameter("code");
 		
 		// 驗證帳號(是否有此帳號)
-		if(!(username.equals("admin"))) {
-			resp.getWriter().print("無此帳號: " + username);
+		User user = userService.getUserByUsername(username);
+		if(user == null) {
+			resp.getWriter().print("查無此帳號");
 			return;
 		}
 		
 		// 驗證密碼
-		if(!password.equals("1234")) {
-			resp.getWriter().print("密碼錯誤!");
+		boolean check = userService.login(username, password);
+		if(!check) {
+			resp.getWriter().print("密碼錯誤");
 			return;
 		}
 		
