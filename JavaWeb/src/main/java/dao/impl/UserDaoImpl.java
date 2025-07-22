@@ -104,7 +104,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
 	@Override
 	public void addUser(String username, String hash, String salt) {
-		// TODO Auto-generated method stub
+		String sql = "insert into user(username, hash, salt) values(?, ?, ?)";
+		
 		
 	}
 
