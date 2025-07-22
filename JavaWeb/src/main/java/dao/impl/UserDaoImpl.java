@@ -105,7 +105,21 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	@Override
 	public void addUser(String username, String hash, String salt) {
 		String sql = "insert into user(username, hash, salt) values(?, ?, ?)";
-		
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			
+			pstmt.setString(1, username);
+			pstmt.setString(2, hash);
+			pstmt.setString(3, salt);
+			
+			int rowcount = pstmt.executeUpdate();
+			
+			if(rowcount == 0) {
+				throw new SQLException("新增失敗");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 
