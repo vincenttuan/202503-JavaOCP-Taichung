@@ -48,7 +48,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	public User getUserById(Integer uid) {
 		User user = null;
 		
-		String sql = "select id, username, hash, salt from users where id = ?";
+		String sql = "select id, username, hash, salt from user where id = ?";
 		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
 			// 設定 sql 參數
 			pstmt.setInt(1, uid);
