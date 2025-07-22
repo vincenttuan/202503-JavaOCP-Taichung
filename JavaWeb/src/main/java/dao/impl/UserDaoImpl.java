@@ -1,5 +1,6 @@
 package dao.impl;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -44,9 +45,32 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	}
 
 	@Override
-	public User getUserById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserById(Integer uid) {
+		User user = null;
+		
+		String sql = "select id, username, hash, salt from users where id = ?";
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			// 設定 sql 參數
+			pstmt.setInt(1, uid);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					// 抓取欄位資訊
+					int id = rs.getInt("id");
+					String username = rs.getString("username");
+					String hash = rs.getString("hash");
+					String salt = rs.getString("salt");
+					// 建立 user 物件
+					user = new User();
+					user.setId(id);
+					user.setUsername(username);
+					user.setHash(hash);
+					user.setSalt(salt);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
 	}
 
 	@Override
