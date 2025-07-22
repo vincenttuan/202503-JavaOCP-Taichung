@@ -11,4 +11,6 @@ public interface UserService {
 	void addUser(String username, String password);
 	void changePasswordById(Integer id, String oldPassword, String newPassword);
 	void deleteUserById(Integer id);
+	// 登入
+	void login(String username, String password);
 }
