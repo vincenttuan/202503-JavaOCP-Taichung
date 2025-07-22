@@ -12,5 +12,5 @@ public interface UserService {
 	void changePasswordById(Integer id, String oldPassword, String newPassword);
 	void deleteUserById(Integer id);
 	// 登入
-	void login(String username, String password);
+	boolean login(String username, String password);
 }

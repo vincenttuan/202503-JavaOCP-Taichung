@@ -60,5 +60,17 @@ public class UserServiceImpl implements UserService {
 	public void deleteUserById(Integer id) {
 		userDao.deleteUserById(id);
 	}
+
+	@Override
+	public boolean login(String username, String password) {
+		 User user = getUserByUsername(username);
+		 if(user == null) {
+			 throw new RuntimeException("查無此人");
+		 }
+		 String salt = user.getSalt(); // 該使用者目前存放在資料表中的鹽
+		 String hash = user.getHash(); // 該使用者目前存放在資料表中的哈希
+		 // 判斷
+		 return PasswordHash.getHashPassword(password, salt).equals(hash);
+	}
 	
 }
