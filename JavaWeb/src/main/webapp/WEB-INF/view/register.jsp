@@ -27,7 +27,11 @@
 		function check() {
 			const password = document.getElementById('password').value;
 			const confirmPassword = document.getElementById('confirmPassword').value;
-			return password === confirmPassword;
+			if(password !=== confirmPassword) {
+				alert('二次密碼必須相同!')
+				return false;
+			}
+			return true;
 		}
 	</script>
 	
