@@ -19,7 +19,7 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>使用者列表</legend>
-				<table class="pure-table pure-table-borderd">
+				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
 							<th>id</th><th>username</th><th>hash</th><th>salt</th>
