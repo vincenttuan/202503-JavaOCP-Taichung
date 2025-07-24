@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -26,8 +27,15 @@ public class RegisterServlet extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		
-		// 新增使用者
-		userService.addUser(username, password);
+		try {
+			// 新增使用者
+			userService.addUser(username, password);
+			// 建立新增成功訊息
+			req.setAttribute("message", "新增成功");
+		} catch (Exception e) {
+			// 建立新增失敗訊息
+			req.setAttribute("message", e.getMessage());
+		}
 		
 		// 回應結果頁
 		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
