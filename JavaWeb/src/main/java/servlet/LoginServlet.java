@@ -38,14 +38,18 @@ public class LoginServlet extends HttpServlet {
 		// 驗證帳號(是否有此帳號)
 		User user = userService.getUserByUsername(username);
 		if(user == null) {
-			resp.getWriter().print("查無此帳號");
+			//resp.getWriter().print("查無此帳號");
+			req.setAttribute("message", "查無此帳號");
+			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 			return;
 		}
 		
 		// 驗證密碼
 		boolean check = userService.login(username, password);
 		if(!check) {
-			resp.getWriter().print("密碼錯誤");
+			//resp.getWriter().print("密碼錯誤");
+			req.setAttribute("message", "密碼錯誤");
+			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 			return;
 		}
 		
@@ -54,7 +58,9 @@ public class LoginServlet extends HttpServlet {
 		// 驗證碼是否正確
 		String sessionCode = session.getAttribute("code").toString();
 		if(!code.equals(sessionCode)) {
-			resp.getWriter().print("驗證碼錯誤!");
+			//resp.getWriter().print("驗證碼錯誤!");
+			req.setAttribute("message", "驗證碼錯誤");
+			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 			return;
 		}		
 		
