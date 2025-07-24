@@ -1,6 +1,11 @@
+<%@page import="model.User"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  
+
+<%
+	List<User> users = (List<User>)request.getAttribute("users");
+%>  
 <!DOCTYPE html>
 <html>
 	<head>
