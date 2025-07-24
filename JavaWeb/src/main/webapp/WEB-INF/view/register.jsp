@@ -13,12 +13,12 @@
 		<!-- 註冊頁面表單 -->
 		<form method="post" action="/JavaWeb/register" class="pure-form">
 			<fieldset>
-				<legend>註冊頁面</legend>
+				<legend>📰 註冊頁面</legend>
 				🤵 <input type="text" id="username" name="username" placeholder="請輸入帳號" required /><p />
 				🔑 <input type="password" id="password" name="password" placeholder="請輸入密碼" required /><p />
 				🔑 <input type="password" id="confirmPassword" placeholder="請再輸入一次密碼" required /><p />
 				<p />
-				<button type="submit" class="pure-button pure-button-primary">註冊</button>
+				<button type="submit" class="pure-button pure-button-primary">📝 註冊</button>
 			</fieldset>
 		</form>
 			
