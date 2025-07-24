@@ -11,7 +11,7 @@
 	<body style="padding: 20px">
 		
 		<!-- 註冊頁面表單 -->
-		<form method="post" action="/JavaWeb/register" class="pure-form">
+		<form method="post" action="/JavaWeb/register" class="pure-form" onsubmit="return check()">
 			<fieldset>
 				<legend>📰 註冊頁面</legend>
 				🤵 <input type="text" id="username" name="username" placeholder="請輸入帳號" required /><p />
@@ -23,4 +23,12 @@
 		</form>
 			
 	</body>
+	<script>
+		function check() {
+			const password = document.getElementById('password').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+			return password === confirmPassword;
+		}
+	</script>
+	
 </html>
