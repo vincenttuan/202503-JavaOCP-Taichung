@@ -19,7 +19,23 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>使用者列表</legend>
-				
+				<table class="pure-table pure-table-borderd">
+					<thead>
+						<tr>
+							<th>id</th><th>username</th><th>hash</th><th>salt</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<% for(User user : users) { %>
+								<td><%=user.getId() %></td>
+								<td><%=user.getUsername() %></td>
+								<td><%=user.getHash() %></td>
+								<td><%=user.getSalt() %></td>
+							<% } %>
+						</tr>
+					</tbody>
+				</table>
 				
 			</fieldset>
 		</div>
