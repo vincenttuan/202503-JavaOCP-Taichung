@@ -60,9 +60,8 @@ public class LoginServlet extends HttpServlet {
 		
 		session.setAttribute("username", username); // 登入成功之後才有的 username
 		
-		resp.getWriter().print("Hi " + username + " 您好!");
-		resp.getWriter().print("<p />");
-		
+		// 重導到使用者頁面
+		req.getRequestDispatcher("/WEB-INF/view/user.jsp").forward(req, resp);
 		
 	}
 	
