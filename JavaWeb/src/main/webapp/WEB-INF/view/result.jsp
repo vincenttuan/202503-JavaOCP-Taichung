@@ -14,7 +14,8 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>結果頁面</legend>
-				結果: <%=request.getAttribute("message") %>
+				結果: <%=request.getAttribute("message") %><p />
+				<a href="/JavaWeb/login" class="pure-button pure-button-primary">返回登入頁</a>
 			</fieldset>
 		</div>
 			
