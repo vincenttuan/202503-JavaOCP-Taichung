@@ -36,6 +36,7 @@
 						<% } %>
 					</tbody>
 				</table>
+				<br />
 				<a href="/JavaWeb/register" class="pure-button pure-button-primary">註冊</a>
 				<a href="/JavaWeb/logout" class="pure-button pure-button-primary">登出</a>
 			</fieldset>
