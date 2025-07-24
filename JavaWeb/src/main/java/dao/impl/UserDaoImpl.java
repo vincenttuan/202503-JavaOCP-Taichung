@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import dao.BaseDao;
 import dao.UserDao;
 import model.User;
@@ -114,11 +116,12 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 			int rowcount = pstmt.executeUpdate();
 			
 			if(rowcount == 0) {
-				throw new SQLException("新增失敗");
+				throw new RuntimeException("新增失敗");
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
 		}
 		
 	}
