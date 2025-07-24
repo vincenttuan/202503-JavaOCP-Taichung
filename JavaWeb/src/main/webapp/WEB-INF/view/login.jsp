@@ -20,6 +20,7 @@
 				   <img src="/JavaWeb/code/image" alt="驗證碼" title="我是驗證碼" valign="middle" />
 				<p />
 				<button type="submit" class="pure-button pure-button-primary">傳送</button>
+				<a href="/JavaWeb/register" class="pure-button pure-button-primary">註冊頁</a>
 			</fieldset>
 		</form>
 			
