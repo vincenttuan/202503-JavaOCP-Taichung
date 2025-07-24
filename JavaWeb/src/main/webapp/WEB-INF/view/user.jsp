@@ -26,14 +26,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<% for(User user : users) { %>
+						<% for(User user : users) { %>
+							<tr>
 								<td><%=user.getId() %></td>
 								<td><%=user.getUsername() %></td>
 								<td><%=user.getHash() %></td>
 								<td><%=user.getSalt() %></td>
-							<% } %>
-						</tr>
+							</tr>
+						<% } %>
 					</tbody>
 				</table>
 				
