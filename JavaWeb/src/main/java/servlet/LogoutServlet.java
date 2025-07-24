@@ -21,7 +21,11 @@ public class LogoutServlet extends HttpServlet {
 		}
 		// 外部重導到 login
 		// 由瀏覽器自動調用 GET /JavaWeb/login 請求
-		resp.sendRedirect("/JavaWeb/login");
+		//resp.sendRedirect("/JavaWeb/login");
+		
+		// 內部重導到 result.jsp
+		req.setAttribute("message", "登出成功");
+		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
 }
