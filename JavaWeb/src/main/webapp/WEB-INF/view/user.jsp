@@ -40,7 +40,7 @@
 									<%
 										if(session.getAttribute("priority") != null && 
 											Integer.parseInt(session.getAttribute("priority").toString()) == 1) {
-											out.println("<a href='/JavaWeb/user/delete?id=" + user.getId() + "'>刪除</a>");
+											out.println("<a class='button-error pure-button' href='/JavaWeb/user/delete?id=" + user.getId() + "'>刪除</a>");
 										}
 									%>
 								</td>
