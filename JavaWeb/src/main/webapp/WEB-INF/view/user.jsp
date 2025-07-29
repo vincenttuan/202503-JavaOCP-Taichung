@@ -23,6 +23,7 @@
 					<thead>
 						<tr>
 							<th>id</th><th>username</th><th>hash</th><th>salt</th><th>priority</th>
+							<th>delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,6 +34,15 @@
 								<td><%=user.getHash() %></td>
 								<td><%=user.getSalt() %></td>
 								<td><%=user.getPriority() %></td>
+								<td>
+									<!-- 只有 priority == 1 的才可以刪除 -->
+									<%
+										if(session.getAttribute("priority") != null && 
+											Integer.parseInt(session.getAttribute("priority").toString()) == 1) {
+											out.println("<a href='/JavaWeb/user/delete?id=" + user.getId() + "'>刪除</a>");
+										}
+									%>
+								</td>
 							</tr>
 						<% } %>
 					</tbody>
