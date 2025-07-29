@@ -19,7 +19,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	public List<User> findAllUsers() {
 		List<User> users = new ArrayList<>();
 		
-		String sql = "select id, username, hash, salt from user order by id";
+		String sql = "select id, username, hash, salt, priority from user order by id";
 		try(Statement stmt = getConnection().createStatement();
 			ResultSet rs = stmt.executeQuery(sql)) {
 			
@@ -29,12 +29,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 				String username = rs.getString("username");
 				String hash = rs.getString("hash");
 				String salt = rs.getString("salt");
+				int priority = rs.getInt("priority");
 				// 建立 user 物件
 				User user = new User();
 				user.setId(id);
 				user.setUsername(username);
 				user.setHash(hash);
 				user.setSalt(salt);
+				user.setPriority(priority);
 				// 注入到 users 集合中
 				users.add(user);
 			}
