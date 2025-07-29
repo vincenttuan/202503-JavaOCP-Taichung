@@ -22,7 +22,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>id</th><th>username</th><th>hash</th><th>salt</th>
+							<th>id</th><th>username</th><th>hash</th><th>salt</th><th>priority</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -32,6 +32,7 @@
 								<td><%=user.getUsername() %></td>
 								<td><%=user.getHash() %></td>
 								<td><%=user.getSalt() %></td>
+								<td><%=user.getPriority() %></td>
 							</tr>
 						<% } %>
 					</tbody>
