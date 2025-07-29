@@ -20,7 +20,7 @@ public class LoginFilter extends HttpFilter {
 		
 		// 判斷是否有登入 ?
 		HttpSession session = req.getSession(false);
-		if(session.getAttribute("username") == null) {
+		if(session == null || session.getAttribute("username") == null) {
 			req.setAttribute("message", "請先登入");
 			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 			return;
