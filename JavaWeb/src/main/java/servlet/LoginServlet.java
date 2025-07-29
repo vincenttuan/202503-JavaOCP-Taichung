@@ -73,12 +73,8 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("priority", user.getPriority());
 		//session.setAttribute("user", user);
 		
-		// 取得使用這列表資料給 user.jsp 顯示使用
-		List<User> users = userService.findAllUsers();
-		req.setAttribute("users", users);
 		// 重導到使用者頁面
-		req.getRequestDispatcher("/WEB-INF/view/user.jsp").forward(req, resp);
-		
+		resp.sendRedirect("/JavaWeb/user");
 	}
 	
 }
