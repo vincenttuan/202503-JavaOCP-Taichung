@@ -14,6 +14,7 @@
 		<form method="post" action="/JavaWeb/user/change/password" class="pure-form">
 			<fieldset>
 				<legend>修改密碼頁面</legend>
+				Username: <%=session.getAttribute("username") %><p />
 				🔑 <input type="password" name="oldPassword" placeholder="請輸入舊密碼" required /><p />
 				🔑 <input type="password" name="newPassword" placeholder="請輸入新密碼" required /><p />
 				🔑 <input type="password" name="confirmPassword" placeholder="請再輸入一次新密碼" required /><p />
