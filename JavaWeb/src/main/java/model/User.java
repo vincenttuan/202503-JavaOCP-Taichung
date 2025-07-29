@@ -27,5 +27,5 @@ public class User {
 	private String username;
 	private String hash;
 	private String salt;
-	
+	private Integer priority;
 }
