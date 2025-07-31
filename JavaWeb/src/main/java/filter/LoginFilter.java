@@ -21,7 +21,9 @@ public class LoginFilter extends HttpFilter {
 		// 判斷是否有登入 ?
 		HttpSession session = req.getSession(false);
 		if(session == null || session.getAttribute("username") == null) {
-			req.setAttribute("message", "請先登入");
+			// 記住 requestURI
+			String requestURI = req.getRequestURI();
+			req.setAttribute("message", requestURI + " 網址需要登入. 請先登入");
 			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 			return;
 		}
