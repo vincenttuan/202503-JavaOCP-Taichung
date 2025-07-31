@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 	</head>
 	<body style="padding: 20px">
+		<!-- menu -->
+		<%@include file="/WEB-INF/view/menu.jspf" %>
+		
 		<div class="pure-form">
 			<fieldset>
 				<legend>新增學生</legend>
