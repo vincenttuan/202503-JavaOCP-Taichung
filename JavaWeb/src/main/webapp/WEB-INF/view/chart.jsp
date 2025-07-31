@@ -24,7 +24,8 @@
 	
 	        var options = {
 	          title: 'My Daily Activities',
-	          pieHole: 1.0
+	          //is3D: true,
+	          pieHole: 0.4
 	        };
 	
 	        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
