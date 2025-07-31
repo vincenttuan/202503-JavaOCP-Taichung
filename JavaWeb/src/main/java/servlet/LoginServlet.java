@@ -74,7 +74,13 @@ public class LoginServlet extends HttpServlet {
 		//session.setAttribute("user", user);
 		
 		// 重導到使用者頁面
-		resp.sendRedirect("/JavaWeb/user");
+		// 查看 requestURI 屬性是否有資料
+		if(session.getAttribute("requestURI") == null) {
+			resp.sendRedirect("/JavaWeb/user");
+		} else {
+			resp.sendRedirect(session.getAttribute("requestURI").toString());
+			session.setAttribute("requestURI", null); // 清空 requestURI 
+		}
 	}
 	
 }
