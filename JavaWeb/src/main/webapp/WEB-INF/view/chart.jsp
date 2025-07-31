@@ -36,7 +36,8 @@
 		<!-- menu -->
 		<%@include file="/WEB-INF/view/menu.jspf" %>
 		
-		
+		<!-- chart -->
+		<div id="piechart" style="width: 900px; height: 500px;"></div>
 		
 	</body>
 </html>
