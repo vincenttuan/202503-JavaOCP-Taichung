@@ -10,8 +10,8 @@
 		</span>
 		<a href="/JavaWeb/register" class="pure-button pure-button-primary">📝 用戶註冊</a>
 		<a href="/JavaWeb/user" class="pure-button pure-button-primary">📖 用戶列表</a>
-		<a href="/JavaWeb/japanese/class/level" class="pure-button pure-button-primary">📖 日文能力</a>
-		<a href="/JavaWeb/beverage" class="pure-button pure-button-primary">📖 飲料訂購</a>
+		<a href="/JavaWeb/japanese/class/level" class="pure-button pure-button-primary">✍ 日文能力</a>
+		<a href="/JavaWeb/beverage" class="pure-button pure-button-primary">🥤 飲料訂購</a>
 		<a href="/JavaWeb/logout" class="pure-button pure-button-primary">🚪 用戶登出</a>
 	<% } %>
 </div>
