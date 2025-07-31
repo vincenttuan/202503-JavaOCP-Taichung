@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div id="menu" class="pure-form">
-	<span style="font-size: 24px;font-weight:bold" valign="middle">
-		Hi <%=session.getAttribute("username") %> 您好 !
-	</span>
-	<a href="/JavaWeb/login" class="pure-button pure-button-primary">用戶登入</a>
-	<a href="/JavaWeb/logout" class="pure-button pure-button-primary">用戶登出</a>
-	<a href="/JavaWeb/register" class="pure-button pure-button-primary">用戶註冊</a>
-	<a href="/JavaWeb/user" class="pure-button pure-button-primary">用戶列表</a>
+	
+	<% if(session.getAttribute("username") == null) { %>
+		<a href="/JavaWeb/login" class="pure-button pure-button-primary">用戶登入</a>
+	<% } else { %>
+		<span style="font-size: 24px;font-weight:bold">
+			Hi <%=session.getAttribute("username") %> 您好 !
+		</span>
+		<a href="/JavaWeb/register" class="pure-button pure-button-primary">用戶註冊</a>
+		<a href="/JavaWeb/user" class="pure-button pure-button-primary">用戶列表</a>
+		<a href="/JavaWeb/logout" class="pure-button pure-button-primary">用戶登出</a>
+	<% } %>
 </div>
 <p />
