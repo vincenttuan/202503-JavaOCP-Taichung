@@ -11,6 +11,15 @@
 		<meta charset="UTF-8">
 		<title>無人機訂單頁面</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.2.4/js/dataTables.buttons.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.2.4/js/buttons.dataTables.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.2.4/js/buttons.html5.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.2.4/js/buttons.print.min.js"></script>
 	</head>
 	<body style="padding: 20px">
 		<!-- menu -->
@@ -29,7 +38,7 @@
 				</ol>
 				<p />
 				 -->
-				<table class="pure-table pure-table-bordered">
+				<table id="droneOrderTable" class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
 							<th>訂單編號</th><th>客戶姓名</th><th>無人機型號</th>
@@ -56,6 +65,17 @@
 				
 			</fieldset>
 		</div>
+		
+		<script type="text/javascript">
+			new DataTable('#droneOrderTable', {
+			    layout: {
+			        topStart: {
+			            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+			        }
+			    }
+			});	
+		
+		</script>
 			
 	</body>
 </html>
