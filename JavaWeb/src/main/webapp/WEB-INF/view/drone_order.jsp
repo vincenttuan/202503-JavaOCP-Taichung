@@ -17,11 +17,11 @@
 			<fieldset>
 				<legend>無人機訂單</legend>
 				<%=request.getAttribute("droneOrders") %>
-				<p />
+				<hr />
 				${ requestScope.droneOrders }
-				<p />
+				<hr />
 				${ droneOrders }
-				<p />
+				<hr />
 			</fieldset>
 		</div>
 			
