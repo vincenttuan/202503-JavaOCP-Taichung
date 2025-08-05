@@ -11,6 +11,9 @@
 		<meta charset="UTF-8">
 		<title>無人機訂單頁面</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.4/css/buttons.dataTables.css">
+		
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
 		<script type="text/javascript" src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
 		<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.2.4/js/dataTables.buttons.js"></script>
