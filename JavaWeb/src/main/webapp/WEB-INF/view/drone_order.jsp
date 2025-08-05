@@ -19,6 +19,7 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>無人機訂單</legend>
+				${fn:length(droneOrders)} 筆 <p />
 				
 			</fieldset>
 		</div>
