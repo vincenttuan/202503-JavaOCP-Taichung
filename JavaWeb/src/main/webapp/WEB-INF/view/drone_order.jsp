@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri="jakarta.tags.core" %>
@@ -20,7 +21,11 @@
 			<fieldset>
 				<legend>無人機訂單</legend>
 				${fn:length(droneOrders)} 筆 <p />
-				
+				<ol>
+					<c:forEach var="droneOrder" items="${ droneOrders }">
+						<li>${ droneOrder }</li>
+					</c:forEach>
+				</ol>
 			</fieldset>
 		</div>
 			
