@@ -49,8 +49,7 @@ public class DroneOrderDaoImpl extends BaseDao implements DroneOrderDao {
 
 	@Override
 	public List<DroneOrder> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return findAll("order_id", true);
 	}
 
 }
