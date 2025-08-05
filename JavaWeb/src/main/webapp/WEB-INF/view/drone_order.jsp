@@ -21,12 +21,14 @@
 			<fieldset>
 				<legend>無人機訂單</legend>
 				${fn:length(droneOrders)} 筆 <p />
+				<!-- 
 				<ol>
 					<c:forEach var="droneOrder" items="${ droneOrders }">
 						<li>${ droneOrder }</li>
 					</c:forEach>
 				</ol>
 				<p />
+				 -->
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
