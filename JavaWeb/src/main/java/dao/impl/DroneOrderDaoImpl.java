@@ -44,7 +44,6 @@ public class DroneOrderDaoImpl extends BaseDao implements DroneOrderDao {
 			throw new RuntimeException("查詢失敗: " + e);
 		}
 		
-		
 		return droneOrders;
 	}
 
