@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix ="fmt" uri="jakarta.tags.fmt" %>
-<%@ taglib prefix ="fn" uri="jakarta.tags.functions" %>
-  
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,12 +19,7 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>無人機訂單</legend>
-				<%=request.getAttribute("droneOrders") %>
-				<hr />
-				${ requestScope.droneOrders }
-				<hr />
-				${ droneOrders }
-				<hr />
+				
 			</fieldset>
 		</div>
 			
