@@ -71,7 +71,7 @@
 		
 		<script type="text/javascript">
 			new DataTable('#droneOrderTable', {
-				pageLength: 5, // 每頁顯示 5 筆
+				pageLength: 10, // 每頁顯示 10 筆
 			    layout: {
 			        topStart: {
 			            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
