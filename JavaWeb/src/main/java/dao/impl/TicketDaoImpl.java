@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -40,7 +41,28 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 
 	@Override
 	public Ticket getTicket(int id) {
-		// TODO Auto-generated method stub
+		String sql = "select id, departure, location, class, airline, price from ticket where id = ?";
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			pstmt.setInt(1, id);
+			
+			try(ResultSet rs = pstmt.executeQuery()) {
+				
+				if(rs.next()) {
+					Ticket ticket = new Ticket();
+					ticket.setId(rs.getInt("id"));
+					ticket.setDeparture(rs.getString("departure"));
+					ticket.setClazz(rs.getString("class"));
+					ticket.setAirline(rs.getString("airline"));
+					ticket.setPrice(rs.getInt("price"));
+					return ticket;
+				}
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
