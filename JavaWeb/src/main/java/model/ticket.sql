@@ -116,3 +116,37 @@ INSERT INTO ticket (departure, location, class, airline, price) VALUES
 ('台中', '雪梨', '頭等艙', '酷航', 46000),
 ('小港', '洛杉磯', '商務艙', '中華航空', 49000),
 ('桃園', '墨爾本', '經濟艙', '樂桃', 28000);
+
+-- 1.查詢每一個出發地點的平均票價
+select departure, avg(price) as avg_price
+from ticket
+group by departure;
+
+-- 2.每一種艙等得最低票價
+select class, min(price)
+from ticket
+group by class;
+
+-- 3.查詢某航空公司所有航班的平均票價
+select airline, avg(price) as avg_price
+from ticket
+where airline = '長榮航空'
+-- where location = '巴黎' and class = '頭等艙'
+group by airline;
+
+-- 4. 找出票價最高的五筆資料
+select * from ticket
+order by price desc
+limit 5;
+
+-- 5.飛往哪些地方
+select distinct(location)
+from ticket
+
+-- 6.有哪些航空公司
+select distinct(airline)
+from ticket
+
+
+
+
