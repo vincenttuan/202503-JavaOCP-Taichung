@@ -63,12 +63,25 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 			e.printStackTrace();
 		}
 		
-		return null;
+		throw new RuntimeException("查無資料 id=" + id);
 	}
 
 	@Override
 	public void addTicket(Ticket ticket) {
-		// TODO Auto-generated method stub
+		String sql = "INSERT INTO ticket (departure, location, class, airline, price) VALUES (?, ?, ?, ?, ?)";
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			pstmt.setString(1, ticket.getDeparture());
+			pstmt.setString(2, ticket.getLocation());
+			pstmt.setString(3, ticket.getClazz());
+			pstmt.setString(4, ticket.getAirline());
+			pstmt.setInt(5, ticket.getPrice());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("新增失敗:" + e);
+		}
 		
 	}
 
