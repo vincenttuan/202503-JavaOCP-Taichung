@@ -108,7 +108,21 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 
 	@Override
 	public void deleteTicket(int id) {
-		// TODO Auto-generated method stub
+		String sql = "delete from ticket where id = ?";
+		
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			
+			pstmt.setInt(1, id);
+			
+			int rowcount = pstmt.executeUpdate(sql);
+			if(rowcount == 0) {
+				throw new RuntimeException("刪除失敗 id=" + id);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("刪除失敗:" + e);
+		}
 		
 	}
 	
