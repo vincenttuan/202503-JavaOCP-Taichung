@@ -47,6 +47,8 @@ public class RestTicketServlet extends HttpServlet {
 			 
 				 Ticket ticket = service.getTicket(id);
 				 resp.getWriter().println(ticket);
+			 } catch (NumberFormatException e) {
+				 resp.getWriter().println("未輸入 id 值");
 			 } catch (Exception e) {
 				 resp.getWriter().println(e.getMessage());
 			 }
