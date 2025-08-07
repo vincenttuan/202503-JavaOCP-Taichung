@@ -44,8 +44,12 @@ public class RestTicketServlet extends HttpServlet {
 			 int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
 			 resp.getWriter().println("id=" + id);
 			 
-			 Ticket ticket = service.getTicket(id);
-			 resp.getWriter().println(ticket);
+			 try {
+				 Ticket ticket = service.getTicket(id);
+				 resp.getWriter().println(ticket);
+			 } catch (Exception e) {
+				 resp.getWriter().println(e.getMessage());
+			 }
 			 
 		 }
 		 
