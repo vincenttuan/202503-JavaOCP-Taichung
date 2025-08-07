@@ -86,8 +86,23 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 	}
 
 	@Override
-	public void updateTicket(int id, Ticket ticket) {
-		// TODO Auto-generated method stub
+	public void updateTicketPrice(int id, int price) {
+		String sql = "update ticket set price = ? where id = ?";
+		
+		try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+			
+			pstmt.setInt(1, price);
+			pstmt.setInt(2, id);
+			
+			int rowcount = pstmt.executeUpdate(sql);
+			if(rowcount == 0) {
+				throw new RuntimeException("修改失敗 id=" + id + " price=" + price);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("修改失敗:" + e);
+		}
 		
 	}
 
