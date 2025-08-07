@@ -20,7 +20,16 @@ public class TicketDaoImpl extends BaseDao implements TicketDao {
 		try(Statement stmt = getConnection().createStatement();
 			ResultSet rs = stmt.executeQuery(sql);) {
 			
-			
+			while (rs.next()) {
+				Ticket ticket = new Ticket();
+				ticket.setId(rs.getInt("id"));
+				ticket.setDeparture(rs.getString("departure"));
+				ticket.setClazz(rs.getString("class"));
+				ticket.setAirline(rs.getString("airline"));
+				ticket.setPrice(rs.getInt("price"));
+				// 注入到集合
+				tickets.add(ticket);
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
