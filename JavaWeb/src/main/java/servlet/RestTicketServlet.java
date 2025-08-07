@@ -26,6 +26,17 @@ public class RestTicketServlet extends HttpServlet {
 		 resp.getWriter().println("servlet-path:" + req.getServletPath());
 		 resp.getWriter().println("path-info:" + req.getPathInfo());
 		 
+		 String pathInfo = req.getPathInfo();
+		 if(pathInfo == null) { // 多筆查詢
+			 resp.getWriter().println("多筆查詢");
+			 
+		 } else { // 單筆查詢
+			 resp.getWriter().println("單筆查詢");
+			 int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
+			 resp.getWriter().println("id=" + id);
+			 
+		 }
+		 
 	}
 	
 }
