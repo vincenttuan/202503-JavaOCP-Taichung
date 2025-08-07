@@ -41,10 +41,10 @@ public class RestTicketServlet extends HttpServlet {
 			 
 		 } else { // 單筆查詢
 			 resp.getWriter().println("單筆查詢");
-			 int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
-			 resp.getWriter().println("id=" + id);
-			 
 			 try {
+				 int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
+				 resp.getWriter().println("id=" + id);
+			 
 				 Ticket ticket = service.getTicket(id);
 				 resp.getWriter().println(ticket);
 			 } catch (Exception e) {
