@@ -79,7 +79,7 @@ public class RestTicketServlet extends HttpServlet {
 			// 得到 json 串流資料: req.getReader()
 			// 將 json 串流資料轉 Ticket 物件
 			Ticket ticket = gson.fromJson(req.getReader(), Ticket.class);
-				// 儲存
+			// 儲存
 			service.addTicket(ticket);
 			// 回應成功
 			apiResponse = new ApiResponse<>(true, ticket, "新增成功");
