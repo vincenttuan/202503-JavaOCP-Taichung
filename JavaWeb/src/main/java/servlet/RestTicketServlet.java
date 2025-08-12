@@ -74,18 +74,18 @@ public class RestTicketServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 得到 json 串流資料: req.getReader()
-		// 將 json 串流資料轉 Ticket 物件
-		Ticket ticket = gson.fromJson(req.getReader(), Ticket.class);
 		ApiResponse<Ticket> apiResponse = null;
 		try {
-			// 儲存
+			// 得到 json 串流資料: req.getReader()
+			// 將 json 串流資料轉 Ticket 物件
+			Ticket ticket = gson.fromJson(req.getReader(), Ticket.class);
+				// 儲存
 			service.addTicket(ticket);
 			// 回應成功
 			apiResponse = new ApiResponse<>(true, ticket, "新增成功");
 		} catch (Exception e) {
 			// 回應失敗
-			apiResponse = new ApiResponse<>(false, ticket, "新增失敗:" + e.getMessage());
+			apiResponse = new ApiResponse<>(false, null, "新增失敗:" + e.getMessage());
 		}
 		resp.getWriter().print(gson.toJson(apiResponse));
 	}
