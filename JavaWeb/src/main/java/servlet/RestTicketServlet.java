@@ -47,16 +47,16 @@ public class RestTicketServlet extends HttpServlet {
 			 System.out.println("單筆查詢");
 			 try {
 				 int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
-				 resp.getWriter().println("id=" + id);
+				 System.out.println("id=" + id);
 			 
 				 Ticket ticket = service.getTicket(id);
 				 // 物件轉 json
 				 resp.getWriter().println(gson.toJson(ticket));
 				 
 			 } catch (NumberFormatException e) {
-				 resp.getWriter().println("未輸入 id 值");
+				 System.out.println("未輸入 id 值");
 			 } catch (Exception e) {
-				 resp.getWriter().println(e.getMessage());
+				 System.out.println(e.getMessage());
 			 }
 			 
 		 }
