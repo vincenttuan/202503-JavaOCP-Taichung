@@ -5,6 +5,7 @@ create table if not exists project (
     name varchar(100) not null, -- 建案名稱
     location varchar(255) not null, -- 建案地址
     total_units int not null, -- 總戶數
+    unit_price int not null, -- 單價
     builder varchar(100) not null, -- 建商
     status enum('銷售中', '完銷') not null, -- 銷售狀態
     launch_date date -- 推案日期
