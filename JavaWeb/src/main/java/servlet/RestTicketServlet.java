@@ -40,7 +40,8 @@ public class RestTicketServlet extends HttpServlet {
 			 resp.getWriter().println("多筆查詢");
 			 
 			 List<Ticket> tickets = service.findAllTickets();
-			 resp.getWriter().println(tickets);
+			 // 集合轉 json 陣列
+			 resp.getWriter().println(gson.toJson(tickets));
 			 
 		 } else { // 單筆查詢
 			 resp.getWriter().println("單筆查詢");
