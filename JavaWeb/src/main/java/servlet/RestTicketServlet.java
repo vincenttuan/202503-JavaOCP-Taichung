@@ -59,11 +59,13 @@ public class RestTicketServlet extends HttpServlet {
 			 } catch (NumberFormatException e) {
 				 System.out.println("未輸入 id 值");
 				 // 回應一個 json 格式的錯誤資訊
-				 resp.getWriter().println("{\"message\": \"未輸入 id 值\"}");
+				 ApiResponse<Ticket> apiResponse = new ApiResponse<Ticket>(false, null, "未輸入 id 值");
+				 resp.getWriter().println(gson.toJson(apiResponse));
 			 } catch (Exception e) {
 				 System.out.println(e.getMessage());
 				 // 回應一個 json 格式的錯誤資訊
-				 resp.getWriter().println("{\"message\": \"" + e.getMessage() + "\"}");
+				 ApiResponse<Ticket> apiResponse = new ApiResponse<Ticket>(false, null, e.getMessage());
+				 resp.getWriter().println(gson.toJson(apiResponse));
 			 }
 			 
 		 }
