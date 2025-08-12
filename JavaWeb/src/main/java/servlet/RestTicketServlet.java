@@ -3,6 +3,8 @@ package servlet;
 import java.io.IOException;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,6 +26,7 @@ import service.impl.TicketServiceImpl;
 @WebServlet("/rest/ticket/*")
 public class RestTicketServlet extends HttpServlet {
 	
+	private Gson gson = new Gson();
 	private TicketService service = new TicketServiceImpl();
 	
 	@Override
@@ -46,7 +49,9 @@ public class RestTicketServlet extends HttpServlet {
 				 resp.getWriter().println("id=" + id);
 			 
 				 Ticket ticket = service.getTicket(id);
-				 resp.getWriter().println(ticket);
+				 // 物件轉 json
+				 resp.getWriter().println(gson.toJson(ticket));
+				 
 			 } catch (NumberFormatException e) {
 				 resp.getWriter().println("未輸入 id 值");
 			 } catch (Exception e) {
