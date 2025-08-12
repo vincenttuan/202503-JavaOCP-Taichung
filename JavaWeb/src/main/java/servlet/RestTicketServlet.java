@@ -93,7 +93,19 @@ public class RestTicketServlet extends HttpServlet {
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// /rest/ticket/1?price=35000
-		resp.getWriter().print("price=" + req.getParameter("price"));
+		String pathInfo = req.getPathInfo();
+		ApiResponse<Ticket> apiResponse = null;
+		try {
+			int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
+			int price = Integer.parseInt(req.getParameter("price"));
+			// 修改
+			service.updateTicketPrice(id, price);
+			apiResponse = new ApiResponse<>(false, null, "修改成功");
+		}
+		catch (Exception e) {
+			apiResponse = new ApiResponse<>(false, null, "修改失敗:" + e.getMessage());
+		}
+		resp.getWriter().print(gson.toJson(apiResponse));
 	}
 	
 	@Override
@@ -105,7 +117,7 @@ public class RestTicketServlet extends HttpServlet {
 			service.deleteTicket(id);
 			apiResponse = new ApiResponse<>(true, null, "刪除成功");
 		} catch (Exception e) {
-			apiResponse = new ApiResponse<>(true, null, "刪除失敗:" + e.getMessage());
+			apiResponse = new ApiResponse<>(false, null, "刪除失敗:" + e.getMessage());
 		}
 		resp.getWriter().print(gson.toJson(apiResponse));
 	}
