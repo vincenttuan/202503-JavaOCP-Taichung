@@ -100,7 +100,7 @@ public class RestTicketServlet extends HttpServlet {
 			int price = Integer.parseInt(req.getParameter("price"));
 			// 修改
 			service.updateTicketPrice(id, price);
-			apiResponse = new ApiResponse<>(false, null, "修改成功");
+			apiResponse = new ApiResponse<>(true, null, "修改成功");
 		}
 		catch (Exception e) {
 			apiResponse = new ApiResponse<>(false, null, "修改失敗:" + e.getMessage());
