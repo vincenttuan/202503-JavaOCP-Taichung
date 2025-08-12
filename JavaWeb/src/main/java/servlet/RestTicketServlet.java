@@ -90,4 +90,17 @@ public class RestTicketServlet extends HttpServlet {
 		resp.getWriter().print(gson.toJson(apiResponse));
 	}
 	
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String pathInfo = req.getPathInfo();
+		ApiResponse<Ticket> apiResponse = null;
+		try {
+			int id = Integer.parseInt(pathInfo.substring(1)); // 字首(位置 0 的地方) "/" 不要
+			service.deleteTicket(id);
+			apiResponse = new ApiResponse<>(true, null, "刪除成功");
+		} catch (Exception e) {
+			apiResponse = new ApiResponse<>(true, null, "刪除失敗:" + e.getMessage());
+		}
+		resp.getWriter().print(gson.toJson(apiResponse));
+	}
 }
