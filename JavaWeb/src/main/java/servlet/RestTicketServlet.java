@@ -91,6 +91,12 @@ public class RestTicketServlet extends HttpServlet {
 	}
 	
 	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// /rest/ticket/1?price=35000
+		resp.getWriter().print("price=" + req.getParameter("price"));
+	}
+	
+	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pathInfo = req.getPathInfo();
 		ApiResponse<Ticket> apiResponse = null;
