@@ -10,7 +10,7 @@ create table if not exists project (
     launch_date date -- 推案日期
 );
 
-INSERT INTO projects (name, location, total_units, unit_price, builder, status, launch_date) VALUES
+INSERT INTO project (name, location, total_units, unit_price, builder, status, launch_date) VALUES
 ('幸福家園一期', '台中市西屯區河南路三段100號', 120, 15800000, '宏盛建設', '銷售中', '2024-03-15'),
 ('金典雅苑', '台中市南屯區公益路二段56號', 80, 12200000, '建泰營造', '銷售中', '2023-12-10'),
 ('悅府No.7', '台中市北屯區松竹路二段45號', 150, 9800000, '大有建設', '完銷', '2022-11-05'),
