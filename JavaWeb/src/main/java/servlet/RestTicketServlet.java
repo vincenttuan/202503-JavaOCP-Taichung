@@ -42,7 +42,7 @@ public class RestTicketServlet extends HttpServlet {
 			 
 			 List<Ticket> tickets = service.findAllTickets();
 			 // 集合轉 json 陣列
-			 ApiResponse<List<Ticket>> apiResponse = new ApiResponse<>(true, tickets, "");
+			 ApiResponse<List<Ticket>> apiResponse = new ApiResponse<>(true, tickets, tickets.size()+"筆");
 			 resp.getWriter().println(gson.toJson(apiResponse));
 			 
 		 } else { // 單筆查詢
