@@ -40,7 +40,7 @@
 			
 			// 配置 WebSocket
 			function setWebSocket() {
-				const wsurl = 'ws://192.168.10.53:8081/JavaWeb/chatserver';
+				const wsurl = 'ws://' + window.location.host + '/JavaWeb/chatserver';
 				// 建立連線
 				webSocket = new WebSocket(wsurl);
 				
