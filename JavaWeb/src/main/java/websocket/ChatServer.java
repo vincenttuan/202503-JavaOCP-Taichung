@@ -18,6 +18,10 @@ import jakarta.websocket.server.ServerEndpoint;
 class ChatUser {
 	Session session;
 	String username;
+	
+	public String toString() {
+		return "username:" + username;
+	}
 }
 
 @ServerEndpoint(value = "/chatserver", configurator = GetHttpSessionConfig.class)
@@ -31,8 +35,8 @@ public class ChatServer {
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 		for(ChatUser chatUser : chatUsers) {
 			if(chatUser.session.isOpen()) {
-				message = String.format("%8s %s 說 %s", sdf.format(new Date()), chatUser.username, message);
-				chatUser.session.getAsyncRemote().sendText(message); // 將訊息回傳給 client 端
+				//message = String.format("%8s %s 說 %s<br />", sdf.format(new Date()), chatUser.username, message);
+				chatUser.session.getAsyncRemote().sendText(chatUser.username + " 說 " + message); // 將訊息回傳給 client 端
 			}
 		}
 	}
@@ -46,6 +50,7 @@ public class ChatServer {
 		chatUser.username = username;
 		
 		chatUsers.add(chatUser);
+		System.out.println(chatUsers);
 		
 		String sessionId = session.getId();
 		System.out.printf("session id: %s 已連入%n", sessionId);
