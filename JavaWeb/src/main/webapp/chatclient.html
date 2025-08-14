@@ -25,6 +25,16 @@
 	</body>
 	<script type="text/javascript">
 		function startup() {
+			const onOpenButton = document.getElementById('onOpenButton');
+			const onCloseButton = document.getElementById('onCloseButton');
+			const messageInput = document.getElementById('messageInput');
+			const onMessageButton = document.getElementById('onMessageButton');
+			const messageHistory = document.getElementById('messageHistory');
+			
+			onOpenButton.disabled = false;
+			onCloseButton.disabled = true;
+			messageInput.disabled = true;
+			onMessageButton.disabled = true;
 			
 		}
 		
