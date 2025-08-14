@@ -36,6 +36,28 @@
 			messageInput.disabled = true;
 			onMessageButton.disabled = true;
 			
+			var webSocket = null;
+			
+			// 配置 WebSocket
+			function setWebSocket() {
+				
+			}
+			
+			// 按下 [連線] 按鈕
+			onOpenButton.addEventListener('click', function() {
+				setWebSocket();
+			});
+			
+			// 按下 [離線] 按鈕
+			onCloseButton.addEventListener('click', function() {
+				webSocket.close(); // 離線關閉
+			});
+			
+			// 按下 [傳送] 按鈕
+			onMessageButton.addEventListener('click', function() {
+				webSocket.send(messageInput.value);
+			});
+			
 		}
 		
 		window.onload = startup;
