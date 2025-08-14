@@ -41,6 +41,7 @@
 			// 配置 WebSocket
 			function setWebSocket() {
 				const wsurl = 'ws://192.168.10.53:8081/JavaWeb/chatserver';
+				// 建立連線
 				webSocket = new WebSocket(wsurl);
 				
 				// 連線成功後會自動調用的函式
