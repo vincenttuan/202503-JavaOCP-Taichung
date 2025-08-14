@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Chat Client</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<script type="text/javascript" src="/JavaWeb/js/bmi.js"></script>
+	</head>
+	<body style="padding: 20px">
+		<h1>我的聊天室</h1>
+		<div class="pure-form">
+			<fieldset>
+				<legend>聊天室</legend>
+				<button type="button" id="onOpenButton" class="button-success pure-button">連線</button>
+				<button type="button" id="onCloseButton" class="button-error pure-button">關閉</button>
+				<p />
+				<input type="text" id="messageInput" placeholder="請輸入訊息" />
+				<button type="button" id="onMessageButton" class="button-secondary pure-button">關閉</button>
+			</fieldset>
+		</div>
+		<div class="pure-form">
+			<fieldset>聊天歷史紀錄</fieldset>
+			<div id="messageHistory"></div>
+		</div>
+	</body>
+</html>
