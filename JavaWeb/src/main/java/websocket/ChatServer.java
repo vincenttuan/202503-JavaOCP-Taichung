@@ -34,6 +34,7 @@ public class ChatServer {
 	public void onOpen(Session session, EndpointConfig config) {
 		HttpSession httpSession = (HttpSession)config.getUserProperties().get(HttpSession.class.getName());
 		String username = httpSession.getAttribute("username") + "";
+		
 		sessions.add(session);
 		String sessionId = session.getId();
 		System.out.printf("session id: %s 已連入%n", sessionId);
@@ -42,19 +43,25 @@ public class ChatServer {
 	}
 	
 	@OnMessage
-	public void onMessage(Session session, String message) {
+	public void onMessage(Session session, String message, EndpointConfig config) {
+		HttpSession httpSession = (HttpSession)config.getUserProperties().get(HttpSession.class.getName());
+		String username = httpSession.getAttribute("username") + "";
+		
 		String sessionId = session.getId();
 		System.out.printf("session id: %s 說: %s%n", sessionId, message);
-		message = String.format("%s 說: %s%n", sessionId, message);
+		message = String.format("%s 說: %s%n", username, message);
 		broadcast(sessionId, message);
 	}
 	
 	@OnClose
-	public void onClose(Session session) {
+	public void onClose(Session session, EndpointConfig config) {
+		HttpSession httpSession = (HttpSession)config.getUserProperties().get(HttpSession.class.getName());
+		String username = httpSession.getAttribute("username") + "";
+		
 		sessions.remove(session);
 		String sessionId = session.getId();
 		System.out.printf("session id: %s 已關閉%n", sessionId);
-		String message = String.format("%s 已離開聊天室%n", sessionId);
+		String message = String.format("%s 已離開聊天室%n", username);
 		broadcast(sessionId, message);
 	}
 	

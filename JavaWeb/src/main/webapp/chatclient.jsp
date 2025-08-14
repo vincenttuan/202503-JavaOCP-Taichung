@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +9,9 @@
 		<link rel="stylesheet" href="/JavaWeb/css/buttons.css">
 	</head>
 	<body style="padding: 20px">
+		<!-- menu -->
+		<%@include file="/WEB-INF/view/menu.jspf" %>
+		
 		<h1>我的聊天室</h1>
 		<div class="pure-form">
 			<fieldset>
