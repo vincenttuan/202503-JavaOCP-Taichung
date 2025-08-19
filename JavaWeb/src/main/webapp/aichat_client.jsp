@@ -10,7 +10,7 @@
 	<body style="padding: 20px">
 		<form class="pure-form" method="post" action="/JavaWeb/aichat" target="_result">
 			<fieldset>
-				<legend>Chat</legend>
+				<legend>AI Chat</legend>
 				問題: <input type="text" placeholder="請輸入問題" name="message" required /><p />
 				<button type="submit" class="pure-button pure-button-primary">詢問 AI</button>
 			</fieldset>
