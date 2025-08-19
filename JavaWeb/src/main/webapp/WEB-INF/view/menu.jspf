@@ -14,6 +14,7 @@
 		<a href="/JavaWeb/beverage" class="pure-button pure-button-primary">🥤 飲料訂購</a>
 		<a href="/JavaWeb/chart" class="pure-button pure-button-primary">📊 統計圖表</a>
 		<a href="/JavaWeb/chatclient.jsp" class="pure-button pure-button-primary">📣 聊天室</a>
+		<a href="/JavaWeb/aichat_client.jsp" class="pure-button pure-button-primary">👩 AI 聊天室</a>
 		<a href="/JavaWeb/logout" class="pure-button pure-button-primary">🚪 用戶登出</a>
 	<% } %>
 </div>
