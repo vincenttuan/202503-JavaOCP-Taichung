@@ -1,6 +1,8 @@
 package servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -59,7 +61,12 @@ public class AIChatServlet extends HttpServlet {
 		// conn.getInputStream() -> byte stream 逐"位元組"讀取
 		// InputStreamReader     -> char stream 逐"字"讀取
 		// BufferedReader        -> 讀取到記憶體,可以逐"行"讀取(字串), 效率較高
-		
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"))) {
+			String line;
+			while ((line = br.readLine()) != null) { // 逐行讀取
+				sb.append(line);
+			}
+		}
 		
 		
 	}
