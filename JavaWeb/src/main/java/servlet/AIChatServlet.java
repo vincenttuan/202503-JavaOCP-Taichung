@@ -72,7 +72,7 @@ public class AIChatServlet extends HttpServlet {
 		int from = sb.toString().indexOf("\"content\"");
 		int to = sb.toString().indexOf("},");
 		String content = sb.toString().substring(from+11, to-1);
-		content = content.replaceAll("\\n", "");
+		content = content.replaceAll("\n", "");
 		
 		// 6.印出結果
 		resp.getWriter().print(content);
