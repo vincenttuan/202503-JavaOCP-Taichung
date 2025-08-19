@@ -15,6 +15,6 @@
 				<button type="submit" class="pure-button pure-button-primary">詢問 AI</button>
 			</fieldset>
 		</form>
-		<iframe name="_result" src="/JavaWeb/aichat/history" frameborder="0" width="1000" height="2000"></iframe>
+		<iframe name="_result" frameborder="0" width="1000" height="2000"></iframe>
 	</body>
 </html>
