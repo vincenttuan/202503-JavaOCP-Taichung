@@ -17,4 +17,4 @@
 		</form>
 		<iframe name="_result" src="/JavaWeb/aichat/history" frameborder="0" width="1000" height="2000"></iframe>
 	</body>
-</html> 
+</html>
