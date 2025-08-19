@@ -23,7 +23,6 @@ public class AIChatServlet extends HttpServlet {
 		resp.setContentType("text/html;charset=UTF-8");
 		
 		String message = req.getParameter("message"); // 使用者的提問訊息 
-		String ollamaResponse = "";
 		
 		// 準備一個 json 的請求
 		String payload = """
