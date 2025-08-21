@@ -23,7 +23,10 @@ public class AESSample {
 		byte[] encrypted = KeyUtil.encryptWithAESKey(myKey, originalText);
 		// 3.印出密文
 		System.out.printf("密文: %s%n", Arrays.toString(encrypted));
-		
+		System.out.println("-------------------------");
+		// 4. 解密
+		String output = KeyUtil.decryptWithAESKey(myKey, encrypted); // 拿到密文去解密
+		System.out.printf("解密: %s%n", output);
 	}
 	
 	
