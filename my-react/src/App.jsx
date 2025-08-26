@@ -3,6 +3,8 @@
 // 組件有二種寫法
 // 1. function
 // 2. () => 函數式 
+// return() <-- 裡面只能放單一標籤 
+//              若要有多組標籤則必須使用<> .. </>或<div> .. </div>來圈住
 function App() {
   return (
     <>
@@ -14,17 +16,13 @@ function App() {
 
 export const  PPA = () => {
   return (
-    <>
-      <h1>Hello PPA !</h1>
-    </>
+    <h1>Hello PPA !</h1>
   )
 }
 
 export function APA() {
   return (
-    <>
-      <h1>Hello APA !</h1>
-    </>
+    <h1>Hello APA !</h1>
   )
 }
 
