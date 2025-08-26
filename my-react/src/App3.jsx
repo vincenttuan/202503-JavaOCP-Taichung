@@ -20,7 +20,7 @@ function App() {
         <>
             <button onClick={clickMe}>好好按我</button>
             <button onClick={touchMe}>不要碰我</button>
-            <button onMouseDown={handleMouseDown}>判斷按鍵</button>
+            <button onMouseDown={handleMouseDown} onContextMenu={e => e.preventDefault()}>判斷按鍵</button>
         </>
     )
 }
