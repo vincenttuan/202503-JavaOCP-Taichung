@@ -1,6 +1,8 @@
 // JSX = Javascrtipt + HTML
 // App() 表示是一個 React 組件 (字首大寫)
-
+// 組件有二種寫法
+// 1. function
+// 2. () => 函數式 
 function App() {
   return (
     <>
@@ -10,7 +12,7 @@ function App() {
   )  
 }
 
-export function PPA() {
+export const  PPA = () => {
   return (
     <>
       <h1>Hello PPA !</h1>
