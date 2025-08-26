@@ -31,7 +31,7 @@ function App() {
                 <tbody>
                     {
                         products.map((product, index) => (
-                            <tr>
+                            <tr key={product.id}>
                                 <td>{product.id}</td>
                                 <td>{product.category}</td>
                                 <td>{product.name}</td>
