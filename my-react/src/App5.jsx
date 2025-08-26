@@ -8,15 +8,19 @@ function App() {
         {id:5, name:"椰子", price:70, qty:5}
     ];
 
+    // 總計使用 reduce
+    const total = fruits.reduce((sum, fruit) => sum + fruit.price*fruit.qty, 0);
+
     return(
         <>
             {
                 fruits.map((fruit, index) => (
                     <div key={fruit.id}>
-                        {index} {fruit.id} {fruit.name} {fruit.price} {fruit.qty}
+                        {index} {fruit.id} {fruit.name} {fruit.price} {fruit.qty} {fruit.price*fruit.qty}
                     </div>
                 ))
             }
+            總計: {total}
         </>
     )
 
