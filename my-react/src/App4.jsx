@@ -1,7 +1,7 @@
 // 陣列
 function App() {
     const fruits = ['西瓜', '芒果', '荔枝', '龍眼', '椰子'];
-    
+    //                0       1       2      3       4
     const fruits2 = [
         <li>西瓜</li>,
         <li>芒果</li>,
@@ -10,10 +10,13 @@ function App() {
         <li>椰子</li>
     ];
 
+    const fruits3 = fruits.map((fruit, index) => (<li>{index} : {fruit}</li>))
+
     return(
         <>
             {fruits}
             {fruits2}
+            {fruits3}
         </>
     )
 
