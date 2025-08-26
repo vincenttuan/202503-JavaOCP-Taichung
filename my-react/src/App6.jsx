@@ -21,7 +21,7 @@ function App() {
     return(
         <>
             <h1>商品資訊</h1>
-            <h2>總價:{total}</h2>
+            <h2>總價:{total.toLocaleString()}</h2>
             <table border="1">
                 <thead>
                     <tr>
