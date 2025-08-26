@@ -22,7 +22,7 @@ function App() {
         <>
             <h1>商品資訊</h1>
             <h2>總價:{total.toLocaleString()}</h2>
-            <table border="1">
+            <table class="pure-table pure-table-bordered">
                 <thead>
                     <tr>
                         <th>id</th><th>category</th><th>name</th><th>price</th><th>qty</th><th>subtotal</th>
