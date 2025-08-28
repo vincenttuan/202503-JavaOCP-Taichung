@@ -34,6 +34,17 @@ function TableBody({products}) {
     )
 }
 
+// 表尾 
+function TableFooter({total}) {
+    return(
+        <tfoot>
+            <tr style={{backgroundColor:'#CCCCCC'}}>
+                <td colSpan="5" align="right">總價</td><td align="right">{total.toLocaleString()}</td>
+            </tr>
+        </tfoot> 
+    )
+}
+
 function App() {
     const products = [
         { id: 1, name: '蘋果', price: 40, category: '水果', qty:2 },
@@ -50,11 +61,7 @@ function App() {
             <table class="pure-table pure-table-bordered">
                 <TableHeader />
                 <TableBody products={products} />
-                <tfoot>
-                    <tr style={{backgroundColor:'#CCCCCC'}}>
-                        <td colSpan="5" align="right">總價</td><td align="right">{total.toLocaleString()}</td>
-                    </tr>
-                </tfoot>    
+                <TableFooter total={total} />
             </table>
         </>
     )
