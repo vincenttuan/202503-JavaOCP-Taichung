@@ -17,7 +17,12 @@ function App() {
     const percent = (drankCC / maxCC * 100).toFixed(1);
 
     function drinkWater() {
+        if(drankCC >= maxCC) return;
         setCups(cups + 1);
+    }
+
+    function drawWater() {
+        
     }
 
     function reset() {
@@ -36,6 +41,9 @@ function App() {
 
             <button onClick={drinkWater} className="button-success pure-button">
                 喝一杯水 (250cc)
+            </button>
+            <button onClick={drawWater} className="button-warning pure-button">
+                吐一杯水 (250cc)
             </button>
             <button onClick={reset} className="button-error pure-button">
                 清除記錄
