@@ -6,12 +6,20 @@ function CircleArea({r}) {
     return(<div>{area} 平方單位</div>)
 }
 
+// 子組件
+function BMI({h, w}) {
+    h = h / 100;
+    const bmi = w / (h*h);
+    return(<div>BMI = {bmi}</div>)
+}
 // 父組件
 function App() {
+    const r = 123;
     return(
         <>
             <CircleArea r="10" />
-            <CircleArea r="123" />
+            <CircleArea r={r} />
+            <BMI h="170" w="60" />
         </>
     )
 }
