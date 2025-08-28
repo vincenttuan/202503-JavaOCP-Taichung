@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App6.jsx'
+import App from './App7.jsx'
 //import {PPA, APA}  from './App.jsx'
 import './index.css'
 
