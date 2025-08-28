@@ -21,7 +21,6 @@ function App() {
     return(
         <>
             <h1>商品資訊</h1>
-            <h2>總價:{total.toLocaleString()}</h2>
             <table class="pure-table pure-table-bordered">
                 <thead>
                     <tr>
@@ -35,14 +34,18 @@ function App() {
                                 <td>{product.id}</td>
                                 <td>{product.category}</td>
                                 <td>{product.name}</td>
-                                <td>{product.price}</td>
-                                <td>{product.qty}</td>
-                                <td>{product.price*product.qty}</td>
+                                <td align="right">{product.price}</td>
+                                <td align="right">{product.qty}</td>
+                                <td align="right">{product.price*product.qty}</td>
                             </tr>
                         ))
                     }
                 </tbody>
-
+                <tfoot>
+                    <tr style={{backgroundColor:'#CCCCCC'}}>
+                        <td colSpan="5" align="right">總價</td><td align="right">{total.toLocaleString()}</td>
+                    </tr>
+                </tfoot>    
             </table>
         </>
     )
