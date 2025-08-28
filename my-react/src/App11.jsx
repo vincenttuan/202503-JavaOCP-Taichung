@@ -4,18 +4,34 @@
     顯示目前的喝水量與目標
 
 * */
+import { useState } from "react";
 
 function App() {
+    const maxCC = 3000; // 目標 cc
+    const cupCC = 250; // 一杯 cc
+    const [cups, setCups] = useState(0); // 紀錄喝了幾杯
+    
+    // 已喝水量
+    const drankCC = cups * cupCC;
+
+    function drinkWater() {
+        setCups(cups + 1);
+    }
+
+    function reset() {
+        setCups(0);
+    }
+
     return(
         <div className="pure-form">
             <h1>飲水記錄</h1>
             <div style={{fontSize: 30}}>
-                已喝了 0 / 3000cc
+                已喝了 {drankCC} / {maxCC}cc
             </div>
-            <button className="button-success pure-button">
+            <button onClick={drinkWater} className="button-success pure-button">
                 喝一杯水 (250cc)
             </button>
-            <button className="button-error pure-button">
+            <button onClick={reset} className="button-error pure-button">
                 清除記錄
             </button>
         </div>
