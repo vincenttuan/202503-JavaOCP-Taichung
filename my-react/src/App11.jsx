@@ -28,6 +28,10 @@ function App() {
             <div style={{fontSize: 30}}>
                 已喝了 {drankCC} / {maxCC}cc
             </div>
+            
+            {/* 進度條 */}
+            <progress value={drankCC} max={maxCC} /><p />
+
             <button onClick={drinkWater} className="button-success pure-button">
                 喝一杯水 (250cc)
             </button>
