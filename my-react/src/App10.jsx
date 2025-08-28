@@ -4,7 +4,7 @@ function App() {
     const [count, setCount] = useState(0);
 
     function clickMe() {
-        setCount(count + 1);
+        setCount(count + 1); // 取代 count++
     }
 
     return(
