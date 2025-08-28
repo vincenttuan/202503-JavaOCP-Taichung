@@ -13,6 +13,8 @@ function App() {
     
     // 已喝水量
     const drankCC = cups * cupCC;
+    // 已喝趴數
+    const percent = (drankCC / maxCC * 100).toFixed(1);
 
     function drinkWater() {
         setCups(cups + 1);
@@ -30,7 +32,7 @@ function App() {
             </div>
             
             {/* 進度條 */}
-            <progress value={drankCC} max={maxCC} /><p />
+            <progress value={drankCC} max={maxCC} /> {percent} %<p />
 
             <button onClick={drinkWater} className="button-success pure-button">
                 喝一杯水 (250cc)
