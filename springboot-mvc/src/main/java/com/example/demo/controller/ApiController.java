@@ -29,6 +29,14 @@ public class ApiController {
 		return String.format("身高: %.1f 體重: %.1f BMI: %.2f", h, w, bmi);
 	}
 	
+	// size=S or M or L or XL or XXL
+	// sweet=1..10
+	// 執行路徑: /api/beverage?size=S&sweet=1
+	@GetMapping("/beverage")
+	public String beverage(@RequestParam String size, @RequestParam int sweet) {
+		return String.format("飲料 %s 杯 甜度 %d 分", size, sweet);
+	}
+	
 	
 	
 }
