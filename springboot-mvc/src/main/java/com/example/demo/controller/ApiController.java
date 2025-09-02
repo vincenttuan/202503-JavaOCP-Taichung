@@ -1,5 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.SpringbootMvcApplication;
+
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
+
+    private final SpringbootMvcApplication springbootMvcApplication;
+
+    ApiController(SpringbootMvcApplication springbootMvcApplication) {
+        this.springbootMvcApplication = springbootMvcApplication;
+    }
 	
 	// 執行路徑: /api/hello
 	@GetMapping("/hello")
@@ -36,7 +46,8 @@ public class ApiController {
 	@GetMapping("/beverage")
 	public String beverage(@RequestParam(required = false, defaultValue = "XL") String size, 
 						   @RequestParam(required = false, defaultValue = "10") Integer sweet) {
-		return String.format("飲料 %s 杯 甜度 %d 分 價格 元", size, sweet);
+		Map<String, Integer> pricesMap = Map.of("S", 20, "M", 25, "L", 30, "XL", 40, "XXL", 50);
+		return String.format("飲料 %s 杯 甜度 %d 分 價格 %d 元", size, sweet, pricesMap.get(size));
 	}
 	
 	
