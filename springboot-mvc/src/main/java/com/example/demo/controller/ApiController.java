@@ -31,10 +31,12 @@ public class ApiController {
 	
 	// size=S or M or L or XL or XXL
 	// sweet=1..10
+	// S(20元) or M(25元) or L(30元) or XL(40元) or XXL(50元)
 	// 執行路徑: /api/beverage?size=S&sweet=1
 	@GetMapping("/beverage")
-	public String beverage(@RequestParam String size, @RequestParam int sweet) {
-		return String.format("飲料 %s 杯 甜度 %d 分", size, sweet);
+	public String beverage(@RequestParam(required = false, defaultValue = "XL") String size, 
+						   @RequestParam(required = false, defaultValue = "10") Integer sweet) {
+		return String.format("飲料 %s 杯 甜度 %d 分 價格 元", size, sweet);
 	}
 	
 	
