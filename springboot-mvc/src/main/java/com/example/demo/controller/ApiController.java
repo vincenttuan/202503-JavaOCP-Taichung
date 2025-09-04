@@ -69,7 +69,23 @@ public class ApiController {
 		return new ApiResponse<>(true, bmi, "BMI 計算成功");
 	}
 	
-	
+	/**
+	 * Lab 練習 II - 飲料含糖量計算
+	 * 路徑: /api/sugar?volume=500&sugar=12
+	 * volume = 飲料容量, 單位(ml)
+	 * sugar = 每 100ml 含糖量, 單位(克)
+	 * 執行結果: 
+	 *  {
+			"success": true,
+			"data": {
+				"volume": 500,
+				"sugar": 12,
+				"totalSugar": 60
+			},
+			"message": "含糖量計算成功"
+		}
+	   提示:建立 Sugar 物件	
+	 * */
 	
 	
 }
