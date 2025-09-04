@@ -126,7 +126,7 @@ public class ApiController {
 		double exerciseWater = time * 0.012;
 		// 建議每日飲水量
 		double recommand = baseWater + exerciseWater;
-		double roundWater = Math.round(totalWater * 100.0) / 100.0;
+		double roundWater = Math.round(recommand * 100.0) / 100.0;
 		
 		String advice;
 		if(roundWater < 2.0) advice = "普通";
