@@ -166,7 +166,7 @@ public class ApiController {
 		Map<Integer, Student> map = Map.of(1, new Student(1, "John", 20),
 										   2, new Student(2, "Mary", 21),
 										   3, new Student(3, "Helen", 22));
-		return new ApiResponse<>(true, map, "取得學生資料成功");
+		return new ApiResponse<>(true, map, "取得所有學生資料成功");
 	}
 	
 }
