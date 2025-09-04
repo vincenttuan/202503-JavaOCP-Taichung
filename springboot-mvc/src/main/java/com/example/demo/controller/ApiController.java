@@ -86,7 +86,7 @@ public class ApiController {
 		}
 	   提示:建立 Sugar 物件	
 	 * */
-	//@GetMapping(value = "/sugar", produces = "application/json;charset=utf-8")
+	@GetMapping(value = "/sugar", produces = "application/json;charset=utf-8")
 	
 	
 	
