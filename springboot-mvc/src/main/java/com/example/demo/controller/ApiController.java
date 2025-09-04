@@ -110,6 +110,8 @@ public class ApiController {
 	 * <2L - 普通 
 	 * 2L~3L - 良好
 	 * >3L - 注意 
+	 * 
+	 * 路徑: /api/water?weight=60&time=30
 	 */
 	@GetMapping(value = "/water", produces = "application/json;charset=utf-8")
 	public ApiResponse<Water> water(@RequestParam(required = false) Integer weight,
