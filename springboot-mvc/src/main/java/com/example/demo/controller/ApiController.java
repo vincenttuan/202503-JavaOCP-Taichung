@@ -3,11 +3,13 @@ package com.example.demo.controller;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.BMI;
+import com.example.demo.model.Student;
 import com.example.demo.model.Sugar;
 import com.example.demo.model.Water;
 import com.example.demo.response.ApiResponse;
@@ -147,5 +149,20 @@ public class ApiController {
 	 * 路徑: /student/3
 	 * 
 	 * */
+	@GetMapping(value = "/student/{id}", produces = "application/json;charset=utf-8")
+	public ApiResponse<Student> student(@PathVariable Integer id) {
+		Map<Integer, Student> map = Map.of(1, new Student(1, "John", 20),
+										   2, new Student(2, "Mary", 21),
+										   3, new Student(3, "Helen", 22));
+		if(id == null) {
+			return new ApiResponse<>(false, null, "請輸入學生 id");
+		}
+		Student student = map.get(id);
+		if(student == null) {
+			return new ApiResponse<>(false, null, "查無學生資料");
+		}
+		return new ApiResponse<>(true, student, "取得學生資料成功");
+	}
+	
 	
 }
