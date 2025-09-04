@@ -138,6 +138,14 @@ public class ApiController {
 		return new ApiResponse<>(true, data, "每日水分需求計算成功");
 	}
 	
-	
+	/**
+	 * 請求參數: /student?id=1
+	 * 請求參數: /student?id=3
+	 * 
+	 * 路徑參數
+	 * 路徑: /student/1
+	 * 路徑: /student/3
+	 * 
+	 * */
 	
 }
