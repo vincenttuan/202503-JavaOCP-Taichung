@@ -62,12 +62,14 @@ public class ApiController {
 	public ApiResponse<BMI> bmi2(@RequestParam(required = false) Double h, 
 								 @RequestParam(required = false) Double w) {
 		if(h == null || w == null) {
-			return new ApiResponse(false, null, "請提供身高與體重");
+			return new ApiResponse<>(false, null, "請提供身高與體重");
 		}
 		double bmiValue = w / Math.pow(h/100, 2);
 		BMI bmi = new BMI(h, w, bmiValue);
-		return new ApiResponse(true, bmi, "BMI 計算成功");
+		return new ApiResponse<>(true, bmi, "BMI 計算成功");
 	}
+	
+	
 	
 	
 }
