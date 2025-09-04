@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.BMI;
 import com.example.demo.model.Sugar;
+import com.example.demo.model.Water;
 import com.example.demo.response.ApiResponse;
 
 @RestController
@@ -110,6 +111,30 @@ public class ApiController {
 	 * 2L~3L - 良好
 	 * >3L - 注意 
 	 */
+	@GetMapping(value = "/water", produces = "application/json;charset=utf-8")
+	public ApiResponse<Water> water(@RequestParam(required = false) Integer weight,
+									@RequestParam(required = false) Integer time) {
+		if(weight == null || time == null) {
+			return new ApiResponse<>(false, null, "請提供體重與運動時間");
+		}
+		
+		// 基礎水量: 體重 x 0.035(升)
+		double baseWater = weight * 0.035;
+		// 運動候補水: 運動時間(分鐘/天) x 0.012(升)
+		double exerciseWater = time * 0.012;
+		// 建議每日飲水量
+		double totalWater = baseWater + exerciseWater;
+		double roundWater = Math.round(totalWater * 100.0) / 100.0;
+		
+		String advice;
+		if(roundWater < 2.0) advice = "普通";
+		else if (roundWater <= 3.0) advice = "良好";
+		else advice = "需注意";
+		
+		Water data = new Water(weight, time, totalWater, advice);
+		
+		return new ApiResponse<>(true, data, "每日水分需求計算成功");
+	}
 	
 	
 	
