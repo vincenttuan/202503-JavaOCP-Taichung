@@ -41,6 +41,21 @@ public class ApiController {
 		return String.format("飲料 %s 杯 甜度 %d 分 價格 %d 元", size, sweet, pricesMap.get(size));
 	}
 	
+	/**
+	 * Lab 練習 I
+	 * 路徑: /api/bmi2?h=170&w=60
+	 * 網址: http://localhost:8080/api/bmi2?h=170&w=60
+	 * 執行結果: 
+	 * {
+	 *   "status": 200,
+	 *   "message": "BMI 計算成功",
+	 *   "data": {
+	 *     "height": 170.0,
+	 *     "weight": 60.0,
+	 *     "bmi": 20.76
+	 *   }
+	 * }
+	 * */
 	
 	
 }
