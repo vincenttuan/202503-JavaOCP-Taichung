@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.BMI;
+import com.example.demo.model.Sugar;
 import com.example.demo.response.ApiResponse;
 
 @RestController
@@ -87,7 +88,15 @@ public class ApiController {
 	   提示:建立 Sugar 物件	
 	 * */
 	@GetMapping(value = "/sugar", produces = "application/json;charset=utf-8")
-	
+	public ApiResponse<Sugar> sugar(@RequestParam(required = false) Integer volume,
+									@RequestParam(required = false) Integer sugar) {
+		if(volume == null || sugar == null) {
+			return new ApiResponse<>(false, null, "請提供飲料容量與每 100ml 含糖量");
+		}
+		Integer totalSugar = volume / 100 * sugar;
+		Sugar data = new Sugar(volume, sugar, totalSugar);
+		return new ApiResponse<>(true, data, "含糖量計算成功");
+	}
 	
 	
 }
