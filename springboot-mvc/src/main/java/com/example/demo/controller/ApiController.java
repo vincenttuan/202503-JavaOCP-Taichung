@@ -47,7 +47,6 @@ public class ApiController {
 	 * 網址: http://localhost:8080/api/bmi2?h=170&w=60
 	 * 執行結果: 
 	 * {
-	 *   "status": 200,
 	 *   "message": "BMI 計算成功",
 	 *   "data": {
 	 *     "height": 170.0,
