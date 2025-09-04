@@ -14,13 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ApiController {
 
-    private final SpringbootMvcApplication springbootMvcApplication;
-
-    ApiController(SpringbootMvcApplication springbootMvcApplication) {
-        this.springbootMvcApplication = springbootMvcApplication;
-    }
-	
-	// 執行路徑: /api/hello
+    // 執行路徑: /api/hello
 	@GetMapping("/hello")
 	public String hello() {
 		return "Hello Springboot";
