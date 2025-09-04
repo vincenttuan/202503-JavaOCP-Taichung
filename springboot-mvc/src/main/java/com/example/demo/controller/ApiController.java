@@ -125,7 +125,7 @@ public class ApiController {
 		// 運動候補水: 運動時間(分鐘/天) x 0.012(升)
 		double exerciseWater = time * 0.012;
 		// 建議每日飲水量
-		double totalWater = baseWater + exerciseWater;
+		double recommand = baseWater + exerciseWater;
 		double roundWater = Math.round(totalWater * 100.0) / 100.0;
 		
 		String advice;
@@ -133,7 +133,7 @@ public class ApiController {
 		else if (roundWater <= 3.0) advice = "良好";
 		else advice = "需注意";
 		
-		Water data = new Water(weight, time, totalWater, advice);
+		Water data = new Water(weight, time, recommand, advice);
 		
 		return new ApiResponse<>(true, data, "每日水分需求計算成功");
 	}
