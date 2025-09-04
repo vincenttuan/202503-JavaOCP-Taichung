@@ -59,10 +59,14 @@ public class ApiController {
 	 * }
 	 * */
 	@GetMapping(value = "/bmi2", produces = "application/json;charset=utf-8")
-	public BMI bmi2(@RequestParam(name = "h") double h, @RequestParam double w) {
+	public ApiResponse<BMI> bmi2(@RequestParam(required = false) Double h, 
+								 @RequestParam(required = false) Double w) {
+		if(h == null || w == null) {
+			return ApiResponse.error("請提供身高與體重");
+		}
 		double bmiValue = w / Math.pow(h/100, 2);
 		BMI bmi = new BMI(h, w, bmiValue);
-		return bmi;
+		return ApiResponse.success("BMI 計算成功", bmi);
 	}
 	
 	
