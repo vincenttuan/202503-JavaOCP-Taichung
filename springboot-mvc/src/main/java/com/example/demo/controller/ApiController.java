@@ -154,9 +154,6 @@ public class ApiController {
 		Map<Integer, Student> map = Map.of(1, new Student(1, "John", 20),
 										   2, new Student(2, "Mary", 21),
 										   3, new Student(3, "Helen", 22));
-		if(id == null) {
-			return new ApiResponse<>(false, null, "請輸入學生 id");
-		}
 		Student student = map.get(id);
 		if(student == null) {
 			return new ApiResponse<>(false, null, "查無學生資料");
