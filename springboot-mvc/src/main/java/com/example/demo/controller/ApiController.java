@@ -19,12 +19,6 @@ import com.example.demo.response.ApiResponse;
 @RequestMapping("/api")
 public class ApiController {
 
-    private final SpringbootMvcApplication springbootMvcApplication;
-
-    ApiController(SpringbootMvcApplication springbootMvcApplication) {
-        this.springbootMvcApplication = springbootMvcApplication;
-    }
-
     // 執行路徑: /api/hello
 	@GetMapping("/hello")
 	public String hello() {
