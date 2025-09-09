@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.example.demo.SpringbootMvcApplication;
 import com.example.demo.model.BMI;
 import com.example.demo.model.Student;
 import com.example.demo.model.Sugar;
@@ -17,6 +18,12 @@ import com.example.demo.response.ApiResponse;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
+
+    private final SpringbootMvcApplication springbootMvcApplication;
+
+    ApiController(SpringbootMvcApplication springbootMvcApplication) {
+        this.springbootMvcApplication = springbootMvcApplication;
+    }
 
     // 執行路徑: /api/hello
 	@GetMapping("/hello")
@@ -167,6 +174,20 @@ public class ApiController {
 										   2, new Student(2, "Mary", 21),
 										   3, new Student(3, "Helen", 22));
 		return new ApiResponse<>(true, map, "取得所有學生資料成功");
+	}
+	
+	/**
+	 * 同名多筆資料
+	 * 路徑: /ages?age=19&age=21&age=30
+	 * 請計算出平均年齡
+	 * */
+	@GetMapping(value = "/ages", produces = "application/json;charset=utf-8")
+	public ApiResponse<Map<String, Double>> getAvgOfAge(@RequestParam(name = "age", required = false) List<Integer> ages) {
+		if(ages == null || ages.size() == 0) {
+			return new ApiResponse<>(false, null, "請輸入年齡資料");
+		}
+		double avg = ages.stream().mapToInt(Integer::intValue).average().getAsDouble();
+		return new ApiResponse<>(true, Map.of("平均年齡", avg), "取得平均年齡成功");
 	}
 	
 }
