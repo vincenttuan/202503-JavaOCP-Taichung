@@ -259,11 +259,20 @@ public class ApiController {
 		Optional<Book> optBook = books.stream().filter(book -> book.getId().equals(id)).findFirst();
 		// 判斷是否有找到
 		if(optBook.isEmpty()) {
-			return new ApiResponse<Book>(false, null, "查無此書");
+			return new ApiResponse<>(false, null, "查無此書");
 		}
 		// 取得此書
 		Book book = optBook.get();
-		return new ApiResponse<Book>(true, book, "查詢成功");
+		return new ApiResponse<>(true, book, "查詢成功");
 	}
+	
+	@GetMapping(value = "/books", produces = "application/json;charset=utf-8")
+	public ApiResponse<List<Book>> findAllBooks() {
+		if(books.isEmpty()) {
+			return new ApiResponse<>(false, null, "查無任何書籍");
+		}
+		return new ApiResponse<>(true, books, "查詢成功");
+	}
+	
 	
 }
