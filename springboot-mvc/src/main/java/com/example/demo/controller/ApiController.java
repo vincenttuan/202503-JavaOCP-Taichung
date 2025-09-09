@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -191,5 +193,26 @@ public class ApiController {
 	 * 請自行設計一個方法，此方法可以
 	 * 印出: 最高分=?、最低分=?、平均=?、總分=?、及格分數列出=?、不及格分數列出=?
 	 */
+	@GetMapping(value = "/exam", produces = "application/json;charset=utf-8")
+	public ApiResponse<Object> getExamInfo(@RequestParam(name = "score", required = false) List<Integer> scores) {
+		if(scores == null || scores.size() == 0) {
+			return new ApiResponse<>(false, null, "請輸入成績資料");
+		}
+		// 統計資料
+		IntSummaryStatistics stat = scores.stream().mapToInt(Integer::intValue).summaryStatistics();
+		// 利用 Collectors.partitioningBy
+		// key=true 及格 | key=false 不及格
+		Map<Boolean, List<Integer>> resultMap = scores.stream()
+				.collect(Collectors.partitioningBy(score -> score >= 60));
+		Object data = Map.of(
+				"最高分", stat.getMax(),
+				"最低分", stat.getMin(),
+				"平均", stat.getAverage(),
+				"總分", stat.getSum(),
+				"及格", resultMap.get(true),
+				"不及格", resultMap.get(false)
+		);
+		return new ApiResponse<>(true, data, "成績計算結果");
+	}
 	
 }
