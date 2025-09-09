@@ -184,4 +184,12 @@ public class ApiController {
 		return new ApiResponse<>(true, Map.of("平均年齡", avg), "取得平均年齡成功");
 	}
 	
+	/*
+	 * Lab 練習: 得到多筆 score 資料
+	 * 路徑: "/exam?score=80&score=100&score=50&score=70&score=30"
+	 * 網址: http://localhost:8080/api/exam?score=80&score=100&score=50&score=70&score=30
+	 * 請自行設計一個方法，此方法可以
+	 * 印出: 最高分=?、最低分=?、平均=?、總分=?、及格分數列出=?、不及格分數列出=?
+	 */
+	
 }
