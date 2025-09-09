@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -242,7 +245,7 @@ public class ApiController {
 	 * */
 	
 	// 書庫
-	List<Book> books = new CopyOnWriteArrayList<Book>();
+	List<Book> books = new CopyOnWriteArrayList<>();
 	
 	{
 		books.add(new Book(1, "機器貓小叮噹", 12.5, 20, false));
@@ -272,6 +275,12 @@ public class ApiController {
 			return new ApiResponse<>(false, null, "查無任何書籍");
 		}
 		return new ApiResponse<>(true, books, "查詢成功");
+	}
+	
+	@PostMapping(value = "/book", produces = "application/json;charset=utf-8")
+	public ApiResponse<Book> addBook(@RequestBody Book book) {
+		books.add(book);
+		return new ApiResponse<>(true, book, "新增成功");
 	}
 	
 	
