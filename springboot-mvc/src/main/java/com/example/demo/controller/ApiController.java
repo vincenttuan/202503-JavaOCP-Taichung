@@ -215,4 +215,27 @@ public class ApiController {
 		return new ApiResponse<>(true, data, "成績計算結果");
 	}
 	
+	/**
+	 * 
+	 * CRUD 現代設計風格(Rest):
+	 * GET    /books   查詢所有書籍
+	 * GET    /book/1  查詢單筆書籍
+	 * POST   /book    新增書籍
+	 * PUT    /book/1  修改單筆書籍
+	 * DELETE /book/1  刪除單筆書籍
+	 * 
+	 * 路徑: /book/1 得到 id = 1 的書
+	 * 路徑: /book/3 得到 id = 3 的書
+	 * 網址: http://localhost:8080/api/book/1
+	 * 網址: http://localhost:8080/api/book/3
+	 * 
+	 * @PathVariable(name = "id") Integer id
+	 * 等價於
+	 * @PathVariable(value = "id") Integer id
+	 * 也等價於
+	 * @PathVariable("id") Integer id
+	 * ps: 就只是符合不同開發者的需要 !
+	 * 
+	 * */
+	
 }
