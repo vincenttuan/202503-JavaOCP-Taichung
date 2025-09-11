@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -340,8 +341,21 @@ public class ApiController {
 		return new ApiResponse<>(true, book, "patch 修改完成");
 	}
 	
-	
 	// 刪除書籍
+	@DeleteMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
+	public ApiResponse<Object> deleteBook(@PathVariable Integer id) {
+		// 根據 id 搜尋 book
+		Optional<Book> optBook = books.stream().filter(book -> book.getId().equals(id)).findFirst();
+		// 判斷是否有找到
+		if(optBook.isEmpty()) {
+			return new ApiResponse<>(false, null, "查無此書");
+		}
+		// 取得原始 book 資料
+		Book book = optBook.get();
+		// 刪除
+		books.remove(book);
+		return new ApiResponse<>(true, "", "刪除成功");
+	} 
 	
 	
 	
