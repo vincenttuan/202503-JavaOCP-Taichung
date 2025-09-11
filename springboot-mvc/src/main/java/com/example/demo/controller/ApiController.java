@@ -282,6 +282,26 @@ public class ApiController {
 		return new ApiResponse<>(true, books, "查詢成功");
 	}
 	
+	// 分頁查詢
+	@GetMapping(value = "/books/page", produces = "application/json;charset=utf-8")
+	public ApiResponse<List<Book>> findBooksByPage(@RequestParam(defaultValue = "1") int page, 
+												   @RequestParam(defaultValue = "3") int size) {
+		if(page < 1 || size < 1) {
+			return new ApiResponse<>(false, null, "page 與 size 必須 > 0");
+		}
+		
+		int start = (page - 1) * size;
+		int end = Math.min(start + size, books.size());
+		
+		List<Book> subBooks = books.subList(start, end); // 
+		
+		if(subBooks.size() == 0) {
+			return new ApiResponse<>(false, null, "此頁無資料");
+		}
+		
+		return new ApiResponse<>(true, books, "分頁查詢成功");
+	}
+	
 	// 新增書籍
 	@PostMapping(value = "/book", produces = "application/json;charset=utf-8")
 	public ApiResponse<Book> addBook(@RequestBody Book book) {
