@@ -257,6 +257,7 @@ public class ApiController {
 		books.add(new Book(4, "尼羅河的女兒", 14.5, 50, true));
 		books.add(new Book(5, "天子傳奇", 25.5, 25, true));
 		books.add(new Book(6, "洪興十三妹", 30.0, 15, true));
+		books.add(new Book(7, "楚留香", 50.0, 18, true));
 	}
 	
 	// 單筆查詢
