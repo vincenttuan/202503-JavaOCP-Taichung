@@ -293,13 +293,13 @@ public class ApiController {
 		int start = (page - 1) * size;
 		int end = Math.min(start + size, books.size());
 		
-		List<Book> subBooks = books.subList(start, end); // 
+		List<Book> subBooks = books.subList(start, end); // 該頁的書籍集合
 		
 		if(subBooks.size() == 0) {
 			return new ApiResponse<>(false, null, "此頁無資料");
 		}
 		
-		return new ApiResponse<>(true, books, "分頁查詢成功");
+		return new ApiResponse<>(true, subBooks, "分頁查詢成功");
 	}
 	
 	// 新增書籍
