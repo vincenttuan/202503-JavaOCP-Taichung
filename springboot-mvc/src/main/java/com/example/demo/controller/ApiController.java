@@ -299,7 +299,7 @@ public class ApiController {
 			return new ApiResponse<>(false, null, "此頁無資料");
 		}
 		
-		return new ApiResponse<>(true, subBooks, "分頁查詢成功");
+		return new ApiResponse<>(true, subBooks, "第 " + page + " 頁查詢成功");
 	}
 	
 	// 新增書籍
