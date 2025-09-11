@@ -8,6 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -308,6 +309,36 @@ public class ApiController {
 	}
 	
 	// 修改書籍(部分, 技巧:使用 Map 來接收資料, 逐欄判斷需更改項目)
+	@PatchMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
+	public ApiResponse<Book> patchBook(@PathVariable Integer id,  @RequestBody Map<String, Object> updates) {
+		// 根據 id 搜尋 book
+		Optional<Book> optBook = books.stream().filter(book -> book.getId().equals(id)).findFirst();
+		// 判斷是否有找到
+		if(optBook.isEmpty()) {
+			return new ApiResponse<>(false, null, "查無此書");
+		}
+		// 取得原始 book 資料
+		Book book = optBook.get();
+		// 利用 foreach 更新欄位
+		updates.forEach((key, value) -> {
+			switch (key) {
+				case "name":
+					book.setName(value.toString());
+					break;
+				case "price":
+					book.setPrice(Double.valueOf(value.toString()));
+					break;
+				case "amount":
+					book.setAmount(Integer.valueOf(value.toString()));
+					break;
+				case "pub":
+					book.setPub(Boolean.valueOf(value.toString()));
+					break;
+			}
+		});
+		
+		return new ApiResponse<>(true, book, "patch 修改完成");
+	}
 	
 	
 	// 刪除書籍
