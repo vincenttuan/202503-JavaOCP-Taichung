@@ -294,6 +294,10 @@ public class ApiController {
 		int start = (page - 1) * size;
 		int end = Math.min(start + size, books.size());
 		
+		if(start > books.size()) {
+			return new ApiResponse<>(false, null, "page 與 size 輸入過大");
+		}
+		
 		List<Book> subBooks = books.subList(start, end); // 該頁的書籍集合
 		
 		if(subBooks.size() == 0) {
