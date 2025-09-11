@@ -289,6 +289,20 @@ public class ApiController {
 		return new ApiResponse<>(true, book, "新增成功");
 	}
 	
+	// 批次新增書籍
+	@PostMapping(value = "/book/batch", produces = "application/json;charset=utf-8")
+	public ApiResponse<Object> addBatchBooks(@RequestBody List<Book> batchBooks) {
+		if(batchBooks == null || batchBooks.isEmpty()) {
+			return new ApiResponse<>(false, null, "請至少要新增一本書");
+		}
+		// 批次新增
+		books.addAll(batchBooks);
+		
+		return new ApiResponse<>(true, "資料筆數:" + batchBooks.size(), "批次新增成功");
+		
+	} 
+	
+	
 	// 修改書籍(完整)
 	@PutMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
 	public ApiResponse<Book> updateBook(@PathVariable Integer id,  @RequestBody Book updateBook) {
