@@ -24,8 +24,9 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public int update(Book book) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update book set title=?, price=?, stock=?, published=? where id=?";
+		int rowcount = jdbcTemplate.update(sql, book.getTitle(), book.getPrice(), book.getStock(), book.getPublished(), book.getId());
+		return rowcount;
 	}
 
 	@Override
