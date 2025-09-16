@@ -31,8 +31,9 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public int deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from book where id=?";
+		int rowcount = jdbcTemplate.update(sql, id);
+		return rowcount;
 	}
 
 	@Override
