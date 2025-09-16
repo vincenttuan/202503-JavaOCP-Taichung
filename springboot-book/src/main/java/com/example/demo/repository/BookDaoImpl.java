@@ -50,8 +50,8 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public List<Book> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select id, title, price, stock, published from book";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Book.class));
 	}
 
 	@Override
