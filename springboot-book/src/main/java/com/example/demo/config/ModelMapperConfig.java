@@ -24,7 +24,9 @@ public class ModelMapperConfig {
 		ModelMapper modelMapper = new ModelMapper();
 		// Entity -> DTO
 		modelMapper.typeMap(Book.class, BookDTO.class).addMappings(mapper -> {
-			
+			mapper.map(Book::getTitle, BookDTO::setName);
+			mapper.map(Book::getStock, BookDTO::setAmount);
+			mapper.map(Book::getPublished, BookDTO::setPub);
 		});
 		
 		// DTO -> Entity 
