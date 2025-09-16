@@ -56,8 +56,8 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public List<Book> findByPage(int start, int size) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select id, title, price, stock, published from book limit ? offset ?";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Book.class), size, start);
 	}
 
 }
