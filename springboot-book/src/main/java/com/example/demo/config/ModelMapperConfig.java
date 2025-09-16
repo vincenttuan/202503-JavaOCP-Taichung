@@ -10,13 +10,7 @@ import com.example.demo.model.entity.Book;
 
 @Configuration
 public class ModelMapperConfig {
-
-    private final ModelMapper modelMapper;
-
-    ModelMapperConfig(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
-	
+    
 	@Bean
 	//@Scope("singleton") // 每次呼叫都使用同一個物件(預設)
 	//@Scope("prototype") // 每次呼叫都會產生一個新的物件
