@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,7 +54,15 @@ public class BookController {
 		return new ApiResponse<>(true, createBookDTO, "單筆新增成功");
 	}
 	
-	
+	@PutMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
+	public ApiResponse<BookDTO> updateBook(@PathVariable Integer id, @RequestBody BookDTO bookDTO) {
+		try {
+			BookDTO updateBookDTO = bookService.updateBook(id, bookDTO);
+			return new ApiResponse<>(true, updateBookDTO, "單筆修改成功");
+		} catch (BookNotFoundException e) {
+			return new ApiResponse<>(false, null, e.getMessage());
+		}
+	}
 	
 }
 
