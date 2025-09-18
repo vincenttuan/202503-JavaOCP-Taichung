@@ -9,7 +9,7 @@ public interface BookService {
 	// 查詢所有書籍
 	List<BookDTO> findAllBooks();
 	// 查詢單筆書籍
-	BookDTO findBookById(Integer id);
+	BookDTO findBookById(Integer id) throws BookNotFoundException;
 	// 新增書籍
 	BookDTO addBook(BookDTO bookDTO);
 	// 修改書籍

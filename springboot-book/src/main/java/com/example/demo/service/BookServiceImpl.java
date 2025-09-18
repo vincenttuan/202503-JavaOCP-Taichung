@@ -1,23 +1,34 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.exception.BookNotFoundException;
 import com.example.demo.model.dto.BookDTO;
+import com.example.demo.model.entity.Book;
+import com.example.demo.repository.BookDao;
 
 @Service
 public class BookServiceImpl implements BookService {
-
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	@Autowired
+	private BookDao bookDao;
+	
 	@Override
 	public List<BookDTO> findAllBooks() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
-	public BookDTO findBookById(Integer id) {
+	public BookDTO findBookById(Integer id) throws BookNotFoundException {
 		// TODO Auto-generated method stub
 		return null;
 	}
