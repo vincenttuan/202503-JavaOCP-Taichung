@@ -55,11 +55,13 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookDTO updateBook(Integer id, BookDTO bookDTO) throws BookNotFoundException {
-		// 1.將 id 注入到 bookDTO 物件中
+		// 1.確認是否有該筆資料(若無此書即會拋出例外)
+		findBookById(id);
+		// 2.id 注入到 bookDTO
 		bookDTO.setId(id);
-		// 2.BookDTO 轉 Book
+		// 3.BookDTO 轉 Book
 		Book book = modelMapper.map(bookDTO, Book.class);
-		// 3.修改
+		// 4.修改
 		bookDao.update(book);
 		return bookDTO;
 	}
