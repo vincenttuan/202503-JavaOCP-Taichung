@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,6 +60,16 @@ public class BookController {
 		try {
 			BookDTO updateBookDTO = bookService.updateBook(id, bookDTO);
 			return new ApiResponse<>(true, updateBookDTO, "單筆修改成功");
+		} catch (BookNotFoundException e) {
+			return new ApiResponse<>(false, null, e.getMessage());
+		}
+	}
+	
+	@DeleteMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
+	public ApiResponse<Void> deleteBook(@PathVariable Integer id) {
+		try {
+			bookService.deleteBook(id);
+			return new ApiResponse<>(true, null, "單筆刪除成功");
 		} catch (BookNotFoundException e) {
 			return new ApiResponse<>(false, null, e.getMessage());
 		}
