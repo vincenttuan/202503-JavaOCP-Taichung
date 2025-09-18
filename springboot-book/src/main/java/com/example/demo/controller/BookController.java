@@ -24,6 +24,8 @@ public class BookController {
 	private BookService bookService;
 	
 	
+	@GetMapping(value = "/books", produces = "application/json;charset=utf-8")
+	public Ap
 	
 	
 }
