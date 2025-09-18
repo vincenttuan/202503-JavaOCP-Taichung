@@ -1,10 +1,14 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.dto.BookDTO;
+import com.example.demo.response.ApiResponse;
 import com.example.demo.service.BookService;
 
 /**
@@ -25,7 +29,17 @@ public class BookController {
 	
 	
 	@GetMapping(value = "/books", produces = "application/json;charset=utf-8")
-	public Ap
+	public ApiResponse<List<BookDTO>> getAllBooks() {
+		List<BookDTO> bookDTOs = bookService.findAllBooks();
+		return new ApiResponse<>(true, bookDTOs, "查詢成功");
+	}
 	
 	
 }
+
+
+
+
+
+
+
