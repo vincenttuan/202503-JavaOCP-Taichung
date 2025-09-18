@@ -46,17 +46,22 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookDTO addBook(BookDTO bookDTO) {
-		// BookDTO 轉 Book
+		// 1.BookDTO 轉 Book
 		Book book = modelMapper.map(bookDTO, Book.class);
-		// 新增
+		// 2.新增
 		bookDao.save(book);
 		return bookDTO;
 	}
 
 	@Override
 	public BookDTO updateBook(Integer id, BookDTO bookDTO) throws BookNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		// 1.將 id 注入到 bookDTO 物件中
+		bookDTO.setId(id);
+		// 2.BookDTO 轉 Book
+		Book book = modelMapper.map(bookDTO, Book.class);
+		// 3.修改
+		bookDao.update(book);
+		return bookDTO;
 	}
 
 	@Override
