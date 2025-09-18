@@ -29,8 +29,15 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookDTO findBookById(Integer id) throws BookNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Book> optBook = bookDao.findById(id);
+		if(optBook.isEmpty()) {
+			throw new BookNotFoundException("查無書籍. id=" + id);
+		}
+		// 取得 book 物件
+		Book book = optBook.get();
+		// Book 轉 BookDTO
+		BookDTO bookDTO = modelMapper.map(book, BookDTO.class);
+		return bookDTO;
 	}
 
 	@Override
