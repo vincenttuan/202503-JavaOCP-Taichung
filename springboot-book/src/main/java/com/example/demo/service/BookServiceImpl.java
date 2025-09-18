@@ -23,8 +23,12 @@ public class BookServiceImpl implements BookService {
 	
 	@Override
 	public List<BookDTO> findAllBooks() {
-		
-		return null;
+		List<Book> books = bookDao.findAll();
+		// 逐筆 Book 轉 BookDTO
+		List<BookDTO> bookDTOs = books.stream()
+									  .map(book -> modelMapper.map(book, BookDTO.class))
+									  .toList();
+		return bookDTOs;
 	}
 
 	@Override
