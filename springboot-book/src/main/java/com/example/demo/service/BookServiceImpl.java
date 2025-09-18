@@ -46,8 +46,11 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookDTO addBook(BookDTO bookDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		// BookDTO 轉 Book
+		Book book = modelMapper.map(bookDTO, Book.class);
+		// 新增
+		bookDao.save(book);
+		return bookDTO;
 	}
 
 	@Override
