@@ -68,8 +68,10 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public void deleteBook(Integer id) throws BookNotFoundException {
-		// TODO Auto-generated method stub
-		
+		// 1.確認是否有該筆資料(若無此書即會拋出例外)
+		findBookById(id);
+		// 2.刪除
+		bookDao.deleteById(id);
 	}
 
 }
