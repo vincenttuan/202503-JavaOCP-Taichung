@@ -32,14 +32,14 @@ public class BookController {
 	@GetMapping(value = "/books", produces = "application/json;charset=utf-8")
 	public ApiResponse<List<BookDTO>> getAllBooks() {
 		List<BookDTO> bookDTOs = bookService.findAllBooks();
-		return new ApiResponse<>(true, bookDTOs, "查詢成功");
+		return new ApiResponse<>(true, bookDTOs, "多筆查詢成功");
 	}
 	
 	@GetMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
 	public ApiResponse<BookDTO> getBookById(@PathVariable Integer id) {
 		try {
 			BookDTO bookDTO = bookService.findBookById(id);
-			return new ApiResponse<>(true, bookDTO, "查詢成功");
+			return new ApiResponse<>(true, bookDTO, "單筆查詢成功");
 		} catch (BookNotFoundException e) {
 			return new ApiResponse<>(false, null, e.getMessage());
 		}
