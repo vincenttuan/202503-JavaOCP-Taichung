@@ -29,7 +29,7 @@ function App() {
 
   // 新增書籍
   function addBook() {
-    alert(newBook);
+    alert(JSON.stringify(newBook));
   }
 
   return (
