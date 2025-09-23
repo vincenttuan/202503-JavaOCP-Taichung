@@ -5,7 +5,11 @@ function App() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    //setBooks([{id:1, name:"小叮噹", price:18.0, amount:10, pub:true}, {id:2, name:"老夫子", price:20.5, amount:15, pub:false}]);
+    fetchBooks();
+  }, [])
+
+  // 取得所有書籍
+  function fetchBooks() {
     fetch("http://localhost:8080/api/books")
         .then((response) => {
           if(!response.ok) {
@@ -20,8 +24,7 @@ function App() {
           console.log(error);
           alert(error);
         }) // 錯誤處理
-
-  }, [])
+  }
 
   return (
     <>
