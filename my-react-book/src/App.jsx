@@ -28,6 +28,16 @@ function App() {
 
   return (
     <>
+      <h1>My Book 書籍新增</h1>
+      書名: <input type="text" /><p />
+      價格: <input type="number" /><p />
+      數量: <input type="number" /><p />
+      出版: <select>
+              <option value="true">已出版</option>
+              <option value="false">已絕版</option>
+           </select><p />
+      <button>新增書籍</button><p />
+
       <h1>My Book 書籍列表</h1>
       <h2>
         {books.length} 筆
