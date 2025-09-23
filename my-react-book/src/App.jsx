@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [newBook, setNewBook] = useState({name:'', price:0.0, amount:0, pub:true});
 
   useEffect(() => {
     fetchBooks();
@@ -29,10 +30,10 @@ function App() {
   return (
     <>
       <h1>My Book 書籍新增</h1>
-      書名: <input type="text" /><p />
-      價格: <input type="number" /><p />
-      數量: <input type="number" /><p />
-      出版: <select>
+      書名: <input type="text" value={newBook.name} /><p />
+      價格: <input type="number" value={newBook.price} /><p />
+      數量: <input type="number" value={newBook.amount} /><p />
+      出版: <select value={newBook.pub ? "true" : "false"}>
               <option value="true">已出版</option>
               <option value="false">已絕版</option>
            </select><p />
