@@ -27,6 +27,11 @@ function App() {
         }) // 錯誤處理
   }
 
+  // 新增書籍
+  function addBook() {
+    alert(newBook);
+  }
+
   return (
     <>
       <h1>My Book 書籍新增</h1>
@@ -37,7 +42,7 @@ function App() {
               <option value="true">已出版</option>
               <option value="false">已絕版</option>
            </select><p />
-      <button>新增書籍</button><p />
+      <button onClick={addBook}>新增書籍</button><p />
 
       <h1>My Book 書籍列表</h1>
       <h2>
