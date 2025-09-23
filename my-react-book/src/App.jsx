@@ -6,7 +6,20 @@ function App() {
 
   useEffect(() => {
     //setBooks([{id:1, name:"小叮噹", price:18.0, amount:10, pub:true}, {id:2, name:"老夫子", price:20.5, amount:15, pub:false}]);
-    fetch
+    fetch("http://localhost:8080/api/books")
+        .then((response) => {
+          if(!response.ok) {
+            throw new Error("網路回應錯誤");
+          }
+          return response.json();
+        }) // 網路回應
+        .then((jsonData) => {
+          setBooks(jsonData.data); // 將資料透過 setBooks 注入
+        }) // 資料處理
+        .catch((error) => {
+          console.log(error);
+          alert(error);
+        }) // 錯誤處理
 
   }, [])
 
