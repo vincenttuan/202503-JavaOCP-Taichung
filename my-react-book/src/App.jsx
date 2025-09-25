@@ -91,6 +91,16 @@ function App() {
 
   }
 
+  // 編輯 book
+  function editBook(book) {
+    setNewBook({
+      name: book.name,
+      price: book.price,
+      amount: book.amount,
+      pub: book.pub
+    });
+  }
+
   return (
     <>
       <h1>My Book 書籍新增</h1>
