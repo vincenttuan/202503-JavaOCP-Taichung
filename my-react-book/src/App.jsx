@@ -30,6 +30,8 @@ function App() {
   // 新增書籍
   function addBook() {
     alert(JSON.stringify(newBook));
+    
+
   }
 
   return (
@@ -38,7 +40,7 @@ function App() {
       書名: <input type="text" value={newBook.name} onChange={e => setNewBook({...newBook, name:e.target.value})} /><p />
       價格: <input type="number" value={newBook.price} onChange={e => setNewBook({...newBook, price:e.target.value})} /><p />
       數量: <input type="number" value={newBook.amount} onChange={e => setNewBook({...newBook, amount:e.target.value})} /><p />
-      出版: <select value={newBook.pub ? "true" : "false"} onChange={e => setNewBook({...newBook, pub:e.target.value})} >
+      出版: <select value={newBook.pub ? "true" : "false"} onChange={e => setNewBook({...newBook, pub:e.target.value === "true"})} >
               <option value="true">已出版</option>
               <option value="false">已絕版</option>
            </select><p />
