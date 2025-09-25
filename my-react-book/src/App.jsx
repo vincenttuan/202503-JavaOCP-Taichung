@@ -104,9 +104,42 @@ function App() {
     });
   }
 
+  // 更新 book
+  function updateBook() {
+    fetch(`http://localhost:8080/api/book/${newBook.id}`, {
+      method: PUT,
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newBook)
+    })
+    .then((response) => {
+          if(!response.ok) {
+            throw new Error("網路回應錯誤");
+          }
+          return response.json();
+        }) // 網路回應
+    .then((jsonData) => {
+          console.log("更新回應:" + jsonData);
+          console.log("更新回應:" + JSON.stringify(jsonData));
+          if(jsonData.success) {
+            console.log('更新成功');
+            // 清空欄位資料
+            setNewBook({id:0, name:'', price:0.0, amount:0, pub:false});
+            // 重新查詢資料
+            fetchBooks();
+          } else {
+            console.log('更新失敗:' + jsonData.message);
+          }
+        }) // 資料處理
+    .catch((error) => {
+          console.log(error);
+          alert(error);
+        }) // 錯誤處理
+  }
+
   return (
     <>
       <h1>My Book 書籍新增</h1>
+      ID: <input type="text" value={newBook.id} readOnly /><p />
       書名: <input type="text" value={newBook.name} onChange={e => setNewBook({...newBook, name:e.target.value})} /><p />
       價格: <input type="number" value={newBook.price} onChange={e => setNewBook({...newBook, price:e.target.value})} /><p />
       數量: <input type="number" value={newBook.amount} onChange={e => setNewBook({...newBook, amount:e.target.value})} /><p />
@@ -115,7 +148,8 @@ function App() {
               <option value="false">已絕版</option>
            </select><p />
       <button onClick={addBook}>新增書籍</button><p />
-
+      <button onClick={() => updateBook()}>更新書籍</button><p />
+      
       <h1>My Book 書籍列表</h1>
       <h2>
         {books.length} 筆
