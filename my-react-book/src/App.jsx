@@ -47,6 +47,8 @@ function App() {
           console.log("新增回應:" + JSON.stringify(jsonData));
           if(jsonData.success) {
             console.log('新增成功');
+            // 清空欄位資料
+            setNewBook({name:'', price:0.0, amount:0, pub:false});
           } else {
             console.log('新增失敗:' + jsonData.message);
           }
