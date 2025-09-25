@@ -107,7 +107,7 @@ function App() {
   // 更新 book
   function updateBook() {
     fetch(`http://localhost:8080/api/book/${newBook.id}`, {
-      method: PUT,
+      method: 'PUT',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(newBook)
     })
