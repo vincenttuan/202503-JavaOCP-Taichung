@@ -57,7 +57,37 @@ function App() {
           console.log(error);
           alert(error);
         }) // 錯誤處理
+  }
 
+  // 刪除書籍
+  function deleteBook(book) {
+    // 取得 book's id
+    const id = book.id;
+    //fetch('http://localhost:8080/api/book/' + id, { })
+    fetch(`http://localhost:8080/api/book/${id}`, { 
+      method: 'DELETE'
+    })
+    .then((response) => {
+          if(!response.ok) {
+            throw new Error("網路回應錯誤");
+          }
+          return response.json();
+        }) // 網路回應
+    .then((jsonData) => {
+          console.log("刪除回應:" + jsonData);
+          console.log("刪除回應:" + JSON.stringify(jsonData));
+          if(jsonData.success) {
+            console.log('刪除成功');
+            // 重新查詢資料
+            fetchBooks();
+          } else {
+            console.log('刪除失敗:' + jsonData.message);
+          }
+        }) // 資料處理
+    .catch((error) => {
+          console.log(error);
+          alert(error);
+        }) // 錯誤處理
 
   }
 
@@ -79,7 +109,14 @@ function App() {
         <ul>
           {
             books.map((book) => {
-              return (<li key={book.id}>{book.name} ${book.price} {book.amount}本 {book.pub === true ? "出版中" : "已絕版"}</li>)
+              return (
+                  <li key={book.id}>{book.name} ${book.price} {book.amount}本 {book.pub === true ? "出版中" : "已絕版"}
+                    &nbsp;
+                    <button onClick={() => editBook(book)}>修改</button>
+                    &nbsp;
+                    <button onClick={() => deleteBook(book)}>刪除</button>
+                  </li>
+                )
             })
           }
         </ul>
