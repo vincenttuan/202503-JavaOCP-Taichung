@@ -136,6 +136,11 @@ function App() {
         }) // 錯誤處理
   }
 
+  function cancelEdit() {
+    // 清空欄位資料
+    setNewBook({id:0, name:'', price:0.0, amount:0, pub:false});
+  }
+
   return (
     <>
       <h1>My Book 書籍新增</h1>
@@ -147,8 +152,19 @@ function App() {
               <option value="true">已出版</option>
               <option value="false">已絕版</option>
            </select><p />
-      <button onClick={addBook}>新增書籍</button><p />
-      <button onClick={() => updateBook()}>更新書籍</button><p />
+
+      {
+        newBook.id === 0 ? 
+          (<button onClick={addBook}>新增書籍</button>) 
+          : 
+          (
+            <>
+              <button onClick={() => updateBook()}>更新書籍</button>
+              <button onClick={() => cancelEdit()}>取消編輯</button>
+            </>
+          )
+      }     
+      <p />
       
       <h1>My Book 書籍列表</h1>
       <h2>
