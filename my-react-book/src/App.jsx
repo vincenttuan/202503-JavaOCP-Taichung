@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   const [books, setBooks] = useState([]);
-  const [newBook, setNewBook] = useState({name:'', price:0.0, amount:0, pub:false});
+  const [newBook, setNewBook] = useState({id:0, name:'', price:0.0, amount:0, pub:false});
 
   useEffect(() => {
     fetchBooks();
@@ -48,7 +48,7 @@ function App() {
           if(jsonData.success) {
             console.log('新增成功');
             // 清空欄位資料
-            setNewBook({name:'', price:0.0, amount:0, pub:false});
+            setNewBook({id:0, name:'', price:0.0, amount:0, pub:false});
             // 重新查詢資料
             fetchBooks();
           } else {
@@ -96,6 +96,7 @@ function App() {
   // 編輯 book
   function editBook(book) {
     setNewBook({
+      id: book.id,
       name: book.name,
       price: book.price,
       amount: book.amount,
