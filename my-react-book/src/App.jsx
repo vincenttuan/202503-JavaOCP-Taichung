@@ -29,8 +29,32 @@ function App() {
 
   // 新增書籍
   function addBook() {
-    alert(JSON.stringify(newBook));
-    
+    //alert(JSON.stringify(newBook));
+    console.log("新增:", JSON.stringify(newBook));
+    fetch("http://localhost:8080/api/book", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newBook)
+    })
+    .then((response) => {
+          if(!response.ok) {
+            throw new Error("網路回應錯誤");
+          }
+          return response.json();
+        }) // 網路回應
+    .then((jsonData) => {
+          console.log("新增回應:" + jsonData);
+          if(jsonData.success) {
+            console.log('新增成功');
+          } else {
+            console.log('新增失敗:' + jsonData.message);
+          }
+        }) // 資料處理
+    .catch((error) => {
+          console.log(error);
+          alert(error);
+        }) // 錯誤處理
+
 
   }
 

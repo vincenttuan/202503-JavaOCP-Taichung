@@ -51,12 +51,14 @@ public class BookController {
 		}
 	}
 	
+	// 新增
 	@PostMapping(value = "/book", produces = "application/json;charset=utf-8")
 	public ApiResponse<BookDTO> addBook(@RequestBody BookDTO bookDTO) {
 		BookDTO createBookDTO = bookService.addBook(bookDTO);
 		return new ApiResponse<>(true, createBookDTO, "單筆新增成功");
 	}
 	
+	// 修改
 	@PutMapping(value = "/book/{id}", produces = "application/json;charset=utf-8")
 	public ApiResponse<BookDTO> updateBook(@PathVariable Integer id, @RequestBody BookDTO bookDTO) {
 		try {
