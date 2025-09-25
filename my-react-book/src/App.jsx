@@ -44,6 +44,7 @@ function App() {
         }) // 網路回應
     .then((jsonData) => {
           console.log("新增回應:" + jsonData);
+          console.log("新增回應:" + JSON.stringify(jsonData));
           if(jsonData.success) {
             console.log('新增成功');
           } else {
