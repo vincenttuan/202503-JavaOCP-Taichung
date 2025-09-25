@@ -49,6 +49,8 @@ function App() {
             console.log('新增成功');
             // 清空欄位資料
             setNewBook({name:'', price:0.0, amount:0, pub:false});
+            // 重新查詢資料
+            fetchBooks();
           } else {
             console.log('新增失敗:' + jsonData.message);
           }
