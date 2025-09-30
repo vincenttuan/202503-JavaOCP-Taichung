@@ -28,11 +28,16 @@ public class findUser {
 		}
 		
 		// 取得多筆
-		List<User> users = userRepository.findAll();
+		//List<User> users = userRepository.findAll();
+		// 透過自訂方法
+		List<User> users = userRepository.findByUsername("john");
+		
 		System.out.printf("資料筆數: %d%n", users.size());
 		users.forEach(user -> {
 			System.out.printf("%d\t%s\t%s%n", user.getId(), user.getUsername(), user.getPassword());
 		});
+		
+		
 	}
 	
 }
