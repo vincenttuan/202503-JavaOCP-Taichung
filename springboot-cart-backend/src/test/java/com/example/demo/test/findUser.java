@@ -19,7 +19,8 @@ public class findUser {
 	@Test
 	void find() {
 		// 取得單筆資料
-		Optional<User> optUser = userRepository.findById(1L);
+		//Optional<User> optUser = userRepository.findById(1L);
+		Optional<User> optUser = userRepository.findFirstByUsername("john");
 		if(optUser.isEmpty()) {
 			System.out.println("查無資料");
 		} else {
@@ -36,6 +37,8 @@ public class findUser {
 		users.forEach(user -> {
 			System.out.printf("%d\t%s\t%s%n", user.getId(), user.getUsername(), user.getPassword());
 		});
+		
+		
 		
 		
 	}
