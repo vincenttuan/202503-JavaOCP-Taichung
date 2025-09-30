@@ -20,7 +20,8 @@ public class findUser {
 	void find() {
 		// 取得單筆資料
 		//Optional<User> optUser = userRepository.findById(1L);
-		Optional<User> optUser = userRepository.findFirstByUsername("mary");
+		//Optional<User> optUser = userRepository.findFirstByUsername("mary");
+		Optional<User> optUser = userRepository.findByUsernameNative("mary");
 		if(optUser.isEmpty()) {
 			System.out.println("查無資料");
 		} else {
