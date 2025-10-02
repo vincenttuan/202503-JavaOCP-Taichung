@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo.cart.model.entity.Product;
 import com.example.demo.cart.model.entity.ProductImage;
+import com.example.demo.cart.repository.ProductImageRepository;
 import com.example.demo.cart.repository.ProductRepository;
 
 @SpringBootTest
