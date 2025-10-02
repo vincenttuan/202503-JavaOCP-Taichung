@@ -1,4 +1,4 @@
-package com.example.demo.test;
+package com.example.demo.test.user;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package com.example.demo.test;
+package com.example.demo.test.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
