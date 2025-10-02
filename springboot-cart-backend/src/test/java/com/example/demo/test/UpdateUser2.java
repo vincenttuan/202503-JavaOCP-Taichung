@@ -15,7 +15,8 @@ public class UpdateUser2 {
 	@Test
 	void changePassword() {
 		
-		int rowcount = userRepository.updatePasswordByIdNative(1L, "1234");
+		//int rowcount = userRepository.updatePasswordByIdNative(1L, "1234");
+		int rowcount = userRepository.updatePasswordById(1L, "5678");
 		System.out.println("rowcount = " + rowcount);
 		System.out.println(rowcount == 0 ? "修改失敗" : "修改成功");
 	}
