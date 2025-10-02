@@ -25,9 +25,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query(value = "select * from user where username = :username", nativeQuery = true)
 	Optional<User> findByUsernameNative(@Param("username") String username);
 	
+	// 利用原生 sql
 	@Modifying
 	@Transactional
 	@Query(value = "update user set password = :password where id = :id", nativeQuery = true)
 	int updatePasswordByIdNative(@Param("id") Long id, @Param("password") String password);
+	
+	// 透過 PQL (sql語法+物件操作)
+	@Modifying
+	@Transactional
+	@Query(value = "update User u set u.password = :password where u.id = :id")
+	int updatePasswordById(@Param("id") Long id, @Param("password") String password);
 	
 }
