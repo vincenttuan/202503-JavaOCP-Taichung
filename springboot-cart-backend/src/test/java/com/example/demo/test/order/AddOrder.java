@@ -34,9 +34,14 @@ public class AddOrder {
 		item2.setQty(20);
 		item2.setOrder(order); // 建立關聯
 		
+		OrderItem item3 = new OrderItem();
+		item3.setQty(30);
+		item3.setOrder(order); // 建立關聯
+		
 		// 儲存訂單項目
 		orderItemRepository.save(item1);
 		orderItemRepository.save(item2);
+		orderItemRepository.save(item3);
 		
 		System.out.println("order add OK !");
 		
