@@ -41,7 +41,7 @@ public class Product {
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<OrderItem> orderItems;
 	
-	@ManyToMany(mappedBy = "favoriteProducts", fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "favoriteProducts")
 	private Set<User> favoriteUsers;
 	
 }
