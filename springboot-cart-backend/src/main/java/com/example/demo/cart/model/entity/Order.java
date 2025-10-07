@@ -3,6 +3,7 @@ package com.example.demo.cart.model.entity;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,7 +22,9 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToMany
+	// FetchType.EAGER 查找 order 的同時會一併查找 orderItem
+	// FetchType.Lazy 查找 order 的同時不會查找 orderItem
+	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
 	private List<OrderItem> orderItems;
 	
 }
