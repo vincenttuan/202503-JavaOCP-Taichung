@@ -27,9 +27,11 @@ public class AddOrder {
 		
 		// 建立訂單-項目
 		OrderItem item1 = new OrderItem();
+		item1.setQty(10);
 		item1.setOrder(order); // 建立關聯
 		
 		OrderItem item2 = new OrderItem();
+		item2.setQty(20);
 		item2.setOrder(order); // 建立關聯
 		
 		// 儲存訂單項目
