@@ -44,8 +44,22 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDTO login(LoginDTO loginDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		// 判斷 username
+		Optional<User> optUser = userRepository.findFirstByUsername(loginDTO.getUsername());
+		if(optUser.isEmpty()) {
+			return null;
+		}
+		// 得到 User 物件
+		User user = optUser.get();
+		
+		// 判斷 passsword
+		if(!user.getPassword().equals(loginDTO.getPassword())) {
+			return null;
+		}
+		
+		// 將 User 轉 UserDTO
+		UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+		return userDTO;
 	}
 
 	@Override
