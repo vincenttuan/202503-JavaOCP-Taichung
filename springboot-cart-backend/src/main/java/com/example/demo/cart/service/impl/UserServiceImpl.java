@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.cart.exception.AddException;
 import com.example.demo.cart.exception.LoginException;
+import com.example.demo.cart.exception.ProductNotFoundException;
 import com.example.demo.cart.exception.UserNotFoundException;
 import com.example.demo.cart.model.dto.FavoriteProductDTO;
 import com.example.demo.cart.model.dto.FavoriteUserDTO;
@@ -93,8 +94,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<FavoriteUserDTO> getFavoriteUsers(Long productId) {
-		// TODO Auto-generated method stub
+	public List<FavoriteUserDTO> getFavoriteUsers(Long productId) throws ProductNotFoundException {
+		Product product = productRepository.findById(productId).orElseThrow(() -> new ProductNotFoundException("查無商品id:" + productId));
 		return null;
 	}
 
