@@ -1,6 +1,7 @@
 package com.example.demo.cart.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import com.example.demo.cart.model.dto.FavoriteProductDTO;
 import com.example.demo.cart.model.dto.FavoriteUserDTO;
 import com.example.demo.cart.model.dto.LoginDTO;
 import com.example.demo.cart.model.dto.UserDTO;
+import com.example.demo.cart.model.entity.User;
 import com.example.demo.cart.repository.ProductRepository;
 import com.example.demo.cart.repository.UserRepository;
 import com.example.demo.cart.service.UserService;
@@ -29,8 +31,15 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserDTO findByUsername(String username) throws UserNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> optUser = userRepository.findFirstByUsername(username);
+		if(optUser.isEmpty()) {
+			throw new UserNotFoundException("查無使用者:" + username);
+		}
+		// 得到 User 物件
+		User user = optUser.get();
+		// 將 User 轉 UserDTO
+		UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+		return userDTO;
 	}
 
 	@Override
