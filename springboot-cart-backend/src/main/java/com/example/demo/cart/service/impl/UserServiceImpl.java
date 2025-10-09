@@ -87,7 +87,9 @@ public class UserServiceImpl implements UserService {
 		// 查詢該用戶所關注的商品
 		Set<Product> products = user.getFavoriteProducts();
 		// 將 products 集合中的每一個元素 Product 一個一個轉 FavoriteProductDTO 最後放到 List 保存
-		return null;
+		return products.stream()
+					   .map(product -> modelMapper.map(product, FavoriteProductDTO.class))
+					   .toList();
 	}
 
 	@Override
