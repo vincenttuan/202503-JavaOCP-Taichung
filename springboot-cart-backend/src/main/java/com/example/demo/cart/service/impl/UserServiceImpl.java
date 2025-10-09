@@ -2,6 +2,8 @@ package com.example.demo.cart.service.impl;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.cart.exception.UserNotFoundException;
@@ -9,11 +11,22 @@ import com.example.demo.cart.model.dto.FavoriteProductDTO;
 import com.example.demo.cart.model.dto.FavoriteUserDTO;
 import com.example.demo.cart.model.dto.LoginDTO;
 import com.example.demo.cart.model.dto.UserDTO;
+import com.example.demo.cart.repository.ProductRepository;
+import com.example.demo.cart.repository.UserRepository;
 import com.example.demo.cart.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
 	@Override
 	public UserDTO findByUsername(String username) throws UserNotFoundException {
 		// TODO Auto-generated method stub
