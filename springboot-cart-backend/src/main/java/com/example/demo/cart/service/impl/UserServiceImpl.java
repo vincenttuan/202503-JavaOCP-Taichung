@@ -98,7 +98,9 @@ public class UserServiceImpl implements UserService {
 		Product product = productRepository.findById(productId).orElseThrow(() -> new ProductNotFoundException("查無商品id:" + productId));
 		// 查詢該商品被那些用戶所關注
 		Set<User> users = product.getFavoriteUsers();
-		return null;
+		return users.stream()
+					.map(user -> modelMapper.map(user, FavoriteUserDTO.class))
+					.toList();
 	}
 
 	@Override
