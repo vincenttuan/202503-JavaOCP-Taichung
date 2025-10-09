@@ -1,0 +1,25 @@
+package com.example.demo.cart.service;
+
+import java.util.List;
+
+import com.example.demo.cart.exception.UserNotFoundException;
+import com.example.demo.cart.model.dto.FavoriteProductDTO;
+import com.example.demo.cart.model.dto.FavoriteUserDTO;
+import com.example.demo.cart.model.dto.LoginDTO;
+import com.example.demo.cart.model.dto.UserDTO;
+
+public interface UserService {
+	// 根據名字找使用者
+	UserDTO findByUsername(String username) throws UserNotFoundException;
+	// 登入
+	UserDTO login(LoginDTO loginDTO);
+	// 儲存
+	UserDTO saveUser(UserDTO userDTO); 
+	// 用戶關注列表(用戶關注那些商品) - 正向查詢
+	List<FavoriteProductDTO> getFavoriteProducts(Long userId);
+	// 商品關注列表(商品被那些用戶關注) - 反向查詢
+	
+	// 新增商品關注
+	
+	// 移除所關注的商品
+}

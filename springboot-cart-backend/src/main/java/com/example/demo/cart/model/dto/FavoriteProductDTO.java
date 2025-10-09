@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class FavorateProductDTO {
+public class FavoriteProductDTO {
 	private Long id;
 	private String name;
 }
