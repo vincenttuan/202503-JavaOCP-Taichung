@@ -104,13 +104,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addFavoriteProduct(Long userId, Long productId) {
-		// TODO Auto-generated method stub
-		
+	public void addFavoriteProduct(Long userId, Long productId) throws UserNotFoundException, ProductNotFoundException {
+		User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("查無使用者id:" + userId));
+		Product product = productRepository.findById(productId).orElseThrow(() -> new ProductNotFoundException("查無商品id:" + productId));
+		// 將商品加入到用戶的關注清單
+		user.getFavoriteProducts().add(product);
+		// 保存
+		userRepository.save(user);
 	}
 
 	@Override
-	public void removeFavoriteProduct(Long userId, Long productId) {
+	public void removeFavoriteProduct(Long userId, Long productId) throws UserNotFoundException, ProductNotFoundException {
 		// TODO Auto-generated method stub
 		
 	}
