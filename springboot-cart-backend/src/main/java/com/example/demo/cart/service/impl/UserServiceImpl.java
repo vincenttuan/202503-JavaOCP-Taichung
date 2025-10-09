@@ -96,6 +96,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<FavoriteUserDTO> getFavoriteUsers(Long productId) throws ProductNotFoundException {
 		Product product = productRepository.findById(productId).orElseThrow(() -> new ProductNotFoundException("查無商品id:" + productId));
+		// 查詢該商品被那些用戶所關注
+		Set<User> users = product.getFavoriteUsers();
 		return null;
 	}
 
