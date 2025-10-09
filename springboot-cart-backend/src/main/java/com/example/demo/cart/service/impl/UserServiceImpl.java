@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.cart.exception.LoginException;
 import com.example.demo.cart.exception.UserNotFoundException;
 import com.example.demo.cart.model.dto.FavoriteProductDTO;
 import com.example.demo.cart.model.dto.FavoriteUserDTO;
@@ -43,18 +44,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO login(LoginDTO loginDTO) {
+	public UserDTO login(LoginDTO loginDTO) throws LoginException {
 		// 判斷 username
 		Optional<User> optUser = userRepository.findFirstByUsername(loginDTO.getUsername());
 		if(optUser.isEmpty()) {
-			return null;
+			throw new LoginException("帳號錯誤");
 		}
 		// 得到 User 物件
 		User user = optUser.get();
 		
 		// 判斷 passsword
 		if(!user.getPassword().equals(loginDTO.getPassword())) {
-			return null;
+			throw new LoginException("密碼錯誤");
 		}
 		
 		// 將 User 轉 UserDTO
