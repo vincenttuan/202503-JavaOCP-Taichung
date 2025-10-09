@@ -23,8 +23,8 @@ public interface UserService {
 	// 商品關注列表(商品被那些用戶關注) - 反向查詢
 	List<FavoriteUserDTO> getFavoriteUsers(Long productId) throws ProductNotFoundException;
 	// 新增商品關注
-	void addFavoriteProduct(Long userId, Long productId);
+	void addFavoriteProduct(Long userId, Long productId) throws UserNotFoundException, ProductNotFoundException;
 	// 移除所關注的商品
-	void removeFavoriteProduct(Long userId, Long productId);
+	void removeFavoriteProduct(Long userId, Long productId) throws UserNotFoundException, ProductNotFoundException;
 	
 }
