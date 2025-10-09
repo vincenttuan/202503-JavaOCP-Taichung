@@ -81,7 +81,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<FavoriteProductDTO> getFavoriteProducts(Long userId) {
-		// TODO Auto-generated method stub
+		User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("查無使用者"));
+		
 		return null;
 	}
 
