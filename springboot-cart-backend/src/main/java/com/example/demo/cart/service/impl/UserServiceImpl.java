@@ -5,8 +5,10 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.cart.exception.AddException;
 import com.example.demo.cart.exception.LoginException;
 import com.example.demo.cart.exception.UserNotFoundException;
 import com.example.demo.cart.model.dto.FavoriteProductDTO;
@@ -64,9 +66,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO saveUser(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserDTO saveUser(UserDTO userDTO) throws AddException {
+		// UserDTO 轉 User
+		User user = modelMapper.map(userDTO, User.class);
+		try {
+			user = userRepository.save(user);
+		} catch(Exception e) {
+			throw new AddException("新增 user 失敗:" + e.getMessage());
+		}
+		// User 轉 UserDTO
+		userDTO = modelMapper.map(user, UserDTO.class);
+		return userDTO;
 	}
 
 	@Override
