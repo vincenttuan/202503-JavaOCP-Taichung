@@ -61,14 +61,15 @@ public class OrderServiceImpl implements OrderService {
 		order.setUser(user);
 		
 		// 4. 建立訂單明細 orderItems
-		List<OrderItem> orderItems = items.stream()
+		List<OrderItem> orderItems = items // [OrderItemDTO]->[OrderItemDTO]->[OrderItemDTO]
+				.stream()                  // [OrderItemDTO]  [OrderItemDTO]  [OrderItemDTO]
 				.map(item -> {
 					OrderItem orderItem = modelMapper.map(item, OrderItem.class);
 					// orderItem 與 order 關係
 					orderItem.setOrder(order);
 					return orderItem;
-				})
-				.toList();
+				})                         // [OrderItem]  [OrderItem]  [OrderItem]
+				.toList();                 // [OrderItem]->[OrderItem]->[OrderItem]
 		
 		// 5. 設定 order 與 orderItems 的關係
 		order.setOrderItems(orderItems);
