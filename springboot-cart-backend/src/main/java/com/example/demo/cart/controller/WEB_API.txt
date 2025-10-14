@@ -22,6 +22,7 @@ POST "/checkout" 該用戶(已登入)進行結帳        範例: "/checkout"
 
 FavoriteController:
 Request Mapping: "/favorites"
+------------------------------------------------------------------
 GET    "", "/"               獲取用戶(已登入)關注清單 範例: "/favorites" 或 "/favorites/"
 GET    "/product/{productId} 獲取該商品被那些用戶所關注 範例: "/favorites/product/1" 或 "/favorites/product/2"
 POST   "/{productId}        用戶(已登入)加入所關注的商品 範例: "/favorites/1" 或 "/favorites/2"
