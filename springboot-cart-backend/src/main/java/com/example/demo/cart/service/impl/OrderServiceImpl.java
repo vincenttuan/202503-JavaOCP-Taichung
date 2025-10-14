@@ -10,6 +10,7 @@ import com.example.demo.cart.exception.OrderItemEmptyException;
 import com.example.demo.cart.exception.UserNotFoundException;
 import com.example.demo.cart.model.dto.OrderDTO;
 import com.example.demo.cart.model.dto.OrderItemDTO;
+import com.example.demo.cart.model.entity.User;
 import com.example.demo.cart.repository.OrderRepository;
 import com.example.demo.cart.repository.ProductRepository;
 import com.example.demo.cart.repository.UserRepository;
@@ -43,7 +44,11 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public OrderDTO saveOrder(Long userId, List<OrderItemDTO> orderItems)
 			throws UserNotFoundException, OrderItemEmptyException {
+		// 0. 判斷 orderItems 是否是空的 ?
+		
+		
 		// 1. 取得用戶 user
+		User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("用戶不存在"));
 		
 		// 2. 建立訂單 order
 		
