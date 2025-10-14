@@ -29,7 +29,11 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Override
 	public List<OrderDTO> findOrdersByUserId(Long userId) throws UserNotFoundException {
-		// TODO Auto-generated method stub
+		// 1. User 是否存在
+		if(!userRepository.existsById(userId)) {
+			throw new UserNotFoundException("查無使用者");
+		}
+		// 2. 查詢訂單
 		return null;
 	}
 
