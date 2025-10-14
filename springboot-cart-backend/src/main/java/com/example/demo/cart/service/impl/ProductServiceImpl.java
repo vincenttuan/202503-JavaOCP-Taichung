@@ -41,7 +41,14 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDTO saveProduct(ProductDTO productDTO) throws AddException {
-		// TODO Auto-generated method stub
+		// 1.建立 ProductImage
+		
+		// 2.ProductDTO 轉 Product
+		
+		// 3.儲存 Product
+		
+		// 4.Product 轉 ProductDTO
+		
 		return null;
 	}
 
