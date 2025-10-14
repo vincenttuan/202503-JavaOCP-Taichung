@@ -10,6 +10,7 @@ import com.example.demo.cart.exception.AddException;
 import com.example.demo.cart.exception.ProductNotFoundException;
 import com.example.demo.cart.model.dto.ProductDTO;
 import com.example.demo.cart.model.entity.Product;
+import com.example.demo.cart.model.entity.ProductImage;
 import com.example.demo.cart.repository.ProductImageRepository;
 import com.example.demo.cart.repository.ProductRepository;
 import com.example.demo.cart.service.ProductService;
@@ -42,14 +43,20 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductDTO saveProduct(ProductDTO productDTO) throws AddException {
 		// 1.建立 ProductImage
+		ProductImage productImage = new ProductImage();
+		productImage.setImageBase64(productDTO.getImageBase64());
 		
 		// 2.ProductDTO 轉 Product
+		Product product = modelMapper.map(productDTO, Product.class);
+		product.setProductImage(productImage); // 配置 ProductImage
 		
 		// 3.儲存 Product
+		product = productRepository.save(product);
 		
 		// 4.Product 轉 ProductDTO
-		
-		return null;
+		productDTO = modelMapper.map(product, ProductDTO.class); 
+				
+		return productDTO;
 	}
 
 }
