@@ -9,22 +9,25 @@ import org.springframework.stereotype.Service;
 import com.example.demo.cart.exception.AddException;
 import com.example.demo.cart.exception.ProductNotFoundException;
 import com.example.demo.cart.model.dto.ProductDTO;
+import com.example.demo.cart.repository.ProductImageRepository;
 import com.example.demo.cart.repository.ProductRepository;
 import com.example.demo.cart.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	@Autowired
+
+    @Autowired
 	private ProductRepository productRepository;
 	
 	@Autowired
 	private ModelMapper modelMapper;
-	
+    
 	@Override
 	public List<ProductDTO> getAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.findAll()
+								.stream() // [Product]->[Product]->[Product]...
+								.map(product -> modelMapper.map(product, ProductDTO.class)) // [ProductDTO] [ProductDTO] [ProductDTO] ...
+								.toList();
 	}
 
 	@Override
