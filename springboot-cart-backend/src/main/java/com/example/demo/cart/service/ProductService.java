@@ -11,7 +11,7 @@ public interface ProductService {
 	List<ProductDTO> getAllProducts();
 	
 	// 取得指定商品
-	ProductDTO getProductById(Integer id) throws ProductNotFoundException;
+	ProductDTO getProductById(Long id) throws ProductNotFoundException;
 	
 	// 新增商品
 	ProductDTO saveProduct(ProductDTO productDTO) throws AddException;
