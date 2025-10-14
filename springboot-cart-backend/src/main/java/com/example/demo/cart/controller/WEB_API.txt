@@ -1,0 +1,24 @@
+WEB API 規格
+
+ProductController:
+Request Mapping: "/products"
+------------------------------------------------------------------
+GET  "", "/"   查詢所有商品(多筆) 範例: "/products"   或 "/products/"
+GET  "/{id}"   查詢指定商品(單筆) 範例: "/products/1" 或 "/products/2"
+POST "", "/"   新增商品        範例: "/products"   或 "/products/"
+
+AuthController:
+Request Mapping: "/auth"
+------------------------------------------------------------------
+POST "/login"      登入      範例: "/auth/login"
+GET  "/logout"     登出      範例: "/auth/logout"
+GET  "/isLoggedIn" 判斷登入狀態 範例: "/auth/isLoggedIn"
+
+OrderController:
+Request Mapping: "/orders"
+------------------------------------------------------------------
+GET "", "/"      查詢該用戶(已登入)的訂單 範例: "/orders" 或 "/orders/"
+POST "/checkout" 該用戶進行結帳        範例: "/checkout"
+
+
+Request Mapping: "/favorites"
