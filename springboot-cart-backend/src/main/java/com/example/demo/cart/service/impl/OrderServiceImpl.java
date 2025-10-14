@@ -75,10 +75,12 @@ public class OrderServiceImpl implements OrderService {
 		order.setOrderItems(orderItems);
 		
 		// 6. 保存 order
+		Order savedOrder = orderRepository.save(order);
 		
-		// 7. order 轉 orderDTO
+		// 7. savedOrder 轉 orderDTO
+		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
 		
-		return null;
+		return orderDTO;
 	}
 
 }
