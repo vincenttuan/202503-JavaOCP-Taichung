@@ -11,5 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class OrderDTO {
 	private Long id;
-	private List<OrderItemDTO> orderItemDTOs;
+	private List<OrderItemDTO> orderItems;
 }
