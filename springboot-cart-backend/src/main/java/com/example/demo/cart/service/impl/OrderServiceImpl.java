@@ -47,13 +47,15 @@ public class OrderServiceImpl implements OrderService {
 		
 		// 2. 建立訂單 order
 		
-		// 3. 建立訂單明細 orderItems
+		// 3. 設定 order 與 user 的關係
 		
-		// 4. 設定 order 與 orderItems 的關係
+		// 4. 建立訂單明細 orderItems
 		
-		// 5. 保存 order
+		// 5. 設定 order 與 orderItems 的關係
 		
-		// 6. order 轉 orderDTO
+		// 6. 保存 order
+		
+		// 7. order 轉 orderDTO
 		
 		return null;
 	}
