@@ -43,7 +43,18 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public OrderDTO saveOrder(Long userId, List<OrderItemDTO> orderItems)
 			throws UserNotFoundException, OrderItemEmptyException {
-		// TODO Auto-generated method stub
+		// 1. 取得用戶 user
+		
+		// 2. 建立訂單 order
+		
+		// 3. 建立訂單明細 orderItems
+		
+		// 4. 設定 order 與 orderItems 的關係
+		
+		// 5. 保存 order
+		
+		// 6. order 轉 orderDTO
+		
 		return null;
 	}
 
