@@ -18,7 +18,13 @@ OrderController:
 Request Mapping: "/orders"
 ------------------------------------------------------------------
 GET "", "/"      查詢該用戶(已登入)的訂單 範例: "/orders" 或 "/orders/"
-POST "/checkout" 該用戶進行結帳        範例: "/checkout"
+POST "/checkout" 該用戶(已登入)進行結帳        範例: "/checkout"
 
 
 Request Mapping: "/favorites"
+GET "", "/"               獲取用戶(已登入)關注清單 範例: "/favorites" 或 "/favorites/"
+GET "/product/{productId} 獲取該商品被那些用戶所關注 範例: "/favorites/product/1" 或 "/favorites/product/2"
+
+
+
+
