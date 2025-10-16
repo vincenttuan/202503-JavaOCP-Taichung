@@ -2,6 +2,7 @@ package com.example.demo.cart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ import jakarta.servlet.http.HttpSession;
  * */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class AuthController {
 	
 	@Autowired
@@ -46,6 +47,12 @@ public class AuthController {
 		} catch (Exception e) {
 			return new ApiResponse<>(400, "其他錯誤:" + e.getMessage(), null);
 		}
+	}
+	
+	@GetMapping("/logout")
+	public ApiResponse<Void> logout(HttpSession httpSession) {
+		httpSession.invalidate();
+		return new ApiResponse<>(200, "登出成功", null);
 	}
 	
 	
