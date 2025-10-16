@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.cart.exception.ProductNotFoundException;
 import com.example.demo.cart.model.dto.ProductDTO;
 import com.example.demo.cart.response.ApiResponse;
 import com.example.demo.cart.service.ProductService;
@@ -33,6 +35,17 @@ public class ProductController {
 		List<ProductDTO> productDTOs = productService.getAllProducts();
 		return new ApiResponse<>(200, "查詢成功", productDTOs);
 	}
+	
+	@GetMapping("/{id}")
+	public ApiResponse<ProductDTO> getProduct(@PathVariable(name = "id") Long productId) {
+		try {
+			ProductDTO productDTO = productService.getProductById(productId);
+			return new ApiResponse<>(200, "查詢成功", productDTO);
+		} catch (ProductNotFoundException e) {
+			return new ApiResponse<>(404, e.getMessage(), null);
+		}
+	}
+	
 	
 	
 	
