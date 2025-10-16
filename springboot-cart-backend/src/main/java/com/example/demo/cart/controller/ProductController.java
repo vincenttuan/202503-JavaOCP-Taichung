@@ -28,7 +28,7 @@ import com.example.demo.cart.service.ProductService;
  * POST "", "/"   新增商品        範例: "/products"   或 "/products/"
  * */
 @RestController
-@RequestMapping("/products")
+@RequestMapping(value = {"/products", "/product"})
 @CrossOrigin(origins = "http://localhost:5173")
 public class ProductController {
 	
@@ -62,6 +62,8 @@ public class ProductController {
 		} catch (AddException e) {
 			//return new ApiResponse<>(400, e.getMessage(), null);
 			return new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), e.getMessage(), null);
+		} catch (Exception e2) {
+			return new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), "其他錯誤:" + e2.getMessage(), null);
 		}	
 	}
 	
