@@ -36,6 +36,8 @@ public class AuthController {
 		try {
 			UserDTO userDTO = userService.login(loginDTO);
 			// 登入成功:
+			// 不要將密碼顯示出來
+			userDTO.setPassword("******");
 			// 將 userDTO 存放到 httpsession
 			httpSession.setAttribute("userDTO", userDTO);
 			return new ApiResponse<>(200, "登入成功", userDTO);
