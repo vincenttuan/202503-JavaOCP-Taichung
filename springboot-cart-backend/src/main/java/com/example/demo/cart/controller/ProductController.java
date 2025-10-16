@@ -62,8 +62,7 @@ public class ProductController {
 		} catch (AddException e) {
 			//return new ApiResponse<>(400, e.getMessage(), null);
 			return new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), e.getMessage(), null);
-		}
-				
+		}	
 	}
 	
 	
