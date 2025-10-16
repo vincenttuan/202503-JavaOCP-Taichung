@@ -33,7 +33,6 @@ public class AuthController {
 	
 	@PostMapping("/login")
 	public ApiResponse<UserDTO> login(@RequestBody LoginDTO loginDTO, HttpSession httpSession) {
-		
 		try {
 			UserDTO userDTO = userService.login(loginDTO);
 			// 登入成功:
@@ -45,9 +44,6 @@ public class AuthController {
 		} catch (Exception e) {
 			return new ApiResponse<>(400, "其他錯誤:" + e.getMessage(), null);
 		}
-		
-		
-		
 	}
 	
 	
