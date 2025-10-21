@@ -33,6 +33,7 @@ public class OrderController {
 	
 	@GetMapping(value = {"", "/"})
 	public ApiResponse<List<OrderDTO>> getAllOrders(HttpSession httpSession) {
+		// 是否有登入資訊
 		if(httpSession.getAttribute("userDTO") == null) {
 			return new ApiResponse<>(400, "無登入資料", null);
 		}
