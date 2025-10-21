@@ -1,8 +1,21 @@
 package com.example.demo.cart.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.SpringbootCartBackendApplication;
+import com.example.demo.cart.exception.UserNotFoundException;
+import com.example.demo.cart.model.dto.FavoriteProductDTO;
+import com.example.demo.cart.model.dto.UserDTO;
+import com.example.demo.cart.repository.UserRepository;
+import com.example.demo.cart.response.ApiResponse;
+import com.example.demo.cart.service.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 /**
  * FavoriteController:
@@ -17,5 +30,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/favorites")
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class FavoriteController {
+
+    private final SpringbootCartBackendApplication springbootCartBackendApplication;
 	
+	@Autowired
+	private UserService userService;
+
+    // 獲取用戶(已登入)關注清單
+	@GetMapping(value = {"", "/"})
+	public ApiResponse<List<FavoriteProductDTO>> getFavoriteProducts(HttpSession httpSession) {
+		// 是否有登入資訊
+		if(httpSession.getAttribute("userDTO") == null) {
+			return new ApiResponse<>(400, "無登入資料, 請先登入", null);
+		}
+		
+		UserDTO userDTO = (UserDTO)httpSession.getAttribute("userDTO");
+		Long userId = userDTO.getId();
+		// 取得所關注的商品資料
+		List<FavoriteProductDTO> favoriteProductDTOs = null;
+		try {
+			favoriteProductDTOs = userService.getFavoriteProducts(userId);
+		} catch (UserNotFoundException e) {
+			return new ApiResponse<>(400, "查無使用者", null);
+		}
+		return new ApiResponse<>(200, "查詢成功", favoriteProductDTOs);
+	}
+	
+	// 獲取該商品被那些用戶所關注
+	
+	// 用戶(已登入)加入所關注的商品
+	
+	// 用戶(已登入)移除所關注的商品
 }
