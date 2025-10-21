@@ -31,9 +31,7 @@ import jakarta.servlet.http.HttpSession;
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class FavoriteController {
 
-    private final SpringbootCartBackendApplication springbootCartBackendApplication;
-	
-	@Autowired
+    @Autowired
 	private UserService userService;
 
     // 獲取用戶(已登入)關注清單
