@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.SpringbootCartBackendApplication;
@@ -76,7 +77,26 @@ public class FavoriteController {
 	}
 	
 	// 用戶(已登入)加入所關注的商品
-	
+	@PostMapping("/{productId}")
+	public ApiResponse<String> addFavorite(@PathVariable Long productId, HttpSession httpSession) {
+		// 是否有登入資訊
+		if(httpSession.getAttribute("userDTO") == null) {
+			return new ApiResponse<>(400, "無登入資料, 請先登入", null);
+		}
+		
+		UserDTO userDTO = (UserDTO)httpSession.getAttribute("userDTO");
+		Long userId = userDTO.getId();
+		
+		try {
+			userService.addFavoriteProduct(userId, productId);
+		} catch (UserNotFoundException e) {
+			return new ApiResponse<>(400, "查無使用者", null);
+		} catch (ProductNotFoundException e) {
+			return new ApiResponse<>(400, "查無商品", null);
+		}
+		
+		return new ApiResponse<>(200, "關注的商品", "成功");
+	}
 	
 	
 	// 用戶(已登入)移除所關注的商品
