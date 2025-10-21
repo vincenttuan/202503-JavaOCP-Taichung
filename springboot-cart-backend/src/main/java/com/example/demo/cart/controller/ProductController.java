@@ -29,7 +29,7 @@ import com.example.demo.cart.service.ProductService;
  * */
 @RestController
 @RequestMapping(value = {"/products", "/product"})
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class ProductController {
 	
 	@Autowired
