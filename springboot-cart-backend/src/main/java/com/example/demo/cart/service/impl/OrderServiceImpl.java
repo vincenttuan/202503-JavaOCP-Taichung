@@ -12,6 +12,7 @@ import com.example.demo.cart.model.dto.OrderDTO;
 import com.example.demo.cart.model.dto.OrderItemDTO;
 import com.example.demo.cart.model.entity.Order;
 import com.example.demo.cart.model.entity.OrderItem;
+import com.example.demo.cart.model.entity.Product;
 import com.example.demo.cart.model.entity.User;
 import com.example.demo.cart.repository.OrderRepository;
 import com.example.demo.cart.repository.ProductRepository;
@@ -26,6 +27,9 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
 	private OrderRepository orderRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -67,6 +71,12 @@ public class OrderServiceImpl implements OrderService {
 					OrderItem orderItem = modelMapper.map(item, OrderItem.class);
 					// orderItem 與 order 關係
 					orderItem.setOrder(order);
+					
+					// 尋找每一筆訂單的商品, 找到後進行配置
+					Long productId = orderItem.getProduct().getId();
+					Product product = productRepository.findById(productId).get();
+					orderItem.setProduct(product);
+					
 					return orderItem;
 				})                         // [OrderItem]  [OrderItem]  [OrderItem]
 				.toList();                 // [OrderItem]->[OrderItem]->[OrderItem]
