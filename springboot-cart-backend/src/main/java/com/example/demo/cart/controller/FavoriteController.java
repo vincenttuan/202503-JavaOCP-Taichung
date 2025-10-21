@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -95,12 +96,30 @@ public class FavoriteController {
 			return new ApiResponse<>(400, "查無商品", null);
 		}
 		
-		return new ApiResponse<>(200, "關注的商品", "成功");
+		return new ApiResponse<>(200, "新增關注的商品", "成功");
 	}
 	
-	
 	// 用戶(已登入)移除所關注的商品
-	
+	@DeleteMapping("/{productId}")
+	public ApiResponse<String> deleteFavorite(@PathVariable Long productId, HttpSession httpSession) {
+		// 是否有登入資訊
+		if(httpSession.getAttribute("userDTO") == null) {
+			return new ApiResponse<>(400, "無登入資料, 請先登入", null);
+		}
+		
+		UserDTO userDTO = (UserDTO)httpSession.getAttribute("userDTO");
+		Long userId = userDTO.getId();
+		
+		try {
+			userService.removeFavoriteProduct(userId, productId);
+		} catch (UserNotFoundException e) {
+			return new ApiResponse<>(400, "查無使用者", null);
+		} catch (ProductNotFoundException e) {
+			return new ApiResponse<>(400, "查無商品", null);
+		}
+		
+		return new ApiResponse<>(200, "移除關注的商品", "成功");
+	}
 	
 	
 }
