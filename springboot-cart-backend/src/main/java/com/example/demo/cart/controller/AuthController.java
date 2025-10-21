@@ -55,5 +55,21 @@ public class AuthController {
 		return new ApiResponse<>(200, "登出成功", null);
 	}
 	
+	@GetMapping("/isLoggedIn")
+	public ApiResponse<LoginDTO> isLoggedIn(HttpSession session) {
+		LoginDTO loginDTO = new LoginDTO();
+		
+		if(session.getAttribute("userDTO") == null) {
+			loginDTO.setIsLoggedIn(false);
+			return new ApiResponse<>(400, "無登入資料", loginDTO);
+		}
+		
+		UserDTO userDTO = (UserDTO)session.getAttribute("userDTO");
+		loginDTO.setIsLoggedIn(true);
+		loginDTO.setUsername(userDTO.getUsername());
+		loginDTO.setPassword(userDTO.getPassword());
+		return new ApiResponse<>(200, "仍在登入狀態", loginDTO);
+	}
+	
 	
 }
