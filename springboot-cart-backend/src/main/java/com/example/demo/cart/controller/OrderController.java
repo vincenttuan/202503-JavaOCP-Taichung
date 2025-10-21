@@ -69,8 +69,7 @@ public class OrderController {
 			return new ApiResponse<>(400, e2.getMessage(), null);
 		}
 		
-		new ApiResponse<>(200, "結帳成功", orderDTO);
-		
+		return new ApiResponse<>(200, "結帳成功", orderDTO);
 	}
 	
 }
