@@ -22,8 +22,9 @@ function App() {
     try {
       const data = await login(username, password); // 使用登入服務方法
       if(data.message === "登入成功") {
-        setIsLoggedIn(true); // 修改登入狀態
+        //setIsLoggedIn(true); // 修改登入狀態
         window.location.href = "/"; // 回到首頁
+        alert("登入成功");
       } else {
         alert("登入失敗");
       }
