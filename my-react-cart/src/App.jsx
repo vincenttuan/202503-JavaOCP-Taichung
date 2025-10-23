@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
+import {checkLoginStatus, login, logout} from "./services/authService"
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,6 +19,7 @@ function App() {
   const handleLogin = async(username, password) => {
     console.log("username:", username);
     console.log("password:", password);
+    
   };
 
   return (
