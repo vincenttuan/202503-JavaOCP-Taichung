@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Footer from "./components/Footer"
+import LoginPage from "./pages/LoginPage"
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,6 +14,11 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+  const handleLogin = async(username, password) => {
+    console.log("username:", username);
+    console.log("password:", password);
+  };
 
   return (
     <Router>
@@ -30,7 +36,8 @@ function App() {
           {/* 購物車路由 */}
 
           {/* 登入路由 */}
-          
+          <Route path='/login' element={<LoginPage onLogin={handleLogin} />} />
+
         </Routes>
       </div>
 
