@@ -36,7 +36,7 @@ function App() {
       console.log(JSON.stringify(data)); // 登入結果
       if(data.status === 200) {
         setIsLoggedIn(true); // 修改登入狀態
-        window.location.href = "/"; // 回到首頁
+        //window.location.href = "/"; // 回到首頁
         alert("登入成功");
       } else {
         setIsLoggedIn(false); // 修改登入狀態
@@ -52,7 +52,7 @@ function App() {
   return (
     <Router>
       {/* 導航列-位於最上方 */}
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
 
       {/* 主要內容區-位於中間部分 */}
       <div className='content'>
@@ -65,7 +65,7 @@ function App() {
           {/* 購物車路由 */}
 
           {/* 登入路由 */}
-          <Route path='/login' element={<LoginPage onLogin={handleLogin} />} />
+          <Route path='/login' element={<LoginPage onLogin={handleLogin} isLoggedIn={isLoggedIn} />} />
 
         </Routes>
       </div>
