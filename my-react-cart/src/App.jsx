@@ -84,6 +84,17 @@ function App() {
     setCartItems([... cartItems, item])
   }
 
+  // 移除購物項目 
+  const removeFromCart = (indexToRemove) => {
+    //setCartItems(cartItems.filter((item, index) => index !== indexToRemove));
+    setCartItems(cartItems.filter((_, index) => index !== indexToRemove)); // 沒有用到 item 變數可以用 _ 當佔位符號
+  };
+
+  // 清除購物車
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <Router>
       {/* 導航列-位於最上方 */}
@@ -99,6 +110,8 @@ function App() {
           <Route path="/products" element={<Products addToCart={addToCart} isLoggedIn={isLoggedIn} />} />
 
           {/* 購物車路由 */}
+          
+
 
           {/* 登入路由 */}
           <Route path='/login' element={<LoginPage onLogin={handleLogin} isLoggedIn={isLoggedIn} />} />
