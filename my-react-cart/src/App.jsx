@@ -87,7 +87,7 @@ function App() {
   return (
     <Router>
       {/* 導航列-位於最上方 */}
-      <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <Navbar cartCount={cartItems.length} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
 
       {/* 主要內容區-位於中間部分 */}
       <div className='content'>
