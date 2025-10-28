@@ -24,7 +24,10 @@ import {checkLoginStatus, login, logout} from "./services/authService"
 // 結帳相關 API
 
 function App() {
+  // 登入狀態
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // 登入處理
   const handleLogin = async(username, password) => {
     console.log("username:", username);
     console.log("password:", password);
@@ -32,13 +35,15 @@ function App() {
       const data = await login(username, password); // 使用登入服務方法
       console.log(JSON.stringify(data)); // 登入結果
       if(data.status === 200) {
-        //setIsLoggedIn(true); // 修改登入狀態
+        setIsLoggedIn(true); // 修改登入狀態
         window.location.href = "/"; // 回到首頁
         alert("登入成功");
       } else {
+        setIsLoggedIn(false); // 修改登入狀態
         alert("登入失敗: " + data.message);
       }
     } catch(e) {
+      setIsLoggedIn(false); // 修改登入狀態
       alert(e);
       console.error("登入錯誤:", e);
     }
