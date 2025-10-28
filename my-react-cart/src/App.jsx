@@ -3,25 +3,35 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Footer from "./components/Footer"
-import LoginPage from "./pages/LoginPage"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
 
-
 // 登入相關 API
-import {checkLoginStatus, login, logout} from "./services/authService"
+import {checkLoginStatus, login, logout} from "./services/authService";
 
-// 商品相關服務 API
+// 導航列相關模組
+import Navbar from "./components/Navbar"
 
-// 購物車相關 API
+// 首頁相關模組
+import Home from "./pages/Home"
 
-// 結帳相關 API
+// 頁尾相關模組
+import Footer from "./components/Footer"
+
+// 登入相關模組
+import LoginPage from "./pages/LoginPage"
+
+// 商品相關模組
+import Products from "./pages/Products";
+
+// 購物車模組
+import Cart from "./pages/Cart";
+
+// 結帳模組
+import Checkout from "./pages/Checkout";
 
 function App() {
   // 登入狀態
@@ -74,6 +84,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* 商品路由 */}
+
 
           {/* 購物車路由 */}
 
