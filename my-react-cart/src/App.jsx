@@ -7,12 +7,20 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
-import {checkLoginStatus, login, logout} from "./services/authService"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+
+// 登入相關 API
+import {checkLoginStatus, login, logout} from "./services/authService"
+
+// 商品相關服務 API
+
+// 購物車相關 API
+
+// 結帳相關 API
 
 function App() {
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 
 function LoginPage({ onLogin }) {
-  const [username, setUsername] = useState("john");
+  const [username, setUsername] = useState("admin");
   const [password, setPassword] = useState("1234");
   
   const handleSubmit = (e) => {
