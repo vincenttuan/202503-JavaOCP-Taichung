@@ -13,6 +13,7 @@ import {
   Route,
 } from "react-router-dom";
 
+
 // 登入相關 API
 import {checkLoginStatus, login, logout} from "./services/authService"
 
@@ -32,7 +33,7 @@ function App() {
       console.log(JSON.stringify(data)); // 登入結果
       if(data.status === 200) {
         //setIsLoggedIn(true); // 修改登入狀態
-        //window.location.href = "/"; // 回到首頁
+        window.location.href = "/"; // 回到首頁
         alert("登入成功");
       } else {
         alert("登入失敗: " + data.message);
