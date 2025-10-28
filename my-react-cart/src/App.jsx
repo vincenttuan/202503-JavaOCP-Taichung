@@ -36,6 +36,8 @@ import Checkout from "./pages/Checkout";
 function App() {
   // 登入狀態
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // 定義購物中內容
+  const [cartItems, setCartItems] = useState([]);
 
   // 登入處理
   const handleLogin = async(username, password) => {
@@ -72,6 +74,16 @@ function App() {
     }
   };
 
+  // 加入購物車
+  const addToCart = (product) => {
+    const item = {
+      product: product,
+      qty: 1
+    }
+    console.log(item);
+    setCartItems([... cartItems, item])
+  }
+
   return (
     <Router>
       {/* 導航列-位於最上方 */}
@@ -84,7 +96,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* 商品路由 */}
-
+          <Route path="/products" element={<Products addToCart={addToCart} isLoggedIn={isLoggedIn} />} />
 
           {/* 購物車路由 */}
 
