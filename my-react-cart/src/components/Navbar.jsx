@@ -23,7 +23,7 @@ function Navbar({ cartCount, isLoggedIn, onLogout}) {
               <Link to="/checkout">查看結帳</Link>
             </li>
             <li>
-              <button className="navbar-button">
+              <button className="navbar-button" onClick={onLogout}>
                 登出
               </button>
             </li>

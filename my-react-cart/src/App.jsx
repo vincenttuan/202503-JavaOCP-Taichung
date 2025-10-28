@@ -49,10 +49,23 @@ function App() {
     }
   };
 
+  // 登出處理
+  const handleLogout = async() => {
+    try {
+      const data = await logout();
+      setIsLoggedIn(false); // 修改登入狀態
+      console.log(data);
+    } catch(e) {
+      setIsLoggedIn(false); // 修改登入狀態
+      console.log(e);
+      alert(e);
+    }
+  };
+
   return (
     <Router>
       {/* 導航列-位於最上方 */}
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} onLogout={onLogout} />
 
       {/* 主要內容區-位於中間部分 */}
       <div className='content'>
