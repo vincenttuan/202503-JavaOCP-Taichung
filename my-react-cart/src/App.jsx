@@ -72,6 +72,7 @@ function App() {
       console.log(e);
       alert(e);
     }
+    window.location.href='/'; // 回到首頁
   };
 
   // 加入購物車
