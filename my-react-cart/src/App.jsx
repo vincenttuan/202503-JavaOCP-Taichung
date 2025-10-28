@@ -113,6 +113,9 @@ function App() {
           <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} 
                                              clearCart={clearCart} isLoggedIn={isLoggedIn} />} />
 
+          {/* 結帳路由 */}
+          <Route path="/checkout" element={<Checkout />} />
+
           {/* 登入路由 */}
           <Route path='/login' element={<LoginPage onLogin={handleLogin} isLoggedIn={isLoggedIn} />} />
 
